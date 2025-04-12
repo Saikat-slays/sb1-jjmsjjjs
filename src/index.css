@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+  }
+
+  :root {
+    --color-1: 0 72% 51%;
+    --color-2: 256 46% 55%;
+    --color-3: 284 70% 73%;
+    --color-4: 122 39% 49%;
+    --color-5: 43 96% 56%;
+  }
+
+  body {
+    @apply bg-charcoal text-white;
+  }
+}
+
+@layer utilities {
+  .animate-rainbow {
+    animation: rainbow 8s linear infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes rainbow {
+    0% { color: hsl(var(--color-1)); }
+    25% { color: hsl(var(--color-2)); }
+    50% { color: hsl(var(--color-3)); }
+    75% { color: hsl(var(--color-4)); }
+    100% { color: hsl(var(--color-5)); }
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      filter: brightness(1);
+    }
+    50% {
+      filter: brightness(1.2);
+    }
+  }
+}
