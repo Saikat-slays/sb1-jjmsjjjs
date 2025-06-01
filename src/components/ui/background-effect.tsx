@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Squares } from './squares-background';
+import { FlickeringGrid } from './flickering-grid';
 
 export function BackgroundEffect() {
   return (
@@ -14,15 +14,15 @@ export function BackgroundEffect() {
         {/* Dark Background */}
         <div className="absolute inset-0 bg-charcoal" />
 
-        {/* Squares Background */}
+        {/* Flickering Grid Background */}
         <div className="absolute inset-0">
-          <Squares
-            direction="diagonal"
-            speed={0.3}
-            squareSize={60}
-            borderColor="rgba(255,255,255,0.1)"
-            hoverFillColor="rgba(255,255,255,0.05)"
+          <FlickeringGrid
             className="w-full h-full"
+            squareSize={4}
+            gridGap={6}
+            color="#6B7280"
+            maxOpacity={0.5}
+            flickerChance={0.1}
           />
         </div>
 
