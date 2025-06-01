@@ -20,6 +20,12 @@ function Navbar() {
             Services
           </Link>
           <Link 
+            to="/how-we-work" 
+            className={`${location.pathname === '/how-we-work' ? 'text-white' : 'text-white/70'} hover:text-white transition`}
+          >
+            How We Work
+          </Link>
+          <Link 
             to="/about" 
             className={`${location.pathname === '/about' ? 'text-white' : 'text-white/70'} hover:text-white transition`}
           >

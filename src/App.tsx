@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import StrategyCall from './pages/StrategyCall';
+import HowWeWork from './pages/HowWeWork';
 import { BackgroundEffect } from './components/ui/background-effect';
 
 function PageTransition({ children }: { children: React.ReactNode }) {
@@ -40,6 +41,7 @@ function App() {
             <Route path="/about" element={<PageTransition><About /></PageTransition>} />
             <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
             <Route path="/strategy-call" element={<PageTransition><StrategyCall /></PageTransition>} />
+            <Route path="/how-we-work" element={<PageTransition><HowWeWork /></PageTransition>} />
           </Routes>
           <Footer />
         </div>
@@ -47,5 +49,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;

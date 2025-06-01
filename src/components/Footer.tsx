@@ -29,7 +29,7 @@ function Footer() {
             <h3 className="text-white mb-4">Company</h3>
             <ul className="space-y-2">
               <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
-              <li><Link to="/results" className="hover:text-white transition">Case Studies</Link></li>
+              <li><Link to="/how-we-work" className="hover:text-white transition">How We Work</Link></li>
               <li><Link to="/contact" className="hover:text-white transition">Contact</Link></li>
               <li><Link to="/strategy-call" className="hover:text-white transition">Book a Call</Link></li>
             </ul>
