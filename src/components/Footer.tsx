@@ -6,9 +6,14 @@ function Footer() {
   return (
     <footer className="bg-charcoal text-white/70 py-12">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <Link to="/" className="flex items-center mb-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="col-span-2 sm:col-span-1">
+            <Link 
+              to="/" 
+              className="inline-flex items-center mb-4 hover:text-white transition"
+              role="link"
+              aria-label="Go to homepage"
+            >
               <Zap className="h-6 w-6 text-white" />
               <span className="ml-2 text-xl text-white">ThynkNext</span>
             </Link>
@@ -18,38 +23,107 @@ function Footer() {
           </div>
           <div>
             <h3 className="text-white mb-4 font-semibold">Solutions</h3>
-            <ul className="space-y-2">
-              <li><Link to="/services" className="hover:text-white transition">AI Chatbots</Link></li>
-              <li><Link to="/services" className="hover:text-white transition">Lead Generation</Link></li>
-              <li><Link to="/services" className="hover:text-white transition">Personalized Outreach</Link></li>
-              <li><Link to="/services" className="hover:text-white transition">Custom Development</Link></li>
+            <ul className="space-y-3">
+              {[
+                ['AI Chatbots', '/services'],
+                ['Lead Generation', '/services'],
+                ['Personalized Outreach', '/services'],
+                ['Custom Development', '/services']
+              ].map(([label, path]) => (
+                <li key={label}>
+                  <Link 
+                    to={path}
+                    className="inline-block py-2 hover:text-white transition-colors"
+                    role="link"
+                    aria-label={`Go to ${label}`}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
             <h3 className="text-white mb-4 font-semibold">Company</h3>
-            <ul className="space-y-2">
-              <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
-              <li><Link to="/how-we-work" className="hover:text-white transition">How We Work</Link></li>
-              <li><Link to="/strategy-call" className="hover:text-white transition">Book a Call</Link></li>
-              <li><a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Sitemap</a></li>
+            <ul className="space-y-3">
+              {[
+                ['About Us', '/about'],
+                ['How We Work', '/how-we-work'],
+                ['Book a Call', '/strategy-call']
+              ].map(([label, path]) => (
+                <li key={label}>
+                  <Link 
+                    to={path}
+                    className="inline-block py-2 hover:text-white transition-colors"
+                    role="link"
+                    aria-label={`Go to ${label}`}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a 
+                  href="/sitemap.xml"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block py-2 hover:text-white transition-colors"
+                  role="link"
+                  aria-label="View sitemap"
+                >
+                  Sitemap
+                </a>
+              </li>
             </ul>
           </div>
           <div>
             <h3 className="text-white mb-4 font-semibold">Contact</h3>
-            <ul className="space-y-2">
-              <li>Email: inquiries@thynknext.in</li>
-              <li>WhatsApp: +91 6289118324</li>
-              <li>Kolkata, India</li>
+            <ul className="space-y-3">
+              <li>
+                <a 
+                  href="mailto:inquiries@thynknext.in"
+                  className="inline-block py-2 hover:text-white transition-colors"
+                  role="link"
+                  aria-label="Send email"
+                >
+                  Email: inquiries@thynknext.in
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="tel:+916289118324"
+                  className="inline-block py-2 hover:text-white transition-colors"
+                  role="link"
+                  aria-label="Call us"
+                >
+                  WhatsApp: +91 6289118324
+                </a>
+              </li>
+              <li className="py-2">Kolkata, India</li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-sm mb-4 md:mb-0">
-            © 2024 ThynkNext. All rights reserved.
-          </div>
-          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
-            <Link to="/privacy" className="hover:text-white transition text-center">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-white transition text-center">Terms of Service</Link>
+        <div className="border-t border-white/10 mt-8 pt-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+            <div className="text-sm text-center sm:text-left">
+              © 2024 ThynkNext. All rights reserved.
+            </div>
+            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-6">
+              {[
+                ['Privacy Policy', '/privacy'],
+                ['Terms of Service', '/terms']
+              ].map(([label, path]) => (
+                <Link 
+                  key={label}
+                  to={path}
+                  className="inline-block py-2 hover:text-white transition-colors text-center sm:text-left"
+                  role="link"
+                  aria-label={`View ${label}`}
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
