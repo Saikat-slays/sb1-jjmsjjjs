@@ -18,7 +18,7 @@ export default {
           dark: '#F1F1F1',
         },
         charcoal: '#121213',
-        background: '#121213',
+        'app-background': '#121213',
       },
       fontFamily: {
         sans: ['Arial', 'sans-serif'],

@@ -12,7 +12,7 @@ export function BackgroundEffect() {
         transition={{ duration: 1 }}
       >
         {/* Base Background */}
-        <div className="absolute inset-0 bg-background" />
+        <div className="absolute inset-0 bg-app-background" />
 
         {/* Flickering Grid */}
         <div className="absolute inset-0">
@@ -32,7 +32,7 @@ export function BackgroundEffect() {
         <div className="absolute bottom-0 left-1/3 w-[700px] h-[700px] bg-gradient-to-tr from-primary/5 to-primary/10 rounded-full blur-3xl" />
 
         {/* Subtle Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-app-background/50 via-transparent to-app-background/50" />
       </motion.div>
     </div>
   );
