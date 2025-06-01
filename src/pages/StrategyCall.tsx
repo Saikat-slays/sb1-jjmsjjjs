@@ -2,12 +2,28 @@ import React, { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { Check, ChevronRight, Clock, Target, Users } from 'lucide-react';
 import { RainbowButton } from "@/components/ui/rainbow-button";
-import { TypewriterHeading } from '@/components/ui/typewriter-heading';
+import { TypewriterHeading } from '@/components/ui/typewriter-heading";
 import { supabase } from '@/lib/supabase';
 import { PhoneInput } from '@/components/ui/phone-input';
 
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  automationGoal: string;
+}
+
+interface FormErrors {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  automationGoal: string;
+}
+
 function StrategyCall() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     phone: '',
@@ -15,7 +31,7 @@ function StrategyCall() {
     automationGoal: ''
   });
 
-  const [errors, setErrors] = useState({
+  const [errors, setErrors] = useState<FormErrors>({
     name: '',
     email: '',
     phone: '',
@@ -117,7 +133,7 @@ function StrategyCall() {
 
       setSubmitStatus({
         type: 'success',
-        message: 'Thank you for booking a strategy call. We will contact you shortly!'
+        message: 'Thank you for booking a strategy call. We will contact you shortly to confirm your appointment!'
       });
     } catch (error) {
       console.error('Error submitting form:', error);
