@@ -11,28 +11,28 @@ export function BackgroundEffect() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        {/* Dark Background */}
-        <div className="absolute inset-0 bg-charcoal" />
+        {/* Base Background */}
+        <div className="absolute inset-0 bg-background" />
 
-        {/* Flickering Grid Background */}
+        {/* Flickering Grid */}
         <div className="absolute inset-0">
           <FlickeringGrid
             className="w-full h-full"
             squareSize={4}
             gridGap={6}
-            color="#6B7280"
-            maxOpacity={0.5}
+            color="#333333"
+            maxOpacity={0.3}
             flickerChance={0.1}
           />
         </div>
 
-        {/* Gradient Orbs */}
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-r from-gray-500/20 to-gray-400/20 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-gradient-to-l from-gray-400/20 to-gray-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 w-[700px] h-[700px] bg-gradient-to-tr from-gray-500/20 to-gray-400/20 rounded-full blur-3xl" />
+        {/* Gradient Overlays */}
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-r from-primary/5 to-primary/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-gradient-to-l from-primary/5 to-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/3 w-[700px] h-[700px] bg-gradient-to-tr from-primary/5 to-primary/10 rounded-full blur-3xl" />
 
-        {/* Very Light Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/30 via-transparent to-charcoal/30" />
+        {/* Subtle Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background/50" />
       </motion.div>
     </div>
   );

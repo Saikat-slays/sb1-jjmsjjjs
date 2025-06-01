@@ -17,7 +17,8 @@ export default {
           DEFAULT: '#FFFFFF',
           dark: '#F1F1F1',
         },
-        charcoal: '#1A1A1A',
+        charcoal: '#121213',
+        background: '#121213',
       },
       fontFamily: {
         sans: ['Arial', 'sans-serif'],
@@ -37,13 +38,6 @@ export default {
       },
       animation: {
         rainbow: 'rainbow 8s linear infinite',
-      },
-      cssVariables: {
-        '--color-1': '0 72% 51%',
-        '--color-2': '256 46% 55%',
-        '--color-3': '284 70% 73%',
-        '--color-4': '122 39% 49%',
-        '--color-5': '43 96% 56%',
       },
     },
   },
