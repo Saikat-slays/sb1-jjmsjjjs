@@ -153,7 +153,7 @@ function HowWeWork() {
                   <h3 className="text-2xl font-bold text-black">Ongoing Partnership & Support</h3>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  After launch, we offer an $800/month retainer plan that keeps your system sharp, relevant, and evolving with your business. Whether it's new features, integrations, or improvements, we're here to ensure your AI investment keeps delivering ROI.
+                  After launch, we offer a retainer plan that keeps your system sharp, relevant, and evolving with your business. Whether it's new features, integrations, or improvements, we're here to ensure your AI investment keeps delivering ROI.
                 </p>
                 <div className="bg-accent-dark p-6 rounded-xl">
                   <h4 className="font-semibold text-black mb-4">What's included:</h4>
