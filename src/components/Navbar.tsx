@@ -31,12 +31,6 @@ function Navbar() {
           >
             About
           </Link>
-          <Link 
-            to="/contact" 
-            className={`${location.pathname === '/contact' ? 'text-white' : 'text-white/70'} hover:text-white transition`}
-          >
-            Contact
-          </Link>
         </div>
         <Link 
           to="/strategy-call" 

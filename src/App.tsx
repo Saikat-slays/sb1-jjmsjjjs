@@ -6,7 +6,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import About from './pages/About';
-import Contact from './pages/Contact';
 import StrategyCall from './pages/StrategyCall';
 import HowWeWork from './pages/HowWeWork';
 import TermsOfService from './pages/TermsOfService';
@@ -41,7 +40,6 @@ function App() {
             <Route path="/" element={<PageTransition><Home /></PageTransition>} />
             <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
             <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-            <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
             <Route path="/strategy-call" element={<PageTransition><StrategyCall /></PageTransition>} />
             <Route path="/how-we-work" element={<PageTransition><HowWeWork /></PageTransition>} />
             <Route path="/terms" element={<PageTransition><TermsOfService /></PageTransition>} />
