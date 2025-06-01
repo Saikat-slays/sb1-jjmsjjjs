@@ -1,10 +1,11 @@
 import React, { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { Check, ChevronRight, Clock, Target, Users } from 'lucide-react';
+import { Check, ChevronRight, Clock, Target, Users, Home } from 'lucide-react';
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { TypewriterHeading } from '@/components/ui/typewriter-heading';
 import { supabase } from '@/lib/supabase';
 import { PhoneInput } from '@/components/ui/phone-input';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface FormData {
   name: string;
@@ -40,10 +41,7 @@ function StrategyCall() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: 'success' | 'error' | null;
-    message: string;
-  }>({ type: null, message: '' });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const validateEmail = (email: string) => {
     const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -123,24 +121,13 @@ function StrategyCall() {
 
       if (error) throw error;
 
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        automationGoal: ''
-      });
-
-      setSubmitStatus({
-        type: 'success',
-        message: 'Thank you for booking a strategy call. We will contact you shortly to confirm your appointment!'
-      });
+      setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting form:', error);
-      setSubmitStatus({
-        type: 'error',
-        message: 'There was an error submitting your request. Please try again.'
-      });
+      setErrors(prev => ({
+        ...prev,
+        submit: 'There was an error submitting your request. Please try again.'
+      }));
     } finally {
       setIsSubmitting(false);
     }
@@ -156,6 +143,53 @@ function StrategyCall() {
 
   const inputClasses = `w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-white text-gray-900 placeholder-gray-500`;
   const errorInputClasses = `border-red-500`;
+
+  const ConfirmationMessage = () => (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      className="text-center p-8"
+    >
+      <div className="mb-8">
+        <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+          <Check className="h-10 w-10 text-white" />
+        </div>
+        <h2 className="text-3xl font-bold text-black mb-4">Thank You!</h2>
+        <p className="text-xl text-gray-600 mb-6">
+          Your strategy call has been scheduled successfully.
+        </p>
+      </div>
+      
+      <div className="bg-accent-dark p-6 rounded-xl mb-8">
+        <h3 className="font-semibold text-black mb-4">What happens next?</h3>
+        <ul className="space-y-4 text-left">
+          <li className="flex items-start">
+            <Check className="h-5 w-5 text-primary mt-1 mr-3" />
+            <span className="text-gray-600">
+              Our team will review your requirements within 24 hours
+            </span>
+          </li>
+          <li className="flex items-start">
+            <Check className="h-5 w-5 text-primary mt-1 mr-3" />
+            <span className="text-gray-600">
+              You'll receive an email with available time slots
+            </span>
+          </li>
+          <li className="flex items-start">
+            <Check className="h-5 w-5 text-primary mt-1 mr-3" />
+            <span className="text-gray-600">
+              We'll prepare a preliminary analysis of your automation needs
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <ButtonLink to="/">
+        <Home className="mr-2 h-5 w-5" /> Return to Homepage
+      </ButtonLink>
+    </motion.div>
+  );
 
   return (
     <div className="pt-20">
@@ -266,115 +300,116 @@ function StrategyCall() {
               </div>
             </div>
 
-            {/* Right Column - Booking Form */}
+            {/* Right Column - Booking Form or Confirmation */}
             <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h2 className="text-2xl font-bold text-black mb-6">Book Your Strategy Call</h2>
-              {submitStatus.type && (
-                <div
-                  className={`mb-6 p-4 rounded-lg ${
-                    submitStatus.type === 'success'
-                      ? 'bg-green-100 text-green-700'
-                      : 'bg-red-100 text-red-700'
-                  }`}
-                >
-                  {submitStatus.message}
-                </div>
-              )}
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Your Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className={`${inputClasses} ${errors.name ? errorInputClasses : ''}`}
-                    placeholder="John Doe"
-                    required
-                  />
-                  {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className={`${inputClasses} ${errors.email ? errorInputClasses : ''}`}
-                    placeholder="john@example.com"
-                    required
-                  />
-                  {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number <span className="text-red-500">*</span>
-                  </label>
-                  <PhoneInput
-                    value={formData.phone}
-                    onChange={(value) => {
-                      setFormData(prev => ({ ...prev, phone: value }));
-                      setErrors(prev => ({ ...prev, phone: '' }));
-                    }}
-                    error={errors.phone}
-                    className={`${inputClasses} ${errors.phone ? errorInputClasses : ''}`}
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Company <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    className={`${inputClasses} ${errors.company ? errorInputClasses : ''}`}
-                    placeholder="Your Company Name"
-                    required
-                  />
-                  {errors.company && <p className="mt-1 text-sm text-red-500">{errors.company}</p>}
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    What's your primary automation goal? <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    name="automationGoal"
-                    value={formData.automationGoal}
-                    onChange={handleInputChange}
-                    className={`${inputClasses} ${errors.automationGoal ? errorInputClasses : ''}`}
-                    required
+              <AnimatePresence mode="wait">
+                {isSubmitted ? (
+                  <ConfirmationMessage />
+                ) : (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
                   >
-                    <option value="">Select your goal</option>
-                    <option value="Generate More Leads">Generate More Leads</option>
-                    <option value="Automate Customer Support">Automate Customer Support</option>
-                    <option value="Scale Personal Outreach">Scale Personal Outreach</option>
-                    <option value="Streamline Operations">Streamline Operations</option>
-                  </select>
-                  {errors.automationGoal && (
-                    <p className="mt-1 text-sm text-red-500">{errors.automationGoal}</p>
-                  )}
-                </div>
-                <RainbowButton
-                  type="submit"
-                  className="w-full inline-flex items-center justify-center"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'Booking...' : 'Book Your Call'} <ChevronRight className="ml-2 h-5 w-5" />
-                </RainbowButton>
-              </form>
+                    <h2 className="text-2xl font-bold text-black mb-6">Book Your Strategy Call</h2>
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Your Name <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          className={`${inputClasses} ${errors.name ? errorInputClasses : ''}`}
+                          placeholder="John Doe"
+                          required
+                        />
+                        {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Email Address <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          className={`${inputClasses} ${errors.email ? errorInputClasses : ''}`}
+                          placeholder="john@example.com"
+                          required
+                        />
+                        {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Phone Number <span className="text-red-500">*</span>
+                        </label>
+                        <PhoneInput
+                          value={formData.phone}
+                          onChange={(value) => {
+                            setFormData(prev => ({ ...prev, phone: value }));
+                            setErrors(prev => ({ ...prev, phone: '' }));
+                          }}
+                          error={errors.phone}
+                          className={`${inputClasses} ${errors.phone ? errorInputClasses : ''}`}
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Company <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          name="company"
+                          value={formData.company}
+                          onChange={handleInputChange}
+                          className={`${inputClasses} ${errors.company ? errorInputClasses : ''}`}
+                          placeholder="Your Company Name"
+                          required
+                        />
+                        {errors.company && <p className="mt-1 text-sm text-red-500">{errors.company}</p>}
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          What's your primary automation goal? <span className="text-red-500">*</span>
+                        </label>
+                        <select
+                          name="automationGoal"
+                          value={formData.automationGoal}
+                          onChange={handleInputChange}
+                          className={`${inputClasses} ${errors.automationGoal ? errorInputClasses : ''}`}
+                          required
+                        >
+                          <option value="">Select your goal</option>
+                          <option value="Generate More Leads">Generate More Leads</option>
+                          <option value="Automate Customer Support">Automate Customer Support</option>
+                          <option value="Scale Personal Outreach">Scale Personal Outreach</option>
+                          <option value="Streamline Operations">Streamline Operations</option>
+                        </select>
+                        {errors.automationGoal && (
+                          <p className="mt-1 text-sm text-red-500">{errors.automationGoal}</p>
+                        )}
+                      </div>
+                      <RainbowButton
+                        type="submit"
+                        className="w-full inline-flex items-center justify-center"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? 'Booking...' : 'Book Your Call'} <ChevronRight className="ml-2 h-5 w-5" />
+                      </RainbowButton>
+                    </form>
 
-              <div className="mt-8 p-4 bg-accent-dark rounded-lg">
-                <p className="text-sm text-gray-600 text-center">
-                  Limited spots available. Book your call now to secure priority access.
-                </p>
-              </div>
+                    <div className="mt-8 p-4 bg-accent-dark rounded-lg">
+                      <p className="text-sm text-gray-600 text-center">
+                        Limited spots available. Book your call now to secure priority access.
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </div>
