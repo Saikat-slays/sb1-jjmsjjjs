@@ -31,7 +31,7 @@ function Footer() {
               <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
               <li><Link to="/how-we-work" className="hover:text-white transition">How We Work</Link></li>
               <li><Link to="/strategy-call" className="hover:text-white transition">Book a Call</Link></li>
-              <li><Link to="/sitemap.xml" className="hover:text-white transition">Sitemap</Link></li>
+              <li><a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Sitemap</a></li>
             </ul>
           </div>
           <div>
