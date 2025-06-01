@@ -18,13 +18,13 @@
     --color-4: 122 39% 49%;
     --color-5: 43 96% 56%;
   }
-
-  body {
-    @apply bg-app-background text-white;
-  }
 }
 
 @layer utilities {
+  body {
+    @apply bg-slate-900 text-white;
+  }
+
   .animate-rainbow {
     animation: rainbow 8s linear infinite;
   }
