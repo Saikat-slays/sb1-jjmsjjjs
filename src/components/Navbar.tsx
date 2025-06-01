@@ -9,7 +9,12 @@ function Navbar() {
   
   // Close menu when route changes
   useEffect(() => {
-    setIsOpen(false);
+    const handleRouteChange = () => {
+      setIsOpen(false);
+    };
+
+    handleRouteChange(); // Initial cleanup
+    return () => handleRouteChange(); // Cleanup on unmount
   }, [location.pathname]);
 
   // Close menu when clicking outside
@@ -21,8 +26,30 @@ function Navbar() {
       }
     };
 
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    if (isOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen]);
+
+  // Handle escape key press
+  useEffect(() => {
+    const handleEscapeKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscapeKey);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKey);
+    };
   }, [isOpen]);
 
   // Prevent body scroll when menu is open
@@ -30,10 +57,11 @@ function Navbar() {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
     }
+
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
     };
   }, [isOpen]);
 
@@ -44,13 +72,17 @@ function Navbar() {
   ];
   
   return (
-    <nav className="container mx-auto px-6 py-4">
+    <nav className="container mx-auto px-6 py-4 relative z-50">
       <div className="flex items-center justify-between">
         {/* Mobile Menu Button */}
         <button
-          className="menu-button lg:hidden p-2 -ml-2 text-white focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
+          className="menu-button lg:hidden p-2 -ml-2 text-white focus:outline-none focus:ring-2 focus:ring-white/20 rounded-lg"
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsOpen(!isOpen);
+          }}
           aria-label="Toggle menu"
+          aria-expanded={isOpen}
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
@@ -104,6 +136,7 @@ function Navbar() {
                     className={`${
                       location.pathname === path ? 'text-white' : 'text-white/70'
                     } text-xl hover:text-white transition`}
+                    onClick={() => setIsOpen(false)}
                   >
                     {label}
                   </Link>
@@ -111,6 +144,7 @@ function Navbar() {
                 <Link
                   to="/strategy-call"
                   className="bg-white text-charcoal px-6 py-3 rounded-full hover:bg-white/90 transition flex items-center justify-center mt-4"
+                  onClick={() => setIsOpen(false)}
                 >
                   Book Strategy Call <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
