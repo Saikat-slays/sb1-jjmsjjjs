@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="bg-charcoal text-white/70 py-12">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <Link to="/" className="flex items-center mb-4">
               <Zap className="h-6 w-6 text-white" />
@@ -17,7 +17,7 @@ function Footer() {
             </p>
           </div>
           <div>
-            <h3 className="text-white mb-4">Solutions</h3>
+            <h3 className="text-white mb-4 font-semibold">Solutions</h3>
             <ul className="space-y-2">
               <li><Link to="/services" className="hover:text-white transition">AI Chatbots</Link></li>
               <li><Link to="/services" className="hover:text-white transition">Lead Generation</Link></li>
@@ -26,15 +26,16 @@ function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-white mb-4">Company</h3>
+            <h3 className="text-white mb-4 font-semibold">Company</h3>
             <ul className="space-y-2">
               <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
               <li><Link to="/how-we-work" className="hover:text-white transition">How We Work</Link></li>
               <li><Link to="/strategy-call" className="hover:text-white transition">Book a Call</Link></li>
+              <li><Link to="/sitemap.xml" className="hover:text-white transition">Sitemap</Link></li>
             </ul>
           </div>
           <div>
-            <h3 className="text-white mb-4">Contact</h3>
+            <h3 className="text-white mb-4 font-semibold">Contact</h3>
             <ul className="space-y-2">
               <li>Email: inquiries@thynknext.in</li>
               <li>WhatsApp: +91 6289118324</li>
@@ -46,9 +47,9 @@ function Footer() {
           <div className="text-sm mb-4 md:mb-0">
             © 2024 ThynkNext. All rights reserved.
           </div>
-          <div className="flex space-x-6">
-            <Link to="/privacy" className="hover:text-white transition">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-white transition">Terms of Service</Link>
+          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
+            <Link to="/privacy" className="hover:text-white transition text-center">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white transition text-center">Terms of Service</Link>
           </div>
         </div>
       </div>
