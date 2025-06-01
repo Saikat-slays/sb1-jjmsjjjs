@@ -9,6 +9,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import StrategyCall from './pages/StrategyCall';
 import HowWeWork from './pages/HowWeWork';
+import TermsOfService from './pages/TermsOfService';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import { BackgroundEffect } from './components/ui/background-effect';
 
 function PageTransition({ children }: { children: React.ReactNode }) {
@@ -42,6 +44,8 @@ function App() {
             <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
             <Route path="/strategy-call" element={<PageTransition><StrategyCall /></PageTransition>} />
             <Route path="/how-we-work" element={<PageTransition><HowWeWork /></PageTransition>} />
+            <Route path="/terms" element={<PageTransition><TermsOfService /></PageTransition>} />
+            <Route path="/privacy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
           </Routes>
           <Footer />
         </div>
@@ -50,4 +54,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
