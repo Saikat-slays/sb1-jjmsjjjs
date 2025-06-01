@@ -2,7 +2,7 @@ import React, { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { Check, ChevronRight, Clock, Target, Users } from 'lucide-react';
 import { RainbowButton } from "@/components/ui/rainbow-button";
-import { TypewriterHeading } from '@/components/ui/typewriter-heading";
+import { TypewriterHeading } from '@/components/ui/typewriter-heading';
 import { supabase } from '@/lib/supabase';
 import { PhoneInput } from '@/components/ui/phone-input';
 
