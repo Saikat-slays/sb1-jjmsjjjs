@@ -119,57 +119,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Case Study Highlight */}
-      <section className="py-20 bg-charcoal">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-white mb-4">Decor Client — 2X Inbound Leads in 3 Weeks</h2>
-            <p className="text-xl text-white/70 mb-8">
-              This wasn't a chatbot. It was a command center.
-            </p>
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl shadow-sm mb-8">
-              <p className="text-lg text-white/80 mb-6">
-                For a top-tier interior decor brand, we engineered a multi-layer AI system:
-              </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center text-white/80">
-                  <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                  Real-time lead capture through WhatsApp and Instagram
-                </li>
-                <li className="flex items-center text-white/80">
-                  <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                  Instant qualification and routing to sales
-                </li>
-                <li className="flex items-center text-white/80">
-                  <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                  CRM integration and dynamic dashboards
-                </li>
-                <li className="flex items-center text-white/80">
-                  <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                  Personalized AI follow-ups based on product interest
-                </li>
-              </ul>
-              <div className="border-t border-white/10 pt-8">
-                <h3 className="text-xl font-bold text-white mb-4">Results:</h3>
-                <ul className="space-y-2 text-white/80">
-                  <li>Twice the leads.</li>
-                  <li>Fifty percent more bookings.</li>
-                  <li>Zero human input until the closing call.</li>
-                </ul>
-              </div>
-            </div>
-            <p className="text-xl text-white/70 text-center mb-8">
-              Now imagine that operating inside your business.
-            </p>
-            <div className="text-center">
-              <ButtonLink to="/strategy-call">
-                Let's Build Yours Next — Book Now <ChevronRight className="ml-2 h-5 w-5" />
-              </ButtonLink>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Why ThynkNext Section */}
       <section className="py-20 bg-primary text-white">
         <div className="container mx-auto px-6">
