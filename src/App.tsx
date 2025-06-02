@@ -12,6 +12,16 @@ import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import { BackgroundEffect } from './components/ui/background-effect';
 
+function ScrollToTop() {
+  const location = useLocation();
+  
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  return null;
+}
+
 function PageTransition({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -32,6 +42,7 @@ function PageTransition({ children }: { children: React.ReactNode }) {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="relative min-h-screen bg-charcoal">
         <BackgroundEffect />
         <div className="relative z-10">
