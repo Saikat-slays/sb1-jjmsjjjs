@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { animate } from 'motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -11,6 +10,7 @@ import HowWeWork from './pages/HowWeWork';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import { BackgroundEffect } from './components/ui/background-effect';
+import { PageTransition } from './components/ui/motion';
 
 function ScrollToTop() {
   const location = useLocation();
@@ -20,23 +20,6 @@ function ScrollToTop() {
   }, [location.pathname]);
 
   return null;
-}
-
-function PageTransition({ children }: { children: React.ReactNode }) {
-  const location = useLocation();
-  const containerRef = React.useRef<HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    if (!containerRef.current) return;
-
-    animate(
-      containerRef.current,
-      { opacity: [0, 1], y: [20, 0] },
-      { duration: 0.5, easing: [0.17, 0.55, 0.55, 1] }
-    );
-  }, [location.pathname]);
-
-  return <div ref={containerRef}>{children}</div>;
 }
 
 function App() {
