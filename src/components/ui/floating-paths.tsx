@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-function FloatingPaths({ position }: { position: number }) {
+export function FloatingPaths({ position }: { position: number }) {
     const paths = Array.from({ length: 24 }, (_, i) => ({
         id: i,
         d: `M${-1000 - i * 40 * position},${-500 + i * 30} C${-800 - i * 40 * position},${-400 + i * 30} ${-600 - i * 40 * position},${-300 + i * 30} ${-400 - i * 40 * position},${-200 + i * 30} S${0 - i * 40 * position},${0 + i * 30} ${200 - i * 40 * position},${100 + i * 30} S${600 - i * 40 * position},${300 + i * 30} ${800 - i * 40 * position},${400 + i * 30} S${1200 - i * 40 * position},${600 + i * 30} ${1400 - i * 40 * position},${700 + i * 30}`,
