@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FlickeringGrid } from './flickering-grid';
+import { FloatingPaths } from './floating-paths';
+import { Squares } from './squares-background';
 
 export function BackgroundEffect() {
   return (
@@ -14,7 +16,7 @@ export function BackgroundEffect() {
         {/* Base Background */}
         <div className="absolute inset-0 bg-app-background" />
 
-        {/* Flickering Grid */}
+        {/* Technical Grid */}
         <div className="absolute inset-0">
           <FlickeringGrid
             className="w-full h-full"
@@ -23,6 +25,23 @@ export function BackgroundEffect() {
             color="#333333"
             maxOpacity={0.3}
             flickerChance={0.1}
+          />
+        </div>
+
+        {/* Floating Circuit Paths */}
+        <div className="absolute inset-0 opacity-30">
+          <FloatingPaths position={1} />
+          <FloatingPaths position={-1} />
+        </div>
+
+        {/* Animated Squares */}
+        <div className="absolute inset-0 opacity-20">
+          <Squares
+            direction="diagonal"
+            speed={0.5}
+            borderColor="#444444"
+            squareSize={40}
+            hoverFillColor="#222222"
           />
         </div>
 
