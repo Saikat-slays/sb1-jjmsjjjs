@@ -29,6 +29,47 @@ function HowWeWork() {
         </div>
       </section>
 
+      {/* Risk Reversal Section */}
+      <section className="bg-primary py-16">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Our Risk-Free Guarantee</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <FadeIn>
+              <div className="bg-white/10 p-6 rounded-xl">
+                <h3 className="text-xl font-semibold text-white mb-4">Split Payment</h3>
+                <p className="text-white/80">
+                  Pay 50% upfront and 50% only after you approve the final system. No surprises, no risks.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn>
+              <div className="bg-white/10 p-6 rounded-xl">
+                <h3 className="text-xl font-semibold text-white mb-4">Unlimited Revisions</h3>
+                <p className="text-white/80">
+                  We'll revise until it meets your standards. Your satisfaction is our priority.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn>
+              <div className="bg-white/10 p-6 rounded-xl">
+                <h3 className="text-xl font-semibold text-white mb-4">10% First Project Discount</h3>
+                <p className="text-white/80">
+                  Get 10% off your first project in exchange for a testimonial if you're happy with our work.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn>
+              <div className="bg-white/10 p-6 rounded-xl">
+                <h3 className="text-xl font-semibold text-white mb-4">100% Ownership</h3>
+                <p className="text-white/80">
+                  You own the entire system. No hidden fees, no subscriptions, no strings attached.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* Process Section */}
       <section className="bg-charcoal py-20">
         <div className="container mx-auto px-6">
@@ -71,7 +112,7 @@ function HowWeWork() {
                   <h3 className="text-2xl font-bold text-black">50% Upfront — Your Commitment, Our Commitment</h3>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  Once we're aligned, we ask for 50% upfront — a sign of mutual commitment. This covers the initial design, architecture, and development phases.
+                  Once we're aligned, we ask for 50% upfront — a sign of mutual commitment. This covers the initial design, architecture, and development phases. The remaining 50% is only due after you've approved the final system.
                 </p>
                 <div className="bg-accent-dark p-6 rounded-xl">
                   <h4 className="font-semibold text-black mb-4">Why?</h4>
@@ -83,6 +124,10 @@ function HowWeWork() {
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
                       It ensures we're fully invested in your project's success
+                    </li>
+                    <li className="flex items-center">
+                      <ChevronRight className="h-5 w-5 text-primary mr-2" />
+                      You maintain control over final payment until fully satisfied
                     </li>
                   </ul>
                 </div>
@@ -96,7 +141,7 @@ function HowWeWork() {
                   <h3 className="text-2xl font-bold text-black">Build & Demonstrate</h3>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  We build your complete AI solution — tailored, branded, and production-ready. You'll see your system in action on our secure development server, complete with real data, real workflows, and real results.
+                  We build your complete AI solution — tailored, branded, and production-ready. You'll see your system in action on our secure development server, complete with real data, real workflows, and real results. Unlimited revisions ensure it meets your exact requirements.
                 </p>
                 <div className="bg-accent-dark p-6 rounded-xl">
                   <h4 className="font-semibold text-black mb-4">You get:</h4>
@@ -111,6 +156,10 @@ function HowWeWork() {
                     </li>
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
+                      Unlimited revisions until you're 100% satisfied
+                    </li>
+                    <li className="flex items-center">
+                      <ChevronRight className="h-5 w-5 text-primary mr-2" />
                       Confidence that your investment is working
                     </li>
                   </ul>
@@ -122,24 +171,28 @@ function HowWeWork() {
               <div className="bg-white rounded-2xl p-8 md:p-12">
                 <div className="flex items-center mb-6">
                   <span className="text-4xl font-bold text-primary mr-4">04</span>
-                  <h3 className="text-2xl font-bold text-black">Final Payment — Then Handover</h3>
+                  <h3 className="text-2xl font-bold text-black">Final Payment & Complete Ownership</h3>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  Once you're fully satisfied with the system, you pay the remaining 50% — then we deploy the system to your production environment and hand over all documentation, credentials, and support details.
+                  Once you're fully satisfied with the system, you pay the remaining 50% and receive complete ownership. We deploy the system to your production environment and hand over all documentation, credentials, and support details.
                 </p>
                 <div className="bg-accent-dark p-6 rounded-xl">
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      You stay in control
+                      You own 100% of the system
                     </li>
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      No surprises
+                      No hidden fees or subscriptions
                     </li>
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      No hidden fees
+                      Complete technical documentation
+                    </li>
+                    <li className="flex items-center">
+                      <ChevronRight className="h-5 w-5 text-primary mr-2" />
+                      Full deployment support
                     </li>
                   </ul>
                 </div>
@@ -153,7 +206,7 @@ function HowWeWork() {
                   <h3 className="text-2xl font-bold text-black">Ongoing Partnership & Support</h3>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  After launch, we offer a retainer plan that keeps your system sharp, relevant, and evolving with your business. Whether it's new features, integrations, or improvements, we're here to ensure your AI investment keeps delivering ROI.
+                  After launch, we offer an optional retainer plan that keeps your system sharp, relevant, and evolving with your business. Whether it's new features, integrations, or improvements, we're here to ensure your AI investment keeps delivering ROI.
                 </p>
                 <div className="bg-accent-dark p-6 rounded-xl">
                   <h4 className="font-semibold text-black mb-4">What's included:</h4>
@@ -183,7 +236,7 @@ function HowWeWork() {
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-black text-center mb-8">Why This Approach Works</h2>
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-12">
-            We believe in trust, transparency, and results. By sharing risk, we prove that your success is our priority. This is how we've built long-term partnerships with forward-thinking brands — and why we're confident we can help you win.
+            We believe in trust, transparency, and results. By sharing risk and offering unlimited revisions, we prove that your success is our priority. This is how we've built long-term partnerships with forward-thinking brands — and why we're confident we can help you win.
           </p>
         </div>
       </section>
