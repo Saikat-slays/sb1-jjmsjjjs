@@ -39,7 +39,7 @@ export function AnimateIn({
     };
 
     const cleanup = inView(element, () => {
-      animate(
+      const animation = animate(
         element,
         animations[animation],
         {
@@ -48,6 +48,7 @@ export function AnimateIn({
           easing: spring({ stiffness: 100, damping: 15 })
         }
       );
+      return () => animation.stop();
     }, { margin: '-10% 0px' });
 
     return () => cleanup();
@@ -74,10 +75,6 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
     element.style.opacity = '0';
     element.style.transform = 'translateY(20px)';
 
-    // Ensure element is visible
-    element.style.display = 'block';
-    element.style.visibility = 'visible';
-
     // Small delay to ensure DOM is ready
     const timeoutId = setTimeout(() => {
       const animation = animate(
@@ -94,13 +91,12 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
 
       return () => {
         animation.stop();
-        clearTimeout(timeoutId);
         if (element) {
-          element.style.opacity = '1';
-          element.style.transform = 'none';
+          element.style.opacity = '';
+          element.style.transform = '';
         }
       };
-    }, 50);
+    }, 16);
 
     return () => clearTimeout(timeoutId);
   }, [location.pathname, prefersReducedMotion]);
@@ -146,16 +142,16 @@ export function ParallaxScroll({ children, speed = 0.5, className = '' }: {
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const rafId = useRef<number>();
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useEffect(() => {
     if (!ref.current || prefersReducedMotion) return;
 
     const element = ref.current;
-    let rafId: number;
 
     const handleScroll = () => {
-      rafId = requestAnimationFrame(() => {
+      rafId.current = requestAnimationFrame(() => {
         if (!element) return;
         const scrolled = window.scrollY;
         const yPos = -(scrolled * speed);
@@ -167,8 +163,8 @@ export function ParallaxScroll({ children, speed = 0.5, className = '' }: {
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      if (rafId) {
-        cancelAnimationFrame(rafId);
+      if (rafId.current) {
+        cancelAnimationFrame(rafId.current);
       }
     };
   }, [speed, prefersReducedMotion]);
