@@ -58,7 +58,7 @@ export function AnimateIn({
   );
 }
 
-export function PageTransition({ children }: { children: React.ReactNode }) {
+export function PageTransition({ children, key }: { children: React.ReactNode; key?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -66,21 +66,39 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!ref.current || prefersReducedMotion) return;
 
+    const element = ref.current;
+
+    // Reset initial state
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+
+    // Animate in
     animate(
-      ref.current,
+      element,
       { 
-        opacity: [0, 1],
-        y: [20, 0]
+        opacity: 1,
+        y: 0
       },
       {
         duration: 0.4,
         easing: spring({ stiffness: 100, damping: 15 })
       }
     );
+
+    // Cleanup function
+    return () => {
+      if (element) {
+        animate(
+          element,
+          { opacity: 0, y: -20 },
+          { duration: 0.3 }
+        );
+      }
+    };
   }, [location.pathname, prefersReducedMotion]);
 
   return (
-    <div ref={ref} className="opacity-0">
+    <div ref={ref} key={key} className="opacity-0">
       {children}
     </div>
   );
@@ -93,8 +111,9 @@ export function FloatingAnimation({ children, className = '' }: { children: Reac
   useEffect(() => {
     if (!ref.current || prefersReducedMotion) return;
 
-    animate(
-      ref.current,
+    const element = ref.current;
+    const animation = animate(
+      element,
       { y: [0, -10, 0] },
       {
         duration: 3,
@@ -102,6 +121,8 @@ export function FloatingAnimation({ children, className = '' }: { children: Reac
         easing: 'ease-in-out'
       }
     );
+
+    return () => animation.stop();
   }, [prefersReducedMotion]);
 
   return (
@@ -122,15 +143,26 @@ export function ParallaxScroll({ children, speed = 0.5, className = '' }: {
   useEffect(() => {
     if (!ref.current || prefersReducedMotion) return;
 
+    const element = ref.current;
+    let rafId: number;
+
     const handleScroll = () => {
-      if (!ref.current) return;
-      const scrolled = window.scrollY;
-      const yPos = -(scrolled * speed);
-      ref.current.style.transform = `translate3d(0, ${yPos}px, 0)`;
+      rafId = requestAnimationFrame(() => {
+        if (!element) return;
+        const scrolled = window.scrollY;
+        const yPos = -(scrolled * speed);
+        element.style.transform = `translate3d(0, ${yPos}px, 0)`;
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+    };
   }, [speed, prefersReducedMotion]);
 
   return (
