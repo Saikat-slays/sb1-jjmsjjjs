@@ -38,7 +38,7 @@ export function AnimateIn({
       }
     };
 
-    inView(element, () => {
+    const cleanup = inView(element, () => {
       animate(
         element,
         animations[animation],
@@ -49,6 +49,8 @@ export function AnimateIn({
         }
       );
     }, { margin: '-10% 0px' });
+
+    return () => cleanup();
   }, [animation, delay, duration, direction, prefersReducedMotion]);
 
   return (
@@ -58,7 +60,7 @@ export function AnimateIn({
   );
 }
 
-export function PageTransition({ children, key }: { children: React.ReactNode; key?: string }) {
+export function PageTransition({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -68,37 +70,33 @@ export function PageTransition({ children, key }: { children: React.ReactNode; k
 
     const element = ref.current;
 
-    // Reset initial state
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(20px)';
+    // Ensure element is visible
+    element.style.display = 'block';
+    element.style.visibility = 'visible';
 
-    // Animate in
-    animate(
+    const animation = animate(
       element,
       { 
-        opacity: 1,
-        y: 0
+        opacity: [0, 1],
+        y: [20, 0]
       },
       {
-        duration: 0.4,
-        easing: spring({ stiffness: 100, damping: 15 })
+        duration: 0.3,
+        easing: 'ease-out'
       }
     );
 
-    // Cleanup function
     return () => {
+      animation.stop();
       if (element) {
-        animate(
-          element,
-          { opacity: 0, y: -20 },
-          { duration: 0.3 }
-        );
+        element.style.opacity = '1';
+        element.style.transform = 'none';
       }
     };
   }, [location.pathname, prefersReducedMotion]);
 
   return (
-    <div ref={ref} key={key} className="opacity-0">
+    <div ref={ref} style={{ opacity: 0 }}>
       {children}
     </div>
   );
