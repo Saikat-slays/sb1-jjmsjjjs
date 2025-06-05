@@ -1,4 +1,26 @@
 User-agent: *
 Allow: /
 
+# Sitemaps
 Sitemap: https://thynknext.in/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Disallow patterns
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*?*
+
+# Allow patterns
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.ico
+
+# Host
+Host: https://thynknext.in
