@@ -4,11 +4,14 @@ import { HelmetProvider } from 'react-helmet-async';
 import App from './App.tsx';
 import './index.css';
 
-const rootElement = document.getElementById('root');
-if (!rootElement) throw new Error('Root element not found');
+// Create container for hydration
+const container = document.getElementById('root');
+if (!container) throw new Error('Root element not found');
 
-const root = createRoot(rootElement);
+// Create root
+const root = createRoot(container);
 
+// Initial render
 root.render(
   <HelmetProvider>
     <App />
