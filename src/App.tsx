@@ -9,7 +9,7 @@ import StrategyCall from './pages/StrategyCall';
 import HowWeWork from './pages/HowWeWork';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
-import { BackgroundEffect } from './components/ui/background-effect';
+import { AuroraEffect } from './components/ui/aurora-effect';
 import { PageTransition } from './components/ui/motion';
 
 function ScrollToTop() {
@@ -27,7 +27,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="relative min-h-screen bg-charcoal">
-        <BackgroundEffect />
+        <AuroraEffect />
         <div className="relative z-10">
           <Navbar />
           <Routes>

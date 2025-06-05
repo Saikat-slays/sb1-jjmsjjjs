@@ -19,6 +19,13 @@ export default {
         },
         charcoal: '#121213',
         'app-background': '#121213',
+        aurora: {
+          blue: '#60A5FA',
+          purple: '#A78BFA',
+          emerald: '#34D399',
+          cyan: '#22D3EE',
+          violet: '#8B5CF6'
+        }
       },
       fontFamily: {
         sans: ['Inter var', 'Inter', 'system-ui', 'sans-serif'],
@@ -43,11 +50,17 @@ export default {
           '0%, 100%': { opacity: 1 },
           '50%': { opacity: 0.5 },
         },
+        aurora: {
+          '0%': { transform: 'rotate(0deg) scale(1)' },
+          '50%': { transform: 'rotate(180deg) scale(1.2)' },
+          '100%': { transform: 'rotate(360deg) scale(1)' },
+        }
       },
       animation: {
         rainbow: 'rainbow 8s linear infinite',
         float: 'float 3s ease-in-out infinite',
         pulse: 'pulse 2s ease-in-out infinite',
+        aurora: 'aurora 20s linear infinite',
       },
       backdropBlur: {
         xs: '2px',
