@@ -21,13 +21,13 @@ export default {
         'app-background': '#121213',
       },
       fontFamily: {
-        sans: ['Arial', 'sans-serif'],
+        sans: ['Inter var', 'Inter', 'system-ui', 'sans-serif'],
       },
       fontWeight: {
         normal: '400',
-        medium: '400',
-        semibold: '400',
-        bold: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
       },
       keyframes: {
         rainbow: {
@@ -35,9 +35,25 @@ export default {
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        pulse: {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0.5 },
+        },
       },
       animation: {
         rainbow: 'rainbow 8s linear infinite',
+        float: 'float 3s ease-in-out infinite',
+        pulse: 'pulse 2s ease-in-out infinite',
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
+      boxShadow: {
+        glow: '0 0 20px rgba(255, 255, 255, 0.1)',
       },
     },
   },

@@ -3,20 +3,24 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    font-family: Arial, sans-serif;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 400;
-  }
-
   :root {
     --color-1: 0 72% 51%;
     --color-2: 256 46% 55%;
     --color-3: 284 70% 73%;
     --color-4: 122 39% 49%;
     --color-5: 43 96% 56%;
+  }
+
+  html {
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -56,6 +60,22 @@
 
   .animate-scale-in {
     animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-lg bg-white/10 border border-white/20;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-charcoal;
   }
 
   @keyframes float {
