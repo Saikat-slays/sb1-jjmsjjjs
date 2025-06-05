@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 export function AuroraEffect() {
@@ -13,9 +13,9 @@ export function AuroraEffect() {
         {/* Base layer */}
         <div className="absolute inset-0 bg-charcoal" />
         
-        {/* Aurora layers */}
+        {/* Aurora layers with will-change-transform for better mobile performance */}
         <motion.div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-30 will-change-transform"
           animate={{
             scale: [1, 1.1, 1],
             opacity: [0.3, 0.5, 0.3],
@@ -23,14 +23,14 @@ export function AuroraEffect() {
           transition={{
             duration: 10,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "linear"
           }}
         >
-          <div className="absolute top-[-20%] left-[-10%] w-[120%] h-[50%] rotate-12 bg-gradient-to-r from-emerald-500/20 via-cyan-500/20 to-purple-500/20 blur-3xl" />
+          <div className="absolute top-[-20%] left-[-10%] w-[120%] h-[50%] rotate-12 bg-gradient-to-r from-aurora-emerald via-aurora-cyan to-aurora-purple blur-3xl transform-gpu" />
         </motion.div>
 
         <motion.div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-30 will-change-transform"
           animate={{
             scale: [1.1, 1, 1.1],
             opacity: [0.3, 0.5, 0.3],
@@ -38,15 +38,15 @@ export function AuroraEffect() {
           transition={{
             duration: 12,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: "linear",
             delay: 1
           }}
         >
-          <div className="absolute top-[-30%] right-[-10%] w-[120%] h-[60%] -rotate-12 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-violet-500/20 blur-3xl" />
+          <div className="absolute top-[-30%] right-[-10%] w-[120%] h-[60%] -rotate-12 bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-violet blur-3xl transform-gpu" />
         </motion.div>
 
         <motion.div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-30 will-change-transform"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.4, 0.3],
@@ -54,11 +54,11 @@ export function AuroraEffect() {
           transition={{
             duration: 15,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: "linear",
             delay: 2
           }}
         >
-          <div className="absolute top-[10%] left-[-20%] w-[140%] h-[40%] rotate-6 bg-gradient-to-r from-violet-500/20 via-emerald-500/20 to-cyan-500/20 blur-3xl" />
+          <div className="absolute top-[10%] left-[-20%] w-[140%] h-[40%] rotate-6 bg-gradient-to-r from-aurora-violet via-aurora-emerald to-aurora-cyan blur-3xl transform-gpu" />
         </motion.div>
 
         {/* Overlay gradient */}
