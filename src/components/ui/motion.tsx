@@ -70,29 +70,39 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
 
     const element = ref.current;
 
+    // Set initial state
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+
     // Ensure element is visible
     element.style.display = 'block';
     element.style.visibility = 'visible';
 
-    const animation = animate(
-      element,
-      { 
-        opacity: [0, 1],
-        y: [20, 0]
-      },
-      {
-        duration: 0.3,
-        easing: 'ease-out'
-      }
-    );
+    // Small delay to ensure DOM is ready
+    const timeoutId = setTimeout(() => {
+      const animation = animate(
+        element,
+        { 
+          opacity: 1,
+          y: 0
+        },
+        {
+          duration: 0.3,
+          easing: 'ease-out'
+        }
+      );
 
-    return () => {
-      animation.stop();
-      if (element) {
-        element.style.opacity = '1';
-        element.style.transform = 'none';
-      }
-    };
+      return () => {
+        animation.stop();
+        clearTimeout(timeoutId);
+        if (element) {
+          element.style.opacity = '1';
+          element.style.transform = 'none';
+        }
+      };
+    }, 50);
+
+    return () => clearTimeout(timeoutId);
   }, [location.pathname, prefersReducedMotion]);
 
   return (

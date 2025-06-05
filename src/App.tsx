@@ -26,21 +26,19 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="relative min-h-screen bg-charcoal">
-        <div className="relative z-10">
-          <Navbar />
-          <main>
-            <Routes>
-              <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-              <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
-              <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-              <Route path="/strategy-call" element={<PageTransition><StrategyCall /></PageTransition>} />
-              <Route path="/how-we-work" element={<PageTransition><HowWeWork /></PageTransition>} />
-              <Route path="/terms" element={<PageTransition><TermsOfService /></PageTransition>} />
-              <Route path="/privacy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
+        <Navbar />
+        <main className="relative z-10">
+          <Routes>
+            <Route path="/" element={<PageTransition key="home"><Home /></PageTransition>} />
+            <Route path="/services" element={<PageTransition key="services"><Services /></PageTransition>} />
+            <Route path="/about" element={<PageTransition key="about"><About /></PageTransition>} />
+            <Route path="/strategy-call" element={<PageTransition key="strategy"><StrategyCall /></PageTransition>} />
+            <Route path="/how-we-work" element={<PageTransition key="how"><HowWeWork /></PageTransition>} />
+            <Route path="/terms" element={<PageTransition key="terms"><TermsOfService /></PageTransition>} />
+            <Route path="/privacy" element={<PageTransition key="privacy"><PrivacyPolicy /></PageTransition>} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
     </Router>
   );
