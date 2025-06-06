@@ -1,10 +1,10 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { LoadingSpinner } from './components/ui/loading-spinner';
 
-// Import pages directly instead of using lazy loading
+// Import pages directly
 import Home from './pages/Home';
 import Services from './pages/Services';
 import About from './pages/About';
@@ -30,8 +30,8 @@ function App() {
       <div className="relative min-h-screen bg-charcoal">
         <div className="relative z-10">
           <Navbar />
-          <main>
-            <Suspense fallback={<LoadingSpinner />}>
+          <main className="min-h-screen">
+            <React.Suspense fallback={<LoadingSpinner />}>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/services" element={<Services />} />
@@ -41,7 +41,7 @@ function App() {
                 <Route path="/terms" element={<TermsOfService />} />
                 <Route path="/privacy" element={<PrivacyPolicy />} />
               </Routes>
-            </Suspense>
+            </React.Suspense>
           </main>
           <Footer />
         </div>
