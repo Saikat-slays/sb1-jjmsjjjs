@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import { LoadingSpinner } from './components/ui/loading-spinner';
 
 // Import pages directly
 import Home from './pages/Home';
@@ -31,17 +30,15 @@ function App() {
         <div className="relative z-10">
           <Navbar />
           <main className="min-h-screen">
-            <React.Suspense fallback={<LoadingSpinner />}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/strategy-call" element={<StrategyCall />} />
-                <Route path="/how-we-work" element={<HowWeWork />} />
-                <Route path="/terms" element={<TermsOfService />} />
-                <Route path="/privacy" element={<PrivacyPolicy />} />
-              </Routes>
-            </React.Suspense>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/strategy-call" element={<StrategyCall />} />
+              <Route path="/how-we-work" element={<HowWeWork />} />
+              <Route path="/terms" element={<TermsOfService />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+            </Routes>
           </main>
           <Footer />
         </div>
