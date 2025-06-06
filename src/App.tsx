@@ -5,34 +5,14 @@ import Footer from './components/Footer';
 import { PageTransition } from './components/ui/motion';
 import { LoadingSpinner } from './components/ui/loading-spinner';
 
-// Lazy load pages with loading states
-const Home = React.lazy(() => import('./pages/Home').then(module => {
-  return new Promise(resolve => setTimeout(() => resolve(module), 100));
-}));
-
-const Services = React.lazy(() => import('./pages/Services').then(module => {
-  return new Promise(resolve => setTimeout(() => resolve(module), 100));
-}));
-
-const About = React.lazy(() => import('./pages/About').then(module => {
-  return new Promise(resolve => setTimeout(() => resolve(module), 100));
-}));
-
-const StrategyCall = React.lazy(() => import('./pages/StrategyCall').then(module => {
-  return new Promise(resolve => setTimeout(() => resolve(module), 100));
-}));
-
-const HowWeWork = React.lazy(() => import('./pages/HowWeWork').then(module => {
-  return new Promise(resolve => setTimeout(() => resolve(module), 100));
-}));
-
-const TermsOfService = React.lazy(() => import('./pages/TermsOfService').then(module => {
-  return new Promise(resolve => setTimeout(() => resolve(module), 100));
-}));
-
-const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy').then(module => {
-  return new Promise(resolve => setTimeout(() => resolve(module), 100));
-}));
+// Preload pages
+const Home = React.lazy(() => import('./pages/Home'));
+const Services = React.lazy(() => import('./pages/Services'));
+const About = React.lazy(() => import('./pages/About'));
+const StrategyCall = React.lazy(() => import('./pages/StrategyCall'));
+const HowWeWork = React.lazy(() => import('./pages/HowWeWork'));
+const TermsOfService = React.lazy(() => import('./pages/TermsOfService'));
+const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy'));
 
 function ScrollToTop() {
   const location = useLocation();
@@ -48,12 +28,18 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate minimum loading time
-    const timer = setTimeout(() => {
+    // Preload all routes
+    Promise.all([
+      import('./pages/Home'),
+      import('./pages/Services'),
+      import('./pages/About'),
+      import('./pages/StrategyCall'),
+      import('./pages/HowWeWork'),
+      import('./pages/TermsOfService'),
+      import('./pages/PrivacyPolicy')
+    ]).then(() => {
       setIsLoading(false);
-    }, 500);
-
-    return () => clearTimeout(timer);
+    });
   }, []);
 
   if (isLoading) {

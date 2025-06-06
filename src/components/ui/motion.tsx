@@ -71,34 +71,30 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
 
     const element = ref.current;
 
-    // Set initial state
+    // Reset initial state
     element.style.opacity = '0';
     element.style.transform = 'translateY(20px)';
 
-    // Small delay to ensure DOM is ready
-    const timeoutId = setTimeout(() => {
-      const animation = animate(
-        element,
-        { 
-          opacity: 1,
-          y: 0
-        },
-        {
-          duration: 0.3,
-          easing: 'ease-out'
-        }
-      );
+    // Animate immediately
+    const animation = animate(
+      element,
+      { 
+        opacity: 1,
+        y: 0
+      },
+      {
+        duration: 0.3,
+        easing: 'ease-out'
+      }
+    );
 
-      return () => {
-        animation.stop();
-        if (element) {
-          element.style.opacity = '';
-          element.style.transform = '';
-        }
-      };
-    }, 16);
-
-    return () => clearTimeout(timeoutId);
+    return () => {
+      animation.stop();
+      if (element) {
+        element.style.opacity = '';
+        element.style.transform = '';
+      }
+    };
   }, [location.pathname, prefersReducedMotion]);
 
   return (
