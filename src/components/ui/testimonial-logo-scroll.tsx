@@ -9,31 +9,31 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
   const logos = [
     {
       name: 'OpenAI',
-      url: 'https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg',
+      url: 'https://cdn.worldvectorlogo.com/logos/openai-2.svg',
     },
     {
       name: 'Google',
-      url: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg',
+      url: 'https://cdn.worldvectorlogo.com/logos/google-1-1.svg',
     },
     {
       name: 'Microsoft',
-      url: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg',
+      url: 'https://cdn.worldvectorlogo.com/logos/microsoft-5.svg',
     },
     {
       name: 'Meta',
-      url: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg',
+      url: 'https://cdn.worldvectorlogo.com/logos/meta-1.svg',
     },
     {
       name: 'Anthropic',
-      url: 'https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/erkxwhl1gd48xfhe2yld',
+      url: 'https://cdn.worldvectorlogo.com/logos/anthropic.svg',
     },
     {
       name: 'Nvidia',
-      url: 'https://upload.wikimedia.org/wikipedia/sco/2/21/Nvidia_logo.svg',
+      url: 'https://cdn.worldvectorlogo.com/logos/nvidia.svg',
     },
     {
       name: 'AWS',
-      url: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg',
+      url: 'https://cdn.worldvectorlogo.com/logos/aws-2.svg',
     },
   ];
 
@@ -83,12 +83,12 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
                   onError={(e) => {
                     console.log(`Failed to load logo: ${logo.url}`);
                     const target = e.target as HTMLImageElement;
-                    // Fallback to a text-based placeholder
+                    // Hide the broken image and show text fallback
                     target.style.display = 'none';
                     const parent = target.parentElement;
                     if (parent && !parent.querySelector('.logo-fallback')) {
                       const fallback = document.createElement('div');
-                      fallback.className = 'logo-fallback text-white text-sm font-bold text-center';
+                      fallback.className = 'logo-fallback text-white text-sm font-bold text-center flex items-center justify-center w-full h-full';
                       fallback.textContent = logo.name;
                       parent.appendChild(fallback);
                     }
