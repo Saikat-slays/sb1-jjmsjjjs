@@ -70,7 +70,7 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
             x: [`0%`, `-${100 / 3}%`], // Move by exactly one set (1/3 of total width)
           }}
           transition={{
-            duration: 25,
+            duration: 12, // Reduced from 25 to 12 for faster scrolling
             repeat: Infinity,
             ease: "linear",
           }}
