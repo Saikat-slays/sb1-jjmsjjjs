@@ -8,32 +8,32 @@ interface TestimonialLogoScrollProps {
 export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps) {
   const logos = [
     {
-      name: 'Client 1',
-      url: '/logos/client-1.png',
+      name: 'Anthropic',
+      url: '/logos/anthropic logo.png',
     },
     {
-      name: 'Client 2', 
-      url: '/logos/client-2.png',
+      name: 'DeepSeek',
+      url: '/logos/deepseek logo.jpg',
     },
     {
-      name: 'Client 3',
-      url: '/logos/client-3.png',
+      name: 'Google',
+      url: '/logos/google logo.jpg',
     },
     {
-      name: 'Client 4',
-      url: '/logos/client-4.png',
+      name: 'Groq',
+      url: '/logos/groq logo.png',
     },
     {
-      name: 'Client 5',
-      url: '/logos/client-5.png',
+      name: 'Meta',
+      url: '/logos/meta logo.jpg',
     },
     {
-      name: 'Client 6',
-      url: '/logos/client-6.png',
+      name: 'OpenAI',
+      url: '/logos/openai logo.png',
     },
     {
-      name: 'Client 7',
-      url: '/logos/client-7.png',
+      name: 'xAI',
+      url: '/logos/xai logo.jpg',
     },
   ];
 
@@ -46,10 +46,10 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
         {/* Section Header */}
         <div className="container mx-auto px-6 mb-12">
           <h2 className="text-3xl font-bold text-white text-center mb-4">
-            Trusted by Forward-Thinking Brands
+            Powered by Industry-Leading AI Technologies
           </h2>
           <p className="text-xl text-white/70 text-center max-w-2xl mx-auto">
-            Join the companies that have transformed their operations with our bespoke AI solutions
+            We leverage the most advanced AI platforms to build solutions that outperform and outscale
           </p>
         </div>
 
@@ -96,9 +96,9 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
         {/* Bottom text */}
         <div className="container mx-auto px-6 mt-12">
           <p className="text-center text-white/60 text-sm">
-            These brands chose custom-built AI solutions over generic templates. 
+            These cutting-edge AI technologies power our custom-built solutions. 
             <br className="hidden sm:block" />
-            The results speak for themselves.
+            The future of business automation, engineered for your success.
           </p>
         </div>
       </div>
