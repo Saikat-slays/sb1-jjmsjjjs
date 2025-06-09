@@ -20,11 +20,6 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
       url: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg',
     },
     {
-      name: 'Anthropic',
-      url: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=200&h=100&fit=crop&crop=center',
-      isText: false
-    },
-    {
       name: 'Meta',
       url: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg',
     },
@@ -34,13 +29,11 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
     },
     {
       name: 'xAI',
-      url: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=200&h=100&fit=crop&crop=center',
-      isText: true // Force text display for xAI
+      isText: true
     },
     {
       name: 'DeepSeek',
-      url: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=200&h=100&fit=crop&crop=center',
-      isText: true // Force text display for DeepSeek
+      isText: true
     },
   ];
 
@@ -68,10 +61,10 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
         <motion.div
           className="flex whitespace-nowrap"
           animate={{
-            x: [`0%`, `-${100 / 3}%`], // Move by exactly one set (1/3 of total width)
+            x: [`0%`, `-${100 / 3}%`],
           }}
           transition={{
-            duration: 8, // Even faster scrolling
+            duration: 8,
             repeat: Infinity,
             ease: "linear",
           }}
@@ -80,16 +73,18 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
             <div
               key={`${logo.name}-${i}`}
               className="mx-8 flex items-center justify-center flex-shrink-0"
-              style={{ minWidth: '160px' }} // Fixed width for consistent spacing
+              style={{ minWidth: '160px' }}
             >
-              <div className="w-32 h-20 flex items-center justify-center bg-white/10 rounded-lg p-4 hover:bg-white/20 transition-all duration-300">
-                {logo.isText ? (
-                  // Text-based logo for problematic ones
-                  <div className="text-white/70 hover:text-white/100 text-sm font-bold text-center transition-colors duration-300">
+              {logo.isText ? (
+                // Text-based logo for xAI and DeepSeek
+                <div className="w-32 h-20 flex items-center justify-center bg-white/10 rounded-lg p-4 hover:bg-white/20 transition-all duration-300">
+                  <div className="text-white/70 hover:text-white/100 text-lg font-bold text-center transition-colors duration-300">
                     {logo.name}
                   </div>
-                ) : (
-                  // Image-based logo with fallback
+                </div>
+              ) : (
+                // Image-based logo with robust fallback
+                <div className="w-32 h-20 flex items-center justify-center bg-white/10 rounded-lg p-4 hover:bg-white/20 transition-all duration-300">
                   <img
                     src={logo.url}
                     alt={logo.name}
@@ -99,16 +94,31 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
                       const target = e.target as HTMLImageElement;
                       const container = target.parentElement;
                       if (container) {
+                        // Replace the entire container content with text
                         container.innerHTML = `
-                          <div class="text-white/70 hover:text-white/100 text-sm font-bold text-center transition-colors duration-300">
+                          <div class="text-white/70 hover:text-white/100 text-lg font-bold text-center transition-colors duration-300">
                             ${logo.name}
                           </div>
                         `;
                       }
                     }}
+                    onLoad={(e) => {
+                      // Ensure the image loaded properly
+                      const target = e.target as HTMLImageElement;
+                      if (target.naturalWidth === 0 || target.naturalHeight === 0) {
+                        const container = target.parentElement;
+                        if (container) {
+                          container.innerHTML = `
+                            <div class="text-white/70 hover:text-white/100 text-lg font-bold text-center transition-colors duration-300">
+                              ${logo.name}
+                            </div>
+                          `;
+                        }
+                      }
+                    }}
                   />
-                )}
-              </div>
+                </div>
+              )}
             </div>
           ))}
         </motion.div>
