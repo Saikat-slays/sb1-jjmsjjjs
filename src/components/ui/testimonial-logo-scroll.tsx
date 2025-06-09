@@ -33,11 +33,11 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
     },
     {
       name: 'xAI',
-      url: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/X_icon_2.svg',
+      url: 'https://logo.clearbit.com/x.ai',
     },
     {
       name: 'DeepSeek',
-      url: 'https://avatars.githubusercontent.com/u/165788866?s=200&v=4',
+      url: 'https://pbs.twimg.com/profile_images/1866088471526912000/YgX_XIUV_400x400.jpg',
     },
   ];
 
@@ -89,7 +89,7 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
                     const target = e.target as HTMLImageElement;
                     const container = target.closest('.mx-8');
                     if (container) {
-                      container.style.display = 'none';
+                      (container as HTMLElement).style.display = 'none';
                     }
                   }}
                 />
