@@ -10,30 +10,37 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
     {
       name: 'Client 1',
       url: 'https://drive.google.com/uc?export=view&id=1N3qbKlQcuPBd1Arn8ja6ioly0R8AGGNz',
+      fallback: 'https://via.placeholder.com/120x60/ffffff/000000?text=Client+1'
     },
     {
       name: 'Client 2', 
       url: 'https://drive.google.com/uc?export=view&id=1ANTO7C0cecvyh8RAp0VcATRo8kExDZ2S',
+      fallback: 'https://via.placeholder.com/120x60/ffffff/000000?text=Client+2'
     },
     {
       name: 'Client 3',
       url: 'https://drive.google.com/uc?export=view&id=1bGXKoB_g5tSB42-4IMmKH8BvtGkoPsaV',
+      fallback: 'https://via.placeholder.com/120x60/ffffff/000000?text=Client+3'
     },
     {
       name: 'Client 4',
       url: 'https://drive.google.com/uc?export=view&id=1CAuCDS37CeBK0a-726QTo5SDAK0b90dm',
+      fallback: 'https://via.placeholder.com/120x60/ffffff/000000?text=Client+4'
     },
     {
       name: 'Client 5',
       url: 'https://drive.google.com/uc?export=view&id=1j8cMwRR_86wQ2PNWYHWllF-WOxcAhZvW',
+      fallback: 'https://via.placeholder.com/120x60/ffffff/000000?text=Client+5'
     },
     {
       name: 'Client 6',
       url: 'https://drive.google.com/uc?export=view&id=1gAc3cyncUX9Obn7KXHpjbidYVF-KYqNJ',
+      fallback: 'https://via.placeholder.com/120x60/ffffff/000000?text=Client+6'
     },
     {
       name: 'Client 7',
       url: 'https://drive.google.com/uc?export=view&id=1r5i4RJRdYfTYkQDketx4B0p_LsGkSWqH',
+      fallback: 'https://via.placeholder.com/120x60/ffffff/000000?text=Client+7'
     },
   ];
 
@@ -81,17 +88,10 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
                   className="max-w-full max-h-full object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
                   loading="lazy"
                   onError={(e) => {
-                    console.log(`Failed to load image: ${logo.url}`);
-                    // Fallback to text if image fails to load
+                    console.log(`Failed to load Google Drive image: ${logo.url}, using fallback`);
                     const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    const parent = target.parentElement;
-                    if (parent && !parent.querySelector('.fallback-text')) {
-                      const fallback = document.createElement('div');
-                      fallback.className = 'fallback-text text-white text-sm font-medium';
-                      fallback.textContent = logo.name;
-                      parent.appendChild(fallback);
-                    }
+                    target.src = logo.fallback;
+                    target.onError = null; // Prevent infinite loop
                   }}
                 />
               </div>
