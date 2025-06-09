@@ -80,6 +80,19 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
                   alt={logo.name}
                   className="max-w-full max-h-full object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
                   loading="lazy"
+                  onError={(e) => {
+                    console.log(`Failed to load image: ${logo.url}`);
+                    // Fallback to text if image fails to load
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent && !parent.querySelector('.fallback-text')) {
+                      const fallback = document.createElement('div');
+                      fallback.className = 'fallback-text text-white text-sm font-medium';
+                      fallback.textContent = logo.name;
+                      parent.appendChild(fallback);
+                    }
+                  }}
                 />
               </div>
             </div>
