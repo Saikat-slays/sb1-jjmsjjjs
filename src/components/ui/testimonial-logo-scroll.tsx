@@ -31,6 +31,14 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
       name: 'AWS',
       url: 'https://cdn.worldvectorlogo.com/logos/aws-2.svg',
     },
+    {
+      name: 'xAI',
+      url: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/X_icon_2.svg',
+    },
+    {
+      name: 'DeepSeek',
+      url: 'https://avatars.githubusercontent.com/u/165788866?s=200&v=4',
+    },
   ];
 
   // Duplicate logos for seamless scrolling
