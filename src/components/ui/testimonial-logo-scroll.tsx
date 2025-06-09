@@ -21,7 +21,8 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
     },
     {
       name: 'Anthropic',
-      url: 'https://upload.wikimedia.org/wikipedia/commons/7/78/Anthropic_logo.svg',
+      url: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=200&h=100&fit=crop&crop=center',
+      isText: false
     },
     {
       name: 'Meta',
@@ -33,13 +34,13 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
     },
     {
       name: 'xAI',
-      url: 'https://upload.wikimedia.org/wikipedia/commons/5/57/X.AI_logo.png',
-      fallback: 'https://pbs.twimg.com/profile_images/1683325380441128960/yRsRRjGO_400x400.jpg'
+      url: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=200&h=100&fit=crop&crop=center',
+      isText: true // Force text display for xAI
     },
     {
       name: 'DeepSeek',
-      url: 'https://pbs.twimg.com/profile_images/1866088471526912000/YgX_XIUV_400x400.jpg',
-      fallback: 'https://avatars.githubusercontent.com/u/165788866?s=200&v=4'
+      url: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=200&h=100&fit=crop&crop=center',
+      isText: true // Force text display for DeepSeek
     },
   ];
 
@@ -70,7 +71,7 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
             x: [`0%`, `-${100 / 3}%`], // Move by exactly one set (1/3 of total width)
           }}
           transition={{
-            duration: 12, // Reduced from 25 to 12 for faster scrolling
+            duration: 8, // Even faster scrolling
             repeat: Infinity,
             ease: "linear",
           }}
@@ -82,31 +83,31 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
               style={{ minWidth: '160px' }} // Fixed width for consistent spacing
             >
               <div className="w-32 h-20 flex items-center justify-center bg-white/10 rounded-lg p-4 hover:bg-white/20 transition-all duration-300">
-                <img
-                  src={logo.url}
-                  alt={logo.name}
-                  className="max-w-full max-h-full object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
-                  loading="lazy"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    const currentLogo = logos.find(l => l.name === logo.name);
-                    
-                    // Try fallback URL if available
-                    if (currentLogo?.fallback && !target.src.includes('fallback-tried')) {
-                      target.src = currentLogo.fallback + '?fallback-tried=true';
-                    } else {
-                      // Create a text-based fallback
+                {logo.isText ? (
+                  // Text-based logo for problematic ones
+                  <div className="text-white/70 hover:text-white/100 text-sm font-bold text-center transition-colors duration-300">
+                    {logo.name}
+                  </div>
+                ) : (
+                  // Image-based logo with fallback
+                  <img
+                    src={logo.url}
+                    alt={logo.name}
+                    className="max-w-full max-h-full object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
+                    loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
                       const container = target.parentElement;
                       if (container) {
                         container.innerHTML = `
-                          <div class="text-white/70 text-xs font-semibold text-center">
+                          <div class="text-white/70 hover:text-white/100 text-sm font-bold text-center transition-colors duration-300">
                             ${logo.name}
                           </div>
                         `;
                       }
-                    }
-                  }}
-                />
+                    }}
+                  />
+                )}
               </div>
             </div>
           ))}
