@@ -6,6 +6,7 @@ import { ServiceCard } from '@/components/ui/service-card';
 import { TypewriterHeading } from '@/components/ui/typewriter-heading';
 import { MagneticButton } from '@/components/ui/magnetic-button';
 import { StatsCard } from '@/components/ui/stats-card';
+import { TestimonialLogoScroll } from '@/components/ui/testimonial-logo-scroll';
 
 function Home() {
   const ButtonLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
@@ -92,6 +93,9 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonial Logo Scroll Section */}
+      <TestimonialLogoScroll />
 
       {/* What We Build Section */}
       <section className="py-20 bg-charcoal">
