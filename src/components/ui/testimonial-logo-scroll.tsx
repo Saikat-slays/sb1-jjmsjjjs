@@ -20,12 +20,8 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
       url: 'https://cdn.worldvectorlogo.com/logos/microsoft-5.svg',
     },
     {
-      name: 'Meta',
-      url: 'https://cdn.worldvectorlogo.com/logos/meta-1.svg',
-    },
-    {
       name: 'Anthropic',
-      url: 'https://cdn.worldvectorlogo.com/logos/anthropic.svg',
+      url: 'https://upload.wikimedia.org/wikipedia/commons/7/78/Anthropic_logo.svg',
     },
     {
       name: 'Nvidia',
@@ -81,16 +77,11 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
                   className="max-w-full max-h-full object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
                   loading="lazy"
                   onError={(e) => {
-                    console.log(`Failed to load logo: ${logo.url}`);
+                    // Hide broken images completely
                     const target = e.target as HTMLImageElement;
-                    // Hide the broken image and show text fallback
-                    target.style.display = 'none';
-                    const parent = target.parentElement;
-                    if (parent && !parent.querySelector('.logo-fallback')) {
-                      const fallback = document.createElement('div');
-                      fallback.className = 'logo-fallback text-white text-sm font-bold text-center flex items-center justify-center w-full h-full';
-                      fallback.textContent = logo.name;
-                      parent.appendChild(fallback);
+                    const container = target.closest('.mx-8');
+                    if (container) {
+                      container.style.display = 'none';
                     }
                   }}
                 />
