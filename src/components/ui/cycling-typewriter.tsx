@@ -18,10 +18,16 @@ export function CyclingTypewriter({ className = '' }: CyclingTypewriterProps) {
   ];
 
   useEffect(() => {
+    // Calculate timing: typing + pause + deleting + small buffer
+    // Typing: ~55ms per char * avg 40 chars = ~2200ms
+    // Pause: 2200ms
+    // Deleting: ~33ms per char * avg 40 chars = ~1320ms
+    // Buffer: 500ms
+    // Total: ~6220ms per cycle
     const timer = setTimeout(() => {
       setCurrentIndex((prev) => (prev + 1) % headlines.length);
       setKey(prev => prev + 1); // Force re-render of typewriter
-    }, 4000); // Show each headline for 4 seconds
+    }, 6500); // Slightly longer to ensure complete cycle
 
     return () => clearTimeout(timer);
   }, [currentIndex, headlines.length]);
@@ -31,10 +37,11 @@ export function CyclingTypewriter({ className = '' }: CyclingTypewriterProps) {
       <Typewriter
         onInit={(typewriter) => {
           typewriter
-            .changeDelay(50)
+            .changeDelay(55) // 10% slower than 50ms (was 50, now 55)
+            .changeDeleteSpeed(33) // 10% slower than 30ms (was 30, now 33)
             .typeString(headlines[currentIndex])
-            .pauseFor(2000)
-            .deleteAll(30)
+            .pauseFor(2200) // Slightly longer pause
+            .deleteAll()
             .start();
         }}
         options={{
