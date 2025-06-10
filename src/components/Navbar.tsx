@@ -69,6 +69,7 @@ function Navbar() {
     { path: '/services', label: 'Services' },
     { path: '/how-we-work', label: 'How We Work' },
     { path: '/about', label: 'About' },
+    { path: '/developer-docs', label: 'Developer Docs' },
   ];
   
   return (

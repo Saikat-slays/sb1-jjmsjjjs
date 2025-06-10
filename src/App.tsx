@@ -11,6 +11,7 @@ import StrategyCall from './pages/StrategyCall';
 import HowWeWork from './pages/HowWeWork';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import DeveloperDocs from './pages/DeveloperDocs';
 
 // Import service pages
 import BespokeAIChatbots from './pages/services/BespokeAIChatbots';
@@ -46,6 +47,7 @@ function App() {
               <Route path="/how-we-work" element={<HowWeWork />} />
               <Route path="/terms" element={<TermsOfService />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/developer-docs" element={<DeveloperDocs />} />
               
               {/* Service Pages */}
               <Route path="/services/bespoke-ai-chatbots" element={<BespokeAIChatbots />} />
