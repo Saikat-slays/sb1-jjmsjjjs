@@ -34,12 +34,6 @@ function Contact() {
     return re.test(email);
   };
 
-  const validatePhone = (phone: string) => {
-    // Indian phone number format: +91 followed by 10 digits
-    const re = /^\+91[6-9]\d{9}$/;
-    return re.test(phone);
-  };
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -77,10 +71,9 @@ function Contact() {
       newErrors.email = 'Please enter a valid email address';
     }
 
-    if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
-    } else if (!validatePhone(formData.phone)) {
-      newErrors.phone = 'Please enter a valid Indian phone number (+91 followed by 10 digits)';
+    // Phone is now optional, so only validate if provided
+    if (formData.phone.trim() && formData.phone.length < 8) {
+      newErrors.phone = 'Please enter a valid phone number';
     }
 
     if (!formData.company.trim()) {
@@ -209,7 +202,7 @@ function Contact() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number <span className="text-red-500">*</span>
+                    Phone Number <span className="text-gray-500">(Optional)</span>
                   </label>
                   <PhoneInput
                     value={formData.phone}
@@ -219,6 +212,7 @@ function Contact() {
                     }}
                     error={errors.phone}
                     className={`${inputClasses} ${errors.phone ? errorInputClasses : ''}`}
+                    required={false}
                   />
                 </div>
                 <div>
