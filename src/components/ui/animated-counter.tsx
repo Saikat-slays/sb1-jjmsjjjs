@@ -51,7 +51,7 @@ export function AnimatedCounter({
 
     // Always return cleanup function to ensure proper disconnection
     return cleanup;
-  }, [value, prefix, suffix, duration, decimals, hasAnimated]);
+  }, [value, prefix, suffix, duration, decimals]);
 
   return (
     <span ref={ref} className={className}>
