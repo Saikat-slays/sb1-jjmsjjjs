@@ -13,6 +13,7 @@ interface FormData {
   phone: string;
   company: string;
   automationGoal: string;
+  customGoal: string;
 }
 
 interface FormErrors {
@@ -21,6 +22,7 @@ interface FormErrors {
   phone: string;
   company: string;
   automationGoal: string;
+  customGoal: string;
 }
 
 function StrategyCall() {
@@ -29,7 +31,8 @@ function StrategyCall() {
     email: '',
     phone: '',
     company: '',
-    automationGoal: ''
+    automationGoal: '',
+    customGoal: ''
   });
 
   const [errors, setErrors] = useState<FormErrors>({
@@ -37,7 +40,8 @@ function StrategyCall() {
     email: '',
     phone: '',
     company: '',
-    automationGoal: ''
+    automationGoal: '',
+    customGoal: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,7 +52,7 @@ function StrategyCall() {
     return re.test(email);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -58,6 +62,18 @@ function StrategyCall() {
       ...prev,
       [name]: ''
     }));
+
+    // Clear custom goal when switching away from "Other"
+    if (name === 'automationGoal' && value !== 'Other') {
+      setFormData(prev => ({
+        ...prev,
+        customGoal: ''
+      }));
+      setErrors(prev => ({
+        ...prev,
+        customGoal: ''
+      }));
+    }
   };
 
   const handleSubmit = async (e: FormEvent) => {
@@ -68,7 +84,8 @@ function StrategyCall() {
       email: '',
       phone: '',
       company: '',
-      automationGoal: ''
+      automationGoal: '',
+      customGoal: ''
     };
 
     if (!formData.name.trim()) {
@@ -94,6 +111,11 @@ function StrategyCall() {
       newErrors.automationGoal = 'Please select an automation goal';
     }
 
+    // Validate custom goal if "Other" is selected
+    if (formData.automationGoal === 'Other' && !formData.customGoal.trim()) {
+      newErrors.customGoal = 'Please describe your automation goal';
+    }
+
     setErrors(newErrors);
 
     if (Object.values(newErrors).some(error => error !== '')) {
@@ -103,6 +125,9 @@ function StrategyCall() {
     setIsSubmitting(true);
 
     try {
+      // Use custom goal if "Other" is selected, otherwise use the selected goal
+      const finalGoal = formData.automationGoal === 'Other' ? formData.customGoal : formData.automationGoal;
+
       const { error } = await supabase
         .from('strategy_call_submissions')
         .insert([{
@@ -110,7 +135,7 @@ function StrategyCall() {
           email_address: formData.email,
           phone_number: formData.phone,
           company_name: formData.company,
-          automation_goal: formData.automationGoal
+          automation_goal: finalGoal
         }]);
 
       if (error) throw error;
@@ -383,11 +408,41 @@ function StrategyCall() {
                           <option value="Automate Customer Support">Automate Customer Support</option>
                           <option value="Scale Personal Outreach">Scale Personal Outreach</option>
                           <option value="Streamline Operations">Streamline Operations</option>
+                          <option value="Other">Other</option>
                         </select>
                         {errors.automationGoal && (
                           <p className="mt-1 text-sm text-red-500">{errors.automationGoal}</p>
                         )}
                       </div>
+
+                      {/* Custom Goal Input - Shows when "Other" is selected */}
+                      <AnimatePresence>
+                        {formData.automationGoal === 'Other' && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                              Please describe your automation goal <span className="text-red-500">*</span>
+                            </label>
+                            <textarea
+                              name="customGoal"
+                              value={formData.customGoal}
+                              onChange={handleInputChange}
+                              className={`${inputClasses} ${errors.customGoal ? errorInputClasses : ''}`}
+                              rows={3}
+                              placeholder="Tell us about your specific automation needs..."
+                              required={formData.automationGoal === 'Other'}
+                            />
+                            {errors.customGoal && (
+                              <p className="mt-1 text-sm text-red-500">{errors.customGoal}</p>
+                            )}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+
                       <RainbowButton
                         type="submit"
                         className="w-full inline-flex items-center justify-center"
