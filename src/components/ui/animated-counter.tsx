@@ -26,9 +26,12 @@ export function AnimatedCounter({
 
     const element = ref.current;
     
+    // Check if element is connected to the DOM before setting up observer
+    if (!element.isConnected) return;
+    
     const cleanup = inView(element, () => {
-      // Additional check to ensure element is still valid when animation starts
-      if (hasAnimated || !ref.current) return;
+      // Additional check to ensure element is still valid and connected when animation starts
+      if (hasAnimated || !ref.current || !ref.current.isConnected) return;
       
       setHasAnimated(true);
       
@@ -36,8 +39,8 @@ export function AnimatedCounter({
         duration,
         ease: [0.25, 0.46, 0.45, 0.94],
         onUpdate: (latest) => {
-          // Use ref.current instead of captured element variable
-          if (ref.current) {
+          // Use ref.current and check if it's still connected to the DOM
+          if (ref.current && ref.current.isConnected) {
             const displayValue = decimals > 0 
               ? latest.toFixed(decimals)
               : Math.round(latest).toString();
