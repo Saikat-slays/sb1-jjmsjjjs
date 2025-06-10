@@ -1,11 +1,16 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, useMotionValue, useTransform, PanInfo } from 'framer-motion';
 
 interface TestimonialLogoScrollProps {
   className?: string;
 }
 
 export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragX = useMotionValue(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const logos = [
     {
       name: 'OpenAI',
@@ -48,6 +53,23 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
   // Create enough duplicates for seamless scrolling - more for mobile
   const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
 
+  const handleDragStart = () => {
+    setIsDragging(true);
+  };
+
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    setIsDragging(false);
+    // Reset drag position after a short delay to resume normal animation
+    setTimeout(() => {
+      dragX.set(0);
+    }, 100);
+  };
+
+  const handleDrag = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    // Update drag position based on drag delta
+    dragX.set(dragX.get() + info.delta.x);
+  };
+
   return (
     <div className={className}>
       <div className="relative w-full overflow-hidden bg-charcoal py-16">
@@ -62,25 +84,38 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
         </div>
 
         {/* Gradient overlays */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-charcoal to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-charcoal to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-charcoal to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-charcoal to-transparent z-10 pointer-events-none" />
         
         {/* Scrolling container */}
         <motion.div
-          className="flex whitespace-nowrap"
-          animate={{
+          ref={containerRef}
+          className="flex whitespace-nowrap cursor-grab active:cursor-grabbing"
+          animate={!isHovered && !isDragging ? {
             x: [`0%`, `-${100 / 4}%`],
+          } : {}}
+          style={{
+            x: useTransform(dragX, (value) => value)
           }}
           transition={{
             duration: 15, // Slower for better mobile visibility
             repeat: Infinity,
             ease: "linear",
           }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onDragStart={handleDragStart}
+          onDragEnd={handleDragEnd}
+          onDrag={handleDrag}
+          drag="x"
+          dragConstraints={{ left: -1000, right: 1000 }}
+          dragElastic={0.1}
+          whileDrag={{ cursor: "grabbing" }}
         >
           {duplicatedLogos.map((logo, i) => (
             <div
               key={`${logo.name}-${i}`}
-              className="mx-4 sm:mx-8 flex items-center justify-center flex-shrink-0"
+              className="mx-4 sm:mx-8 flex items-center justify-center flex-shrink-0 pointer-events-none"
               style={{ minWidth: '120px' }}
             >
               {logo.isText ? (
