@@ -87,7 +87,7 @@ function About() {
               <div className="bg-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Target className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-black mb-4">Bespoke > Prebuilt</h3>
+              <h3 className="text-xl font-bold text-black mb-4">Bespoke {'>'} Prebuilt</h3>
               <p className="text-gray-600">
                 Every solution is built from the ground up. You won't find templates here.
               </p>
@@ -96,7 +96,7 @@ function About() {
               <div className="bg-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-black mb-4">Precision > Hype</h3>
+              <h3 className="text-xl font-bold text-black mb-4">Precision {'>'} Hype</h3>
               <p className="text-gray-600">
                 We focus on outputs that move the needle. That means measurable results—not fluff dashboards.
               </p>
@@ -105,7 +105,7 @@ function About() {
               <div className="bg-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Globe className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-black mb-4">Partnership > Transaction</h3>
+              <h3 className="text-xl font-bold text-black mb-4">Partnership {'>'} Transaction</h3>
               <p className="text-gray-600">
                 We're not a vendor. We're your AI engineering partner. And we only work with companies ready to move.
               </p>
@@ -114,7 +114,7 @@ function About() {
               <div className="bg-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Code className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-black mb-4">Performance > Promises</h3>
+              <h3 className="text-xl font-bold text-black mb-4">Performance {'>'} Promises</h3>
               <p className="text-gray-600">
                 No buzzwords. No recycled strategies. Just custom-built systems that produce.
               </p>
