@@ -98,7 +98,7 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
             x: useTransform(dragX, (value) => value)
           }}
           transition={{
-            duration: 15, // Slower for better mobile visibility
+            duration: 8, // Increased speed from 15 to 8 seconds
             repeat: Infinity,
             ease: "linear",
           }}
