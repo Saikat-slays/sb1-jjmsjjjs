@@ -11,31 +11,31 @@ function PrivacyPolicy() {
             className="text-4xl md:text-5xl font-bold text-black text-center mb-8"
           />
           <div className="prose prose-lg max-w-4xl mx-auto text-gray-600">
-            <h2 className="text-2xl font-bold text-black mt-8 mb-4">1. Information We Collect</h2>
+            <h2 className="text-2xl font-bold text-black mt-8 mb-4">1. What Information We Collect</h2>
             <p>
-              We collect information that you provide directly to us, including:
+              We collect information you give us directly:
             </p>
             <ul>
-              <li>Name and contact information</li>
-              <li>Company details</li>
-              <li>Project requirements and business information</li>
+              <li>Your name and contact details</li>
+              <li>Company information</li>
+              <li>Project requirements</li>
               <li>Communication preferences</li>
             </ul>
 
             <h2 className="text-2xl font-bold text-black mt-8 mb-4">2. How We Use Your Information</h2>
             <p>
-              We use the collected information to:
+              We use your information to:
             </p>
             <ul>
               <li>Provide and improve our services</li>
               <li>Communicate about your project</li>
-              <li>Send important updates and announcements</li>
-              <li>Process payments and maintain accounts</li>
+              <li>Send important updates</li>
+              <li>Process payments</li>
             </ul>
 
-            <h2 className="text-2xl font-bold text-black mt-8 mb-4">3. Data Security</h2>
+            <h2 className="text-2xl font-bold text-black mt-8 mb-4">3. How We Protect Your Data</h2>
             <p>
-              We implement industry-standard security measures to protect your data. This includes:
+              We use industry-standard security measures:
             </p>
             <ul>
               <li>Encrypted data transmission</li>
@@ -44,10 +44,10 @@ function PrivacyPolicy() {
               <li>Access controls and authentication</li>
             </ul>
 
-            <h2 className="text-2xl font-bold text-black mt-8 mb-4">4. Data Retention</h2>
+            <h2 className="text-2xl font-bold text-black mt-8 mb-4">4. How Long We Keep Your Data</h2>
             <p>
-              We retain your information for as long as necessary to provide our services and maintain 
-              business records. You may request deletion of your data at any time.
+              We keep your information as long as necessary to provide our services. 
+              You can request deletion of your data at any time.
             </p>
 
             <h2 className="text-2xl font-bold text-black mt-8 mb-4">5. Third-Party Services</h2>
@@ -74,13 +74,13 @@ function PrivacyPolicy() {
 
             <h2 className="text-2xl font-bold text-black mt-8 mb-4">7. Cookies and Tracking</h2>
             <p>
-              We use cookies and similar technologies to improve user experience and analyze website traffic. 
+              We use cookies to improve user experience and analyze website traffic. 
               You can control cookie preferences through your browser settings.
             </p>
 
-            <h2 className="text-2xl font-bold text-black mt-8 mb-4">8. Contact Information</h2>
+            <h2 className="text-2xl font-bold text-black mt-8 mb-4">8. Contact Us</h2>
             <p>
-              For privacy-related inquiries, contact us at:
+              For privacy questions, contact us at:
             </p>
             <ul>
               <li>Email: privacy@thynknext.in</li>

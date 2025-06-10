@@ -17,27 +17,27 @@ function DeveloperDocs() {
   const architectureComponents = [
     {
       Icon: Database,
-      title: "Data Layer",
-      description: "Real-time data synchronization across distributed systems",
+      title: "Data Systems",
+      description: "Real-time data sync across all your business systems",
       tech: ["PostgreSQL", "Redis", "Vector Databases", "Event Streaming"]
     },
     {
       Icon: Cpu,
-      title: "AI Processing Engine",
-      description: "Multi-model AI orchestration with intelligent routing",
-      tech: ["OpenAI GPT-4", "Claude", "Custom Fine-tuned Models", "Embedding Systems"]
+      title: "AI Processing",
+      description: "Smart AI that learns and improves from every interaction",
+      tech: ["OpenAI GPT-4", "Claude", "Custom Models", "Smart Routing"]
     },
     {
       Icon: Cloud,
-      title: "Infrastructure",
-      description: "Auto-scaling cloud architecture with 99.9% uptime",
-      tech: ["Kubernetes", "Docker", "AWS/GCP", "CDN Distribution"]
+      title: "Cloud Infrastructure",
+      description: "Reliable, fast systems that scale with your business",
+      tech: ["Auto-scaling", "99.9% Uptime", "Global CDN", "Load Balancing"]
     },
     {
       Icon: Shield,
-      title: "Security Layer",
-      description: "Enterprise-grade security with zero-trust architecture",
-      tech: ["OAuth 2.0", "JWT", "End-to-end Encryption", "SOC 2 Compliance"]
+      title: "Security",
+      description: "Bank-level security to protect your business data",
+      tech: ["Encryption", "Access Controls", "Compliance", "Monitoring"]
     }
   ];
 
@@ -45,7 +45,7 @@ function DeveloperDocs() {
     {
       method: "POST",
       endpoint: "/api/v1/chatbot/message",
-      description: "Send message to AI chatbot and receive intelligent response",
+      description: "Send message to AI chatbot and get intelligent response",
       example: `{
   "message": "I need help with pricing",
   "context": {
@@ -57,7 +57,7 @@ function DeveloperDocs() {
     {
       method: "POST",
       endpoint: "/api/v1/leads/qualify",
-      description: "Automatically qualify and score incoming leads",
+      description: "Automatically score and qualify incoming leads",
       example: `{
   "contact": {
     "email": "prospect@company.com",
@@ -70,7 +70,7 @@ function DeveloperDocs() {
     {
       method: "GET",
       endpoint: "/api/v1/analytics/performance",
-      description: "Retrieve real-time performance metrics and insights",
+      description: "Get real-time performance metrics and insights",
       example: `{
   "timeframe": "30d",
   "metrics": ["conversion_rate", "response_time", "satisfaction"]
@@ -81,8 +81,8 @@ function DeveloperDocs() {
   const integrationExamples = [
     {
       title: "Webhook Integration",
-      description: "Real-time event processing for instant automation triggers",
-      code: `// Webhook endpoint configuration
+      description: "Real-time notifications when important events happen",
+      code: `// Webhook setup
 const webhook = {
   url: "https://your-domain.com/webhook",
   events: ["lead.created", "message.received", "conversion.completed"],
@@ -92,7 +92,7 @@ const webhook = {
   }
 };
 
-// Event handler example
+// Handle incoming webhooks
 app.post('/webhook', (req, res) => {
   const { event, data } = req.body;
   
@@ -109,9 +109,9 @@ app.post('/webhook', (req, res) => {
 });`
     },
     {
-      title: "CRM Synchronization",
-      description: "Bidirectional sync with popular CRM platforms",
-      code: `// Salesforce integration example
+      title: "CRM Integration",
+      description: "Sync leads and customers with your existing CRM",
+      code: `// Salesforce integration
 const salesforceSync = {
   credentials: {
     clientId: process.env.SF_CLIENT_ID,
@@ -135,9 +135,9 @@ const salesforceSync = {
 };`
     },
     {
-      title: "Custom AI Model Training",
-      description: "Train domain-specific models for your business context",
-      code: `// Custom model training pipeline
+      title: "Custom AI Training",
+      description: "Train AI specifically for your business and industry",
+      code: `// Custom model training
 const trainingConfig = {
   model_type: "conversational_ai",
   base_model: "gpt-4-turbo",
@@ -161,16 +161,16 @@ const trainingConfig = {
   }
 };
 
-// Deploy custom model
+// Deploy your custom model
 const deployment = await ai.models.train(trainingConfig);`
     }
   ];
 
   const performanceMetrics = [
-    { metric: "Response Time", value: "<100ms", description: "Average API response time" },
-    { metric: "Uptime", value: "99.9%", description: "System availability guarantee" },
-    { metric: "Throughput", value: "10K req/sec", description: "Peak request handling capacity" },
-    { metric: "Accuracy", value: "94.7%", description: "AI model prediction accuracy" }
+    { metric: "Response Time", value: "<100ms", description: "Lightning-fast API responses" },
+    { metric: "Uptime", value: "99.9%", description: "Always available when you need it" },
+    { metric: "Throughput", value: "10K req/sec", description: "Handles massive traffic spikes" },
+    { metric: "Accuracy", value: "94.7%", description: "AI predictions you can trust" }
   ];
 
   return (
@@ -180,16 +180,15 @@ const deployment = await ai.models.train(trainingConfig);`
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <TypewriterHeading
-              text="Built by Engineers, for Engineers"
+              text="Technical Documentation for Developers"
               className="text-4xl md:text-6xl font-bold text-white mb-6"
             />
             <p className="text-2xl text-white/80 mb-8">
-              Deep dive into the architecture, APIs, and integrations that power our AI automation systems.
+              See how our AI systems actually work under the hood.
             </p>
             <p className="text-xl text-white/70 mb-12 max-w-3xl mx-auto">
-              This isn't just documentation—it's a blueprint for understanding how enterprise-grade 
-              AI automation actually works under the hood. From microservices architecture to 
-              real-time ML inference, we're pulling back the curtain.
+              This is for developers who want to understand the technical architecture, 
+              APIs, and integrations that power our AI automation systems.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <ButtonLink to="/strategy-call">
@@ -205,11 +204,11 @@ const deployment = await ai.models.train(trainingConfig);`
         <div className="container mx-auto px-6">
           <FadeIn>
             <h2 className="text-4xl font-bold text-black text-center mb-4">
-              System Architecture
+              How Our Systems Work
             </h2>
             <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
-              Our AI automation platform is built on a distributed, event-driven architecture 
-              designed for scale, reliability, and real-time performance.
+              Built for scale, reliability, and real-time performance. 
+              Here's the technical foundation that powers everything.
             </p>
           </FadeIn>
           <div className="grid md:grid-cols-2 gap-8">
@@ -241,8 +240,8 @@ const deployment = await ai.models.train(trainingConfig);`
               API Reference
             </h2>
             <p className="text-xl text-white/70 text-center mb-16 max-w-3xl mx-auto">
-              RESTful APIs with GraphQL support, real-time WebSocket connections, 
-              and comprehensive SDK libraries for seamless integration.
+              RESTful APIs with real-time WebSocket connections and comprehensive 
+              SDK libraries for easy integration.
             </p>
           </FadeIn>
           <div className="space-y-8">
@@ -265,7 +264,7 @@ const deployment = await ai.models.train(trainingConfig);`
                   <p className="text-gray-600 mb-6">{endpoint.description}</p>
                   <div className="bg-gray-900 rounded-lg p-4">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-gray-400 text-sm">Request Example</span>
+                      <span className="text-gray-400 text-sm">Example Request</span>
                       <button className="text-gray-400 hover:text-white">
                         <Copy className="h-4 w-4" />
                       </button>
@@ -286,11 +285,11 @@ const deployment = await ai.models.train(trainingConfig);`
         <div className="container mx-auto px-6">
           <FadeIn>
             <h2 className="text-4xl font-bold text-black text-center mb-4">
-              Integration Patterns
+              Integration Examples
             </h2>
             <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
-              Production-ready code examples for common integration scenarios. 
-              Copy, customize, and deploy with confidence.
+              Ready-to-use code examples for common integration scenarios. 
+              Copy, customize, and deploy.
             </p>
           </FadeIn>
           <div className="space-y-12">
@@ -326,10 +325,10 @@ const deployment = await ai.models.train(trainingConfig);`
         <div className="container mx-auto px-6">
           <FadeIn>
             <h2 className="text-4xl font-bold text-white text-center mb-4">
-              Performance Benchmarks
+              Performance You Can Count On
             </h2>
             <p className="text-xl text-white/70 text-center mb-16 max-w-3xl mx-auto">
-              Real-world performance metrics from production systems handling 
+              Real performance metrics from production systems handling 
               millions of requests daily.
             </p>
           </FadeIn>
@@ -363,9 +362,9 @@ const deployment = await ai.models.train(trainingConfig);`
                 <ul className="space-y-2 text-gray-600">
                   <li>• Node.js / TypeScript</li>
                   <li>• Python / FastAPI</li>
-                  <li>• Go for high-performance services</li>
+                  <li>• Go for high-performance</li>
                   <li>• GraphQL & REST APIs</li>
-                  <li>• WebSocket real-time connections</li>
+                  <li>• Real-time WebSockets</li>
                 </ul>
               </div>
             </FadeIn>
@@ -374,11 +373,11 @@ const deployment = await ai.models.train(trainingConfig);`
                 <Database className="h-12 w-12 text-primary mb-6" />
                 <h3 className="text-2xl font-bold text-black mb-4">Data & AI</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>• PostgreSQL with vector extensions</li>
-                  <li>• Redis for caching & sessions</li>
+                  <li>• PostgreSQL with vectors</li>
+                  <li>• Redis for speed</li>
                   <li>• Elasticsearch for search</li>
                   <li>• TensorFlow / PyTorch</li>
-                  <li>• OpenAI, Anthropic, Cohere APIs</li>
+                  <li>• OpenAI, Anthropic APIs</li>
                 </ul>
               </div>
             </FadeIn>
@@ -388,10 +387,10 @@ const deployment = await ai.models.train(trainingConfig);`
                 <h3 className="text-2xl font-bold text-black mb-4">Infrastructure</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>• Kubernetes orchestration</li>
-                  <li>• Docker containerization</li>
+                  <li>• Docker containers</li>
                   <li>• AWS / GCP multi-cloud</li>
-                  <li>• Terraform infrastructure as code</li>
-                  <li>• Prometheus monitoring</li>
+                  <li>• Infrastructure as code</li>
+                  <li>• Real-time monitoring</li>
                 </ul>
               </div>
             </FadeIn>
@@ -411,27 +410,27 @@ const deployment = await ai.models.train(trainingConfig);`
             <div className="grid md:grid-cols-2 gap-12">
               <FadeIn>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-6">Security Measures</h3>
+                  <h3 className="text-2xl font-bold text-white mb-6">Security Features</h3>
                   <ul className="space-y-4">
                     <li className="flex items-start">
                       <Shield className="h-6 w-6 text-primary mt-1 mr-3" />
                       <div>
                         <span className="font-semibold text-white">End-to-End Encryption</span>
-                        <p className="text-white/70">AES-256 encryption for data at rest and in transit</p>
+                        <p className="text-white/70">Bank-level encryption for all data</p>
                       </div>
                     </li>
                     <li className="flex items-start">
                       <Shield className="h-6 w-6 text-primary mt-1 mr-3" />
                       <div>
-                        <span className="font-semibold text-white">Zero-Trust Architecture</span>
-                        <p className="text-white/70">Every request verified and authenticated</p>
+                        <span className="font-semibold text-white">Zero-Trust Security</span>
+                        <p className="text-white/70">Every request is verified and authenticated</p>
                       </div>
                     </li>
                     <li className="flex items-start">
                       <Shield className="h-6 w-6 text-primary mt-1 mr-3" />
                       <div>
                         <span className="font-semibold text-white">Regular Security Audits</span>
-                        <p className="text-white/70">Quarterly penetration testing and vulnerability assessments</p>
+                        <p className="text-white/70">Quarterly testing and vulnerability assessments</p>
                       </div>
                     </li>
                   </ul>
@@ -465,11 +464,11 @@ const deployment = await ai.models.train(trainingConfig);`
       <section className="bg-primary py-20">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-white mb-8">
-            Ready to Build Something Extraordinary?
+            Ready to Build Something Great?
           </h2>
           <p className="text-xl text-white/80 mb-12 max-w-3xl mx-auto">
-            Our engineering team is ready to architect, build, and deploy AI automation 
-            systems that push the boundaries of what's possible. Let's discuss your technical requirements.
+            Our engineering team is ready to build AI systems that push the boundaries 
+            of what's possible. Let's discuss your technical requirements.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <ButtonLink to="/strategy-call">
@@ -477,7 +476,7 @@ const deployment = await ai.models.train(trainingConfig);`
             </ButtonLink>
           </div>
           <p className="text-white/60 mt-6">
-            Free technical assessment • Custom architecture design • Enterprise-grade solutions
+            Free technical assessment • Custom architecture design • Enterprise solutions
           </p>
         </div>
       </section>

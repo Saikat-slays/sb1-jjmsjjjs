@@ -176,7 +176,7 @@ function StrategyCall() {
         </div>
         <h2 className="text-3xl font-bold text-black mb-4">Thank You!</h2>
         <p className="text-xl text-gray-600 mb-6">
-          Your strategy call has been scheduled successfully.
+          We'll contact you within 24 hours to schedule your call.
         </p>
       </div>
       
@@ -186,26 +186,26 @@ function StrategyCall() {
           <li className="flex items-start">
             <Check className="h-5 w-5 text-primary mt-1 mr-3" />
             <span className="text-gray-600">
-              Our team will review your requirements within 24 hours
+              We'll review your business needs within 24 hours
             </span>
           </li>
           <li className="flex items-start">
             <Check className="h-5 w-5 text-primary mt-1 mr-3" />
             <span className="text-gray-600">
-              You'll receive an email with available time slots
+              You'll get an email with available call times
             </span>
           </li>
           <li className="flex items-start">
             <Check className="h-5 w-5 text-primary mt-1 mr-3" />
             <span className="text-gray-600">
-              We'll prepare a preliminary analysis of your automation needs
+              We'll prepare ideas for your specific business
             </span>
           </li>
         </ul>
       </div>
 
       <ButtonLink to="/">
-        <Home className="mr-2 h-5 w-5" /> Return to Homepage
+        <Home className="mr-2 h-5 w-5" /> Back to Homepage
       </ButtonLink>
     </motion.div>
   );
@@ -217,12 +217,13 @@ function StrategyCall() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <TypewriterHeading
-              text="Let's Engineer the System That Grows Your Business While You Sleep"
+              text="Let's Talk About Getting You More Customers"
               className="text-4xl md:text-5xl font-bold text-black mb-8"
             />
             <p className="text-xl text-gray-600 mb-12">
-              This is not a demo.
-              This is a 1-on-1 consultation designed to map out exactly how AI automation can be crafted around your business to multiply output and revenue—without hiring or hustle.
+              This is a real conversation about your business.
+              We'll show you exactly how AI can help you get more customers without working more hours.
+              No sales pitch, just honest advice.
             </p>
             <div className="flex justify-center space-x-8">
               <div className="flex items-center text-gray-600">
@@ -231,11 +232,11 @@ function StrategyCall() {
               </div>
               <div className="flex items-center text-gray-600">
                 <Target className="h-5 w-5 mr-2" />
-                <span>Personalized Strategy</span>
+                <span>Custom Plan</span>
               </div>
               <div className="flex items-center text-gray-600">
                 <Users className="h-5 w-5 mr-2" />
-                <span>Expert Consultation</span>
+                <span>Free Advice</span>
               </div>
             </div>
           </div>
@@ -248,16 +249,16 @@ function StrategyCall() {
           <div className="grid md:grid-cols-2 gap-12">
             {/* Left Column - Benefits */}
             <div>
-              <h2 className="text-3xl font-bold text-black mb-8">What You'll Get</h2>
+              <h2 className="text-3xl font-bold text-black mb-8">What You'll Get From This Call</h2>
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="bg-white p-2 rounded-full mr-4">
                     <Check className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-black mb-2">Custom Automation Roadmap</h3>
+                    <h3 className="text-xl font-semibold text-black mb-2">Clear Plan to Get More Customers</h3>
                     <p className="text-gray-600">
-                      Get a clear plan to automate your top 3 business bottlenecks
+                      We'll identify the top 3 ways AI can help your specific business get more leads and customers.
                     </p>
                   </div>
                 </div>
@@ -266,9 +267,9 @@ function StrategyCall() {
                     <Check className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-black mb-2">ROI Analysis</h3>
+                    <h3 className="text-xl font-semibold text-black mb-2">See How Much Money You Could Make</h3>
                     <p className="text-gray-600">
-                      Understand the potential return on investment for your AI implementation
+                      We'll calculate how much extra revenue you could generate with the right AI system.
                     </p>
                   </div>
                 </div>
@@ -277,9 +278,9 @@ function StrategyCall() {
                     <Check className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-black mb-2">Solution Blueprint</h3>
+                    <h3 className="text-xl font-semibold text-black mb-2">Custom Solution for Your Business</h3>
                     <p className="text-gray-600">
-                      Get a tailored solution design that matches your business needs
+                      Get a tailored plan that fits exactly how your business works and what you want to achieve.
                     </p>
                   </div>
                 </div>
@@ -288,32 +289,32 @@ function StrategyCall() {
                     <Check className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-black mb-2">Implementation Timeline</h3>
+                    <h3 className="text-xl font-semibold text-black mb-2">Timeline and Next Steps</h3>
                     <p className="text-gray-600">
-                      Clear project timeline and milestones for your automation journey
+                      Know exactly when you could have your AI system working and bringing in more customers.
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-12 p-6 bg-white rounded-xl">
-                <h3 className="text-xl font-bold text-black mb-4">Perfect For:</h3>
+                <h3 className="text-xl font-bold text-black mb-4">Perfect If You're:</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-600">
                     <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                    <span>Interior Design & Decor Brands</span>
+                    <span>Losing customers because you respond too slowly</span>
                   </li>
                   <li className="flex items-center text-gray-600">
                     <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                    <span>Energy & Utility Companies</span>
+                    <span>Spending too much time on repetitive tasks</span>
                   </li>
                   <li className="flex items-center text-gray-600">
                     <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                    <span>E-commerce & D2C Brands</span>
+                    <span>Want to grow without hiring more people</span>
                   </li>
                   <li className="flex items-center text-gray-600">
                     <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                    <span>Growing Startups & SMBs</span>
+                    <span>Ready to invest in growing your business</span>
                   </li>
                 </ul>
               </div>
@@ -330,7 +331,7 @@ function StrategyCall() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                   >
-                    <h2 className="text-2xl font-bold text-black mb-6">Book Your Strategy Call</h2>
+                    <h2 className="text-2xl font-bold text-black mb-6">Book Your Free Call</h2>
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -394,7 +395,7 @@ function StrategyCall() {
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                          What's your primary automation goal? <span className="text-red-500">*</span>
+                          What's your biggest challenge? <span className="text-red-500">*</span>
                         </label>
                         <select
                           name="automationGoal"
@@ -403,11 +404,11 @@ function StrategyCall() {
                           className={`${inputClasses} ${errors.automationGoal ? errorInputClasses : ''}`}
                           required
                         >
-                          <option value="">Select your goal</option>
-                          <option value="Generate More Leads">Generate More Leads</option>
-                          <option value="Automate Customer Support">Automate Customer Support</option>
-                          <option value="Scale Personal Outreach">Scale Personal Outreach</option>
-                          <option value="Streamline Operations">Streamline Operations</option>
+                          <option value="">Select your biggest challenge</option>
+                          <option value="Not enough leads">Not enough leads</option>
+                          <option value="Responding to customers too slowly">Responding to customers too slowly</option>
+                          <option value="Too much manual work">Too much manual work</option>
+                          <option value="Can't scale without hiring">Can't scale without hiring</option>
                           <option value="Other">Other</option>
                         </select>
                         {errors.automationGoal && (
@@ -425,7 +426,7 @@ function StrategyCall() {
                             transition={{ duration: 0.3 }}
                           >
                             <label className="block text-sm font-medium text-gray-700 mb-2">
-                              Please describe your automation goal <span className="text-red-500">*</span>
+                              Tell us about your challenge <span className="text-red-500">*</span>
                             </label>
                             <textarea
                               name="customGoal"
@@ -433,7 +434,7 @@ function StrategyCall() {
                               onChange={handleInputChange}
                               className={`${inputClasses} ${errors.customGoal ? errorInputClasses : ''}`}
                               rows={3}
-                              placeholder="Tell us about your specific automation needs..."
+                              placeholder="What's the biggest challenge in your business right now?"
                               required={formData.automationGoal === 'Other'}
                             />
                             {errors.customGoal && (
@@ -448,13 +449,13 @@ function StrategyCall() {
                         className="w-full inline-flex items-center justify-center"
                         disabled={isSubmitting}
                       >
-                        {isSubmitting ? 'Booking...' : 'Book Your Call'} <ChevronRight className="ml-2 h-5 w-5" />
+                        {isSubmitting ? 'Booking...' : 'Book My Free Call'} <ChevronRight className="ml-2 h-5 w-5" />
                       </RainbowButton>
                     </form>
 
                     <div className="mt-8 p-4 bg-accent-dark rounded-lg">
                       <p className="text-sm text-gray-600 text-center">
-                        Limited spots available. Book your call now to secure priority access.
+                        Free call. No pressure. Just honest advice about growing your business.
                       </p>
                     </div>
                   </motion.div>
@@ -468,11 +469,12 @@ function StrategyCall() {
       {/* Testimonials Section */}
       <section className="bg-white py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-black text-center mb-12">What Our Clients Say</h2>
+          <h2 className="text-3xl font-bold text-black text-center mb-12">What Our Customers Say</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-accent-dark p-6 rounded-xl">
               <p className="text-gray-600 mb-4">
-                "The strategy call was eye-opening. ThynkNext helped us identify automation opportunities we hadn't even considered. Now our lead generation is fully automated and performing better than ever."
+                "The call was incredibly helpful. They showed me exactly how AI could help my business get more leads. 
+                Now our lead generation runs automatically and we're getting better results than ever."
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
@@ -486,7 +488,8 @@ function StrategyCall() {
             </div>
             <div className="bg-accent-dark p-6 rounded-xl">
               <p className="text-gray-600 mb-4">
-                "The ROI analysis and implementation roadmap we received were incredibly detailed. It helped us make an informed decision about our AI investment."
+                "They gave me a clear plan and showed me exactly how much money I could make. 
+                The whole process was transparent and professional."
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">

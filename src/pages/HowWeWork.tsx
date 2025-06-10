@@ -20,11 +20,12 @@ function HowWeWork() {
       <section className="bg-white py-20">
         <div className="container mx-auto px-6">
           <TypewriterHeading
-            text="How We Work: A Transparent, Risk-Free Partnership"
+            text="How We Help You Get More Customers (Risk-Free)"
             className="text-4xl md:text-5xl font-bold text-black text-center mb-8"
           />
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto">
-            At ThynkNext, we believe that exceptional AI systems deserve exceptional delivery. That's why we've designed a risk-free, transparent process that ensures your business gets results without the guesswork. Here's exactly how we build, deliver, and support your AI-powered solution.
+            We make it simple and safe for you. Pay half now, half when you're happy with the results.
+            No surprises, no risks.
           </p>
         </div>
       </section>
@@ -32,37 +33,37 @@ function HowWeWork() {
       {/* Risk Reversal Section */}
       <section className="bg-primary py-16">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">Our Risk-Free Guarantee</h2>
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Why It's Risk-Free for You</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <FadeIn>
               <div className="bg-white/10 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold text-white mb-4">Split Payment</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">Pay Half Now, Half Later</h3>
                 <p className="text-white/80">
-                  Pay 50% upfront and 50% only after you approve the final system. No surprises, no risks.
+                  Only pay the rest when you're completely happy with your AI system.
                 </p>
               </div>
             </FadeIn>
             <FadeIn>
               <div className="bg-white/10 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold text-white mb-4">Unlimited Revisions</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">Unlimited Changes</h3>
                 <p className="text-white/80">
-                  We'll revise until it meets your standards. Your satisfaction is our priority.
+                  We'll keep improving it until it's exactly what you want.
                 </p>
               </div>
             </FadeIn>
             <FadeIn>
               <div className="bg-white/10 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold text-white mb-4">10% First Project Discount</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">10% Off First Project</h3>
                 <p className="text-white/80">
-                  Get 10% off your first project in exchange for a testimonial if you're happy with our work.
+                  Save money on your first project when you share your success story.
                 </p>
               </div>
             </FadeIn>
             <FadeIn>
               <div className="bg-white/10 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold text-white mb-4">100% Ownership</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">You Own Everything</h3>
                 <p className="text-white/80">
-                  You own the entire system. No hidden fees, no subscriptions, no strings attached.
+                  No monthly fees. No subscriptions. It's yours forever.
                 </p>
               </div>
             </FadeIn>
@@ -73,32 +74,33 @@ function HowWeWork() {
       {/* Process Section */}
       <section className="bg-charcoal py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-white text-center mb-16">Our Process</h2>
+          <h2 className="text-3xl font-bold text-white text-center mb-16">How We Work Together</h2>
           
           <div className="space-y-16">
             <FadeIn>
               <div className="bg-white rounded-2xl p-8 md:p-12">
                 <div className="flex items-center mb-6">
                   <span className="text-4xl font-bold text-primary mr-4">01</span>
-                  <h3 className="text-2xl font-bold text-black">Discovery & Alignment</h3>
+                  <h3 className="text-2xl font-bold text-black">We Talk About Your Business</h3>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  We start with a deep dive into your business — your goals, your challenges, and your opportunities. No jargon. No fluff. Just a straightforward conversation to ensure we're aligned on what success looks like.
+                  We learn about your business, your customers, and what you want to achieve. 
+                  No tech jargon, just a real conversation about growing your business.
                 </p>
                 <div className="bg-accent-dark p-6 rounded-xl">
-                  <h4 className="font-semibold text-black mb-4">What you get:</h4>
+                  <h4 className="font-semibold text-black mb-4">You get:</h4>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      Personalized consultation
+                      Clear plan for your AI system
                     </li>
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      Clear project scope and deliverables
+                      Honest pricing with no hidden costs
                     </li>
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      Transparent pricing
+                      Timeline for when it'll be ready
                     </li>
                   </ul>
                 </div>
@@ -109,25 +111,26 @@ function HowWeWork() {
               <div className="bg-white rounded-2xl p-8 md:p-12">
                 <div className="flex items-center mb-6">
                   <span className="text-4xl font-bold text-primary mr-4">02</span>
-                  <h3 className="text-2xl font-bold text-black">50% Upfront — Your Commitment, Our Commitment</h3>
+                  <h3 className="text-2xl font-bold text-black">You Pay Half, We Start Building</h3>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  Once we're aligned, we ask for 50% upfront — a sign of mutual commitment. This covers the initial design, architecture, and development phases. The remaining 50% is only due after you've approved the final system.
+                  Pay 50% to get started. This shows we're both serious about making this work.
+                  The other 50% is only due when you're happy with the final result.
                 </p>
                 <div className="bg-accent-dark p-6 rounded-xl">
-                  <h4 className="font-semibold text-black mb-4">Why?</h4>
+                  <h4 className="font-semibold text-black mb-4">Why this works:</h4>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      It protects both of us from time-wasters
+                      You're protected - only pay the rest when satisfied
                     </li>
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      It ensures we're fully invested in your project's success
+                      We're committed to delivering great results
                     </li>
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      You maintain control over final payment until fully satisfied
+                      No time-wasters, just serious business owners
                     </li>
                   </ul>
                 </div>
@@ -138,29 +141,30 @@ function HowWeWork() {
               <div className="bg-white rounded-2xl p-8 md:p-12">
                 <div className="flex items-center mb-6">
                   <span className="text-4xl font-bold text-primary mr-4">03</span>
-                  <h3 className="text-2xl font-bold text-black">Build & Demonstrate</h3>
+                  <h3 className="text-2xl font-bold text-black">We Build and Show You How It Works</h3>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  We build your complete AI solution — tailored, branded, and production-ready. You'll see your system in action on our secure development server, complete with real data, real workflows, and real results. Unlimited revisions ensure it meets your exact requirements.
+                  We build your AI system and show you exactly how it works with real examples.
+                  Don't like something? We'll change it until you love it.
                 </p>
                 <div className="bg-accent-dark p-6 rounded-xl">
                   <h4 className="font-semibold text-black mb-4">You get:</h4>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      A fully functional, demo-ready AI system
+                      Working AI system you can test and try
                     </li>
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      Live walkthrough of features and capabilities
+                      Live demo showing real results
                     </li>
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      Unlimited revisions until you're 100% satisfied
+                      Unlimited changes until you're happy
                     </li>
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      Confidence that your investment is working
+                      Proof that your investment is working
                     </li>
                   </ul>
                 </div>
@@ -171,10 +175,11 @@ function HowWeWork() {
               <div className="bg-white rounded-2xl p-8 md:p-12">
                 <div className="flex items-center mb-6">
                   <span className="text-4xl font-bold text-primary mr-4">04</span>
-                  <h3 className="text-2xl font-bold text-black">Final Payment & Complete Ownership</h3>
+                  <h3 className="text-2xl font-bold text-black">You Pay the Rest and Own Everything</h3>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  Once you're fully satisfied with the system, you pay the remaining 50% and receive complete ownership. We deploy the system to your production environment and hand over all documentation, credentials, and support details.
+                  Love your new AI system? Pay the remaining 50% and it's yours forever.
+                  We'll set it up and show you how to use it.
                 </p>
                 <div className="bg-accent-dark p-6 rounded-xl">
                   <ul className="space-y-2 text-gray-600">
@@ -184,15 +189,15 @@ function HowWeWork() {
                     </li>
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      No hidden fees or subscriptions
+                      No monthly fees or hidden costs
                     </li>
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      Complete technical documentation
+                      Complete setup and training included
                     </li>
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      Full deployment support
+                      Full support to get you started
                     </li>
                   </ul>
                 </div>
@@ -203,25 +208,26 @@ function HowWeWork() {
               <div className="bg-white rounded-2xl p-8 md:p-12">
                 <div className="flex items-center mb-6">
                   <span className="text-4xl font-bold text-primary mr-4">05</span>
-                  <h3 className="text-2xl font-bold text-black">Ongoing Partnership & Support</h3>
+                  <h3 className="text-2xl font-bold text-black">Ongoing Support (Optional)</h3>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  After launch, we offer an optional retainer plan that keeps your system sharp, relevant, and evolving with your business. Whether it's new features, integrations, or improvements, we're here to ensure your AI investment keeps delivering ROI.
+                  Want us to keep improving your system? We offer optional monthly support
+                  to add new features and keep everything running smoothly.
                 </p>
                 <div className="bg-accent-dark p-6 rounded-xl">
-                  <h4 className="font-semibold text-black mb-4">What's included:</h4>
+                  <h4 className="font-semibold text-black mb-4">Optional support includes:</h4>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      Priority support
+                      Priority help when you need it
                     </li>
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      Regular updates and enhancements
+                      Regular updates and improvements
                     </li>
                     <li className="flex items-center">
                       <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                      Feature expansions on request
+                      New features as your business grows
                     </li>
                   </ul>
                 </div>
@@ -234,9 +240,10 @@ function HowWeWork() {
       {/* Why This Approach Works */}
       <section className="bg-white py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-black text-center mb-8">Why This Approach Works</h2>
+          <h2 className="text-3xl font-bold text-black text-center mb-8">Why This Works for You</h2>
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-12">
-            We believe in trust, transparency, and results. By sharing risk and offering unlimited revisions, we prove that your success is our priority. This is how we've built long-term partnerships with forward-thinking brands — and why we're confident we can help you win.
+            You're protected every step of the way. We only succeed when you succeed.
+            That's why our customers trust us and recommend us to others.
           </p>
         </div>
       </section>
@@ -244,12 +251,13 @@ function HowWeWork() {
       {/* CTA Section */}
       <section className="bg-primary py-20">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-white mb-8">Ready to Get Started?</h2>
+          <h2 className="text-4xl font-bold text-white mb-8">Ready to Get More Customers?</h2>
           <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
-            Let's build something extraordinary together. Book your free consultation now and discover how AI can revolutionize your business.
+            Let's talk about your business. No pressure, no sales pitch.
+            Just a real conversation about how AI can help you grow.
           </p>
           <ButtonLink to="/strategy-call">
-            Book Your Strategy Call <ChevronRight className="ml-2 h-5 w-5" />
+            Book Your Free Call <ChevronRight className="ml-2 h-5 w-5" />
           </ButtonLink>
         </div>
       </section>
