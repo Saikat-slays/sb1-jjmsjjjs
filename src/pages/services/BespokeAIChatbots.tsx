@@ -283,22 +283,22 @@ function BespokeAIChatbots() {
                   <div className="bg-accent-dark p-6 rounded-xl">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="text-center p-4 bg-white rounded-lg">
-                        <span className="font-semibold">WhatsApp</span>
+                        <span className="font-semibold text-black">WhatsApp</span>
                       </div>
                       <div className="text-center p-4 bg-white rounded-lg">
-                        <span className="font-semibold">Instagram</span>
+                        <span className="font-semibold text-black">Instagram</span>
                       </div>
                       <div className="text-center p-4 bg-white rounded-lg">
-                        <span className="font-semibold">Facebook</span>
+                        <span className="font-semibold text-black">Facebook</span>
                       </div>
                       <div className="text-center p-4 bg-white rounded-lg">
-                        <span className="font-semibold">Telegram</span>
+                        <span className="font-semibold text-black">Telegram</span>
                       </div>
                       <div className="text-center p-4 bg-white rounded-lg">
-                        <span className="font-semibold">Slack</span>
+                        <span className="font-semibold text-black">Slack</span>
                       </div>
                       <div className="text-center p-4 bg-white rounded-lg">
-                        <span className="font-semibold">Email</span>
+                        <span className="font-semibold text-black">Email</span>
                       </div>
                     </div>
                   </div>
