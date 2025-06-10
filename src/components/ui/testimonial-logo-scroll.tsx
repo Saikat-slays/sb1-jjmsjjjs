@@ -16,6 +16,10 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
       url: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg',
     },
     {
+      name: 'Apple',
+      url: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg',
+    },
+    {
       name: 'Microsoft',
       url: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg',
     },
@@ -28,6 +32,10 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
       url: 'https://upload.wikimedia.org/wikipedia/sco/2/21/Nvidia_logo.svg',
     },
     {
+      name: 'Groq',
+      isText: true
+    },
+    {
       name: 'xAI',
       isText: true
     },
@@ -37,8 +45,8 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
     },
   ];
 
-  // Create enough duplicates for seamless scrolling
-  const duplicatedLogos = [...logos, ...logos, ...logos];
+  // Create enough duplicates for seamless scrolling - more for mobile
+  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
 
   return (
     <div className={className}>
@@ -54,17 +62,17 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
         </div>
 
         {/* Gradient overlays */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-charcoal to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-charcoal to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-charcoal to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-charcoal to-transparent z-10" />
         
         {/* Scrolling container */}
         <motion.div
           className="flex whitespace-nowrap"
           animate={{
-            x: [`0%`, `-${100 / 3}%`],
+            x: [`0%`, `-${100 / 4}%`],
           }}
           transition={{
-            duration: 8,
+            duration: 15, // Slower for better mobile visibility
             repeat: Infinity,
             ease: "linear",
           }}
@@ -72,19 +80,19 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
           {duplicatedLogos.map((logo, i) => (
             <div
               key={`${logo.name}-${i}`}
-              className="mx-8 flex items-center justify-center flex-shrink-0"
-              style={{ minWidth: '160px' }}
+              className="mx-4 sm:mx-8 flex items-center justify-center flex-shrink-0"
+              style={{ minWidth: '120px' }}
             >
               {logo.isText ? (
-                // Text-based logo for xAI and DeepSeek
-                <div className="w-32 h-20 flex items-center justify-center bg-white/10 rounded-lg p-4 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-white/70 hover:text-white/100 text-lg font-bold text-center transition-colors duration-300">
+                // Text-based logo for xAI, DeepSeek, and Groq
+                <div className="w-24 sm:w-32 h-16 sm:h-20 flex items-center justify-center bg-white/10 rounded-lg p-3 sm:p-4 hover:bg-white/20 transition-all duration-300">
+                  <div className="text-white/70 hover:text-white/100 text-sm sm:text-lg font-bold text-center transition-colors duration-300">
                     {logo.name}
                   </div>
                 </div>
               ) : (
                 // Image-based logo with robust fallback
-                <div className="w-32 h-20 flex items-center justify-center bg-white/10 rounded-lg p-4 hover:bg-white/20 transition-all duration-300">
+                <div className="w-24 sm:w-32 h-16 sm:h-20 flex items-center justify-center bg-white/10 rounded-lg p-3 sm:p-4 hover:bg-white/20 transition-all duration-300">
                   <img
                     src={logo.url}
                     alt={logo.name}
@@ -96,7 +104,7 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
                       if (container) {
                         // Replace the entire container content with text
                         container.innerHTML = `
-                          <div class="text-white/70 hover:text-white/100 text-lg font-bold text-center transition-colors duration-300">
+                          <div class="text-white/70 hover:text-white/100 text-sm sm:text-lg font-bold text-center transition-colors duration-300">
                             ${logo.name}
                           </div>
                         `;
@@ -109,7 +117,7 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
                         const container = target.parentElement;
                         if (container) {
                           container.innerHTML = `
-                            <div class="text-white/70 hover:text-white/100 text-lg font-bold text-center transition-colors duration-300">
+                            <div class="text-white/70 hover:text-white/100 text-sm sm:text-lg font-bold text-center transition-colors duration-300">
                               ${logo.name}
                             </div>
                           `;
