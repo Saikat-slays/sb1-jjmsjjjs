@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { animate, inView } from 'motion';
 
 interface AnimatedCounterProps {
@@ -19,7 +19,7 @@ export function AnimatedCounter({
   decimals = 0 
 }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -36,11 +36,11 @@ export function AnimatedCounter({
       }
       
       // Then check if animation has already run
-      if (hasAnimated) {
+      if (hasAnimated.current) {
         return;
       }
       
-      setHasAnimated(true);
+      hasAnimated.current = true;
       
       const animation = animate(0, value, {
         duration,
@@ -61,7 +61,7 @@ export function AnimatedCounter({
 
     // Always return cleanup function to ensure proper disconnection
     return cleanup;
-  }, [value, prefix, suffix, duration, decimals, hasAnimated]);
+  }, [value, prefix, suffix, duration, decimals]);
 
   return (
     <span ref={ref} className={className}>
