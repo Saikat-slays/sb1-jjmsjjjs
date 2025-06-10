@@ -27,7 +27,8 @@ export function AnimatedCounter({
     const element = ref.current;
     
     const cleanup = inView(element, () => {
-      if (hasAnimated) return;
+      // Additional check to ensure element is still valid when animation starts
+      if (hasAnimated || !ref.current) return;
       
       setHasAnimated(true);
       
@@ -35,11 +36,12 @@ export function AnimatedCounter({
         duration,
         ease: [0.25, 0.46, 0.45, 0.94],
         onUpdate: (latest) => {
-          if (element) {
+          // Use ref.current instead of captured element variable
+          if (ref.current) {
             const displayValue = decimals > 0 
               ? latest.toFixed(decimals)
               : Math.round(latest).toString();
-            element.textContent = `${prefix}${displayValue}${suffix}`;
+            ref.current.textContent = `${prefix}${displayValue}${suffix}`;
           }
         }
       });
