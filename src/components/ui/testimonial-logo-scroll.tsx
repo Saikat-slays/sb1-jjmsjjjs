@@ -98,7 +98,7 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
             x: useTransform(dragX, (value) => value)
           }}
           transition={{
-            duration: 8, // Increased speed from 15 to 8 seconds
+            duration: window.innerWidth < 768 ? 4 : 8, // Faster on mobile
             repeat: Infinity,
             ease: "linear",
           }}
@@ -115,19 +115,19 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
           {duplicatedLogos.map((logo, i) => (
             <div
               key={`${logo.name}-${i}`}
-              className="mx-4 sm:mx-8 flex items-center justify-center flex-shrink-0 pointer-events-none"
-              style={{ minWidth: '120px' }}
+              className="mx-3 sm:mx-6 md:mx-8 flex items-center justify-center flex-shrink-0 pointer-events-none"
+              style={{ minWidth: window.innerWidth < 768 ? '100px' : '120px' }}
             >
               {logo.isText ? (
                 // Text-based logo for xAI, DeepSeek, and Groq
-                <div className="w-24 sm:w-32 h-16 sm:h-20 flex items-center justify-center bg-white/10 rounded-lg p-3 sm:p-4 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-white/70 hover:text-white/100 text-sm sm:text-lg font-bold text-center transition-colors duration-300">
+                <div className="w-20 sm:w-24 md:w-32 h-12 sm:h-16 md:h-20 flex items-center justify-center bg-white/10 rounded-lg p-2 sm:p-3 md:p-4 hover:bg-white/20 transition-all duration-300">
+                  <div className="text-white/70 hover:text-white/100 text-xs sm:text-sm md:text-lg font-bold text-center transition-colors duration-300">
                     {logo.name}
                   </div>
                 </div>
               ) : (
                 // Image-based logo with robust fallback
-                <div className="w-24 sm:w-32 h-16 sm:h-20 flex items-center justify-center bg-white/10 rounded-lg p-3 sm:p-4 hover:bg-white/20 transition-all duration-300">
+                <div className="w-20 sm:w-24 md:w-32 h-12 sm:h-16 md:h-20 flex items-center justify-center bg-white/10 rounded-lg p-2 sm:p-3 md:p-4 hover:bg-white/20 transition-all duration-300">
                   <img
                     src={logo.url}
                     alt={logo.name}
@@ -139,7 +139,7 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
                       if (container) {
                         // Replace the entire container content with text
                         container.innerHTML = `
-                          <div class="text-white/70 hover:text-white/100 text-sm sm:text-lg font-bold text-center transition-colors duration-300">
+                          <div class="text-white/70 hover:text-white/100 text-xs sm:text-sm md:text-lg font-bold text-center transition-colors duration-300">
                             ${logo.name}
                           </div>
                         `;
@@ -152,7 +152,7 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
                         const container = target.parentElement;
                         if (container) {
                           container.innerHTML = `
-                            <div class="text-white/70 hover:text-white/100 text-sm sm:text-lg font-bold text-center transition-colors duration-300">
+                            <div class="text-white/70 hover:text-white/100 text-xs sm:text-sm md:text-lg font-bold text-center transition-colors duration-300">
                               ${logo.name}
                             </div>
                           `;
