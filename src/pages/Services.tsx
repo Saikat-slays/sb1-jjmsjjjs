@@ -16,38 +16,38 @@ function Services() {
   const services = [
     {
       Icon: Bot,
-      title: "Bespoke AI Chatbots",
-      description: "Built for nuance, not scripts. Includes live-agent handoff and real-time dashboards.",
+      title: "Never Miss Another Lead",
+      description: "AI chatbots that capture leads 24/7, even when you're sleeping. No more lost customers.",
       link: "/services/bespoke-ai-chatbots"
     },
     {
       Icon: Phone,
-      title: "AI Voice Agents",
-      description: "Autonomous outbound calls, follow-ups, booking confirmations—on autopilot.",
+      title: "Make 500 Calls While You Have Coffee",
+      description: "AI voice agents that call prospects, book appointments, and follow up automatically.",
       link: "/services/ai-voice-agents"
     },
     {
       Icon: LineChart,
-      title: "Lead Generation Systems",
-      description: "Custom funnels that qualify, tag, and route prospects without human drag.",
+      title: "Turn Website Visitors Into Paying Customers",
+      description: "Smart systems that identify hot prospects and guide them to buy from you.",
       link: "/services/lead-generation-systems"
     },
     {
       Icon: MessageSquare,
-      title: "Mass Personalized Outreach",
-      description: "Email, WhatsApp, SMS, LinkedIn—dialed to your exact customer persona.",
+      title: "Send 1000 Personal Messages in Minutes",
+      description: "Reach more prospects with messages that feel personal, without the manual work.",
       link: "/services/personalized-outreach"
     },
     {
       Icon: Share2,
-      title: "AI Social Media Management",
-      description: "Content creation, publishing, responses, and optimization done automatically.",
+      title: "Post on Social Media Without Lifting a Finger",
+      description: "AI creates and posts content that gets engagement while you focus on your business.",
       link: "/services/social-media-management"
     },
     {
       Icon: Layout,
-      title: "Automation Infrastructure",
-      description: "Full-stack systems that connect your digital operations to real-world execution.",
+      title: "Stop Doing Repetitive Tasks",
+      description: "Automate the boring stuff so you can focus on growing your business and making money.",
       link: "/services/automation-infrastructure"
     }
   ];
@@ -58,14 +58,14 @@ function Services() {
       <section className="bg-white py-20">
         <div className="container mx-auto px-6">
           <TypewriterHeading
-            text="Engineered Intelligence. Built for Your Business."
+            text="Get More Customers Without Working More Hours"
             className="text-4xl md:text-5xl font-bold text-black text-center mb-8"
           />
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-8">
-            We don't sell features. We craft automated systems that grow your business while you sleep.
+            We build AI systems that do the work you don't have time for.
           </p>
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto">
-            Each solution is custom-built, grounded in your workflow, and designed for performance at scale.
+            More leads, more customers, less manual work. Built specifically for your business.
           </p>
         </div>
       </section>
@@ -73,7 +73,7 @@ function Services() {
       {/* Core Solutions */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-white text-center mb-16">Our Core Solutions</h2>
+          <h2 className="text-4xl font-bold text-white text-center mb-16">How We Help Your Business</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -104,15 +104,14 @@ function Services() {
       <section className="bg-primary py-20">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-white mb-8">
-            We Don't Sell Products. We Build Competitive Advantages.
+            Ready to Stop Losing Customers?
           </h2>
           <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
-            Every system is handcrafted. Every result is measurable.
-            And it all starts with a 1-on-1 strategy call where we design the blueprint 
-            to automate and scale your unique operation.
+            Let's talk about your business and show you exactly how AI can help you get more customers
+            without working more hours.
           </p>
           <ButtonLink to="/strategy-call">
-            Book Your Strategy Call Now <ChevronRight className="ml-2 h-5 w-5" />
+            Book Your Free Call Now <ChevronRight className="ml-2 h-5 w-5" />
           </ButtonLink>
         </div>
       </section>
