@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Bot, LineChart, MessageSquare, Rocket, Shield, Users, ChevronRight, Zap } from 'lucide-react';
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { ServiceCard } from '@/components/ui/service-card';
-import { TypewriterHeading } from '@/components/ui/typewriter-heading';
+import { CyclingTypewriter } from '@/components/ui/cycling-typewriter';
 import { MagneticButton } from '@/components/ui/magnetic-button';
 import { StatsCard } from '@/components/ui/stats-card';
 import { TestimonialLogoScroll } from '@/components/ui/testimonial-logo-scroll';
@@ -61,9 +61,8 @@ function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-primary">
         <div className="container mx-auto px-6 pt-20 pb-24 text-center">
-          <TypewriterHeading 
-            text="Never Miss a Lead Again"
-            className="text-5xl md:text-7xl font-bold text-white mb-4"
+          <CyclingTypewriter 
+            className="text-5xl md:text-7xl font-bold text-white mb-4 min-h-[120px] md:min-h-[160px] flex items-center justify-center"
           />
           <p className="text-2xl text-white/80 mb-8">
             We build AI systems that work 24/7 to grow your business while you sleep.
