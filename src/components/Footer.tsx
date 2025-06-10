@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Zap } from 'lucide-react';
+import { Zap, Facebook, Instagram, Twitter } from 'lucide-react';
 
 function Footer() {
   return (
@@ -17,9 +17,39 @@ function Footer() {
               <Zap className="h-6 w-6 text-white" />
               <span className="ml-2 text-xl text-white">ThynkNext</span>
             </Link>
-            <p className="text-sm">
+            <p className="text-sm mb-6">
               Crafting bespoke AI automation solutions for business growth.
             </p>
+            {/* Social Media Links */}
+            <div className="flex space-x-4">
+              <a 
+                href="https://www.facebook.com/profile.php?id=61576841385912"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+                aria-label="Follow us on Facebook"
+              >
+                <Facebook className="h-5 w-5 text-white" />
+              </a>
+              <a 
+                href="https://www.instagram.com/thynk_next/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="h-5 w-5 text-white" />
+              </a>
+              <a 
+                href="https://x.com/Thynk_Next"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+                aria-label="Follow us on X (Twitter)"
+              >
+                <Twitter className="h-5 w-5 text-white" />
+              </a>
+            </div>
           </div>
           <div>
             <h3 className="text-white mb-4 font-semibold">Solutions</h3>
