@@ -25,10 +25,12 @@ function Footer() {
             <h3 className="text-white mb-4 font-semibold">Solutions</h3>
             <ul className="space-y-3">
               {[
-                ['AI Chatbots', '/services'],
-                ['Lead Generation', '/services'],
-                ['Personalized Outreach', '/services'],
-                ['Custom Development', '/services']
+                ['Bespoke AI Chatbots', '/services/bespoke-ai-chatbots'],
+                ['AI Voice Agents', '/services/ai-voice-agents'],
+                ['Lead Generation Systems', '/services/lead-generation-systems'],
+                ['Personalized Outreach', '/services/personalized-outreach'],
+                ['Social Media Management', '/services/social-media-management'],
+                ['Automation Infrastructure', '/services/automation-infrastructure']
               ].map(([label, path]) => (
                 <li key={label}>
                   <Link 
