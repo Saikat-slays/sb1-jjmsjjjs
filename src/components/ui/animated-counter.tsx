@@ -49,7 +49,8 @@ export function AnimatedCounter({
       return () => animation.stop();
     }, { margin: '-10% 0px' });
 
-    return () => cleanup();
+    // Always return cleanup function to ensure proper disconnection
+    return cleanup;
   }, [value, prefix, suffix, duration, decimals, hasAnimated]);
 
   return (
