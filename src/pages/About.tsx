@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, Target, Globe, Code, Users } from 'lucide-react';
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { TypewriterHeading } from '@/components/ui/typewriter-heading';
-import { NeuralNetwork } from '@/components/ui/neural-network';
-import { AnimatedGradientBorder } from '@/components/ui/animated-gradient-border';
 
 function About() {
   const ButtonLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
@@ -64,12 +62,17 @@ function About() {
                 </div>
               </div>
             </div>
-            <div className="relative h-[500px] w-full">
-              <AnimatedGradientBorder className="absolute inset-0">
-                <div className="w-full h-full bg-charcoal/50 backdrop-blur-sm rounded-lg p-4">
-                  <NeuralNetwork />
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+              <div className="text-center">
+                <div className="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Code className="h-16 w-16 text-primary" />
                 </div>
-              </AnimatedGradientBorder>
+                <h3 className="text-2xl font-bold text-white mb-4">Bespoke AI Infrastructure</h3>
+                <p className="text-white/70">
+                  Every system we build is handcrafted, proprietary, and engineered from the ground up 
+                  for your specific business model and growth objectives.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -84,7 +87,7 @@ function About() {
               <div className="bg-white/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Target className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">Bespoke &gt; Prebuilt</h3>
+              <h3 className="text-xl font-bold text-white mb-4">Bespoke > Prebuilt</h3>
               <p className="text-white/70">
                 Every solution is built from the ground up. You won't find templates here.
               </p>
@@ -93,7 +96,7 @@ function About() {
               <div className="bg-white/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">Precision &gt; Hype</h3>
+              <h3 className="text-xl font-bold text-white mb-4">Precision > Hype</h3>
               <p className="text-white/70">
                 We focus on outputs that move the needle. That means measurable results—not fluff dashboards.
               </p>
@@ -102,7 +105,7 @@ function About() {
               <div className="bg-white/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Globe className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">Partnership &gt; Transaction</h3>
+              <h3 className="text-xl font-bold text-white mb-4">Partnership > Transaction</h3>
               <p className="text-white/70">
                 We're not a vendor. We're your AI engineering partner. And we only work with companies ready to move.
               </p>
@@ -111,7 +114,7 @@ function About() {
               <div className="bg-white/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Code className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">Performance &gt; Promises</h3>
+              <h3 className="text-xl font-bold text-white mb-4">Performance > Promises</h3>
               <p className="text-white/70">
                 No buzzwords. No recycled strategies. Just custom-built systems that produce.
               </p>
