@@ -18,16 +18,16 @@ export function CyclingTypewriter({ className = '' }: CyclingTypewriterProps) {
   ];
 
   useEffect(() => {
-    // Calculate timing: typing + pause + deleting + small buffer
+    // Calculate timing for complete word-by-word deletion:
     // Typing: ~55ms per char * avg 40 chars = ~2200ms
     // Pause: 2200ms
-    // Deleting: ~33ms per char * avg 40 chars = ~1320ms
+    // Word-by-word deletion: ~300ms per word * avg 8 words = ~2400ms
     // Buffer: 500ms
-    // Total: ~6220ms per cycle
+    // Total: ~7300ms per cycle
     const timer = setTimeout(() => {
       setCurrentIndex((prev) => (prev + 1) % headlines.length);
       setKey(prev => prev + 1); // Force re-render of typewriter
-    }, 6500); // Slightly longer to ensure complete cycle
+    }, 7500); // Extended to accommodate word-by-word deletion
 
     return () => clearTimeout(timer);
   }, [currentIndex, headlines.length]);
@@ -36,18 +36,35 @@ export function CyclingTypewriter({ className = '' }: CyclingTypewriterProps) {
     <h1 className={className} key={key}>
       <Typewriter
         onInit={(typewriter) => {
+          const currentText = headlines[currentIndex];
+          const words = currentText.split(' ');
+          
+          // Type the full sentence
           typewriter
-            .changeDelay(55) // 10% slower than 50ms (was 50, now 55)
-            .changeDeleteSpeed(33) // 10% slower than 30ms (was 30, now 33)
-            .typeString(headlines[currentIndex])
-            .pauseFor(2200) // Slightly longer pause
-            .deleteAll()
-            .start();
+            .changeDelay(55) // 10% slower typing
+            .typeString(currentText)
+            .pauseFor(2200); // Pause to read
+          
+          // Delete word by word (backwards)
+          for (let i = words.length - 1; i >= 0; i--) {
+            const textUpToWord = words.slice(0, i).join(' ');
+            if (textUpToWord.length > 0) {
+              typewriter
+                .deleteChars(words[i].length + (i < words.length - 1 ? 1 : 0)) // +1 for space
+                .pauseFor(200); // Small pause between word deletions
+            } else {
+              // Delete the last word completely
+              typewriter.deleteChars(words[i].length);
+            }
+          }
+          
+          typewriter.start();
         }}
         options={{
           loop: false,
           cursor: '_',
           autoStart: true,
+          deleteSpeed: 33, // 10% slower deletion speed
         }}
       />
     </h1>
