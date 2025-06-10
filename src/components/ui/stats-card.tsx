@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnimatedNumber } from './animated-number';
+import { AnimatedCounter } from './animated-counter';
 import { AnimatedGradientBorder } from './animated-gradient-border';
 
 interface StatsCardProps {
@@ -7,17 +7,19 @@ interface StatsCardProps {
   label: string;
   prefix?: string;
   suffix?: string;
+  decimals?: number;
 }
 
-export function StatsCard({ value, label, prefix, suffix }: StatsCardProps) {
+export function StatsCard({ value, label, prefix, suffix, decimals }: StatsCardProps) {
   return (
     <AnimatedGradientBorder>
       <div className="bg-charcoal p-6 rounded-lg text-center">
-        <AnimatedNumber
+        <AnimatedCounter
           value={value}
           prefix={prefix}
           suffix={suffix}
-          className="text-4xl font-bold text-white mb-2"
+          decimals={decimals}
+          className="text-4xl font-bold text-white mb-2 block"
         />
         <p className="text-white/70">{label}</p>
       </div>

@@ -5,6 +5,7 @@ import { RainbowButton } from "@/components/ui/rainbow-button";
 import { TypewriterHeading } from '@/components/ui/typewriter-heading';
 import { FadeIn } from '@/components/ui/fade-in';
 import { ServiceCard } from '@/components/ui/service-card';
+import { AnimatedCounter } from '@/components/ui/animated-counter';
 
 function SocialMediaManagement() {
   const ButtonLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
@@ -166,7 +167,7 @@ function SocialMediaManagement() {
                     </li>
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
-                      <span>Hiring social media managers costs $50K+ annually</span>
+                      <span>Hiring social media managers costs $<AnimatedCounter value={50} className="font-bold" />K+ annually</span>
                     </li>
                   </ul>
                 </div>
@@ -413,26 +414,34 @@ function SocialMediaManagement() {
               <div className="bg-accent-dark p-8 rounded-2xl">
                 <div className="grid md:grid-cols-4 gap-8 mb-8">
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">2.4M</div>
+                    <div className="text-4xl font-bold text-primary mb-2">
+                      <AnimatedCounter value={2.4} decimals={1} />M
+                    </div>
                     <div className="text-gray-600">Total Reach</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">156K</div>
+                    <div className="text-4xl font-bold text-primary mb-2">
+                      <AnimatedCounter value={156} />K
+                    </div>
                     <div className="text-gray-600">Engagements</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">8.7%</div>
+                    <div className="text-4xl font-bold text-primary mb-2">
+                      <AnimatedCounter value={8.7} decimals={1} />%
+                    </div>
                     <div className="text-gray-600">Engagement Rate</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">847</div>
+                    <div className="text-4xl font-bold text-primary mb-2">
+                      <AnimatedCounter value={847} />
+                    </div>
                     <div className="text-gray-600">New Followers</div>
                   </div>
                 </div>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="bg-white p-4 rounded-lg">
                     <h4 className="font-semibold text-black mb-2">Top Performing Content</h4>
-                    <p className="text-gray-600 text-sm">Educational posts drive 40% more engagement</p>
+                    <p className="text-gray-600 text-sm">Educational posts drive <AnimatedCounter value={40} suffix="%" className="font-bold" /> more engagement</p>
                   </div>
                   <div className="bg-white p-4 rounded-lg">
                     <h4 className="font-semibold text-black mb-2">Best Posting Times</h4>
@@ -440,7 +449,7 @@ function SocialMediaManagement() {
                   </div>
                   <div className="bg-white p-4 rounded-lg">
                     <h4 className="font-semibold text-black mb-2">Audience Growth</h4>
-                    <p className="text-gray-600 text-sm">25% month-over-month follower increase</p>
+                    <p className="text-gray-600 text-sm"><AnimatedCounter value={25} suffix="%" className="font-bold" /> month-over-month follower increase</p>
                   </div>
                 </div>
               </div>

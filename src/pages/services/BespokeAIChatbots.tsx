@@ -5,6 +5,7 @@ import { RainbowButton } from "@/components/ui/rainbow-button";
 import { TypewriterHeading } from '@/components/ui/typewriter-heading';
 import { FadeIn } from '@/components/ui/fade-in';
 import { ServiceCard } from '@/components/ui/service-card';
+import { AnimatedCounter } from '@/components/ui/animated-counter';
 
 function BespokeAIChatbots() {
   const ButtonLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
@@ -110,7 +111,7 @@ function BespokeAIChatbots() {
                   <ul className="space-y-4">
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
-                      <span>97% of website visitors leave without taking action</span>
+                      <span><AnimatedCounter value={97} suffix="%" className="font-bold" /> of website visitors leave without taking action</span>
                     </li>
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
@@ -118,11 +119,11 @@ function BespokeAIChatbots() {
                     </li>
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
-                      <span>Your team spends 60% of time answering the same basic questions</span>
+                      <span>Your team spends <AnimatedCounter value={60} suffix="%" className="font-bold" /> of time answering the same basic questions</span>
                     </li>
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
-                      <span>International visitors convert at 50% lower rates due to time zones</span>
+                      <span>International visitors convert at <AnimatedCounter value={50} suffix="%" className="font-bold" /> lower rates due to time zones</span>
                     </li>
                   </ul>
                 </div>

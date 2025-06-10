@@ -5,6 +5,7 @@ import { RainbowButton } from "@/components/ui/rainbow-button";
 import { TypewriterHeading } from '@/components/ui/typewriter-heading';
 import { FadeIn } from '@/components/ui/fade-in';
 import { ServiceCard } from '@/components/ui/service-card';
+import { AnimatedCounter } from '@/components/ui/animated-counter';
 
 function AIVoiceAgents() {
   const ButtonLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
@@ -111,11 +112,11 @@ function AIVoiceAgents() {
                   <ul className="space-y-4">
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
-                      <span>Your team can only call 20-30 prospects per day</span>
+                      <span>Your team can only call <AnimatedCounter value={20} className="font-bold" />-<AnimatedCounter value={30} className="font-bold" /> prospects per day</span>
                     </li>
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
-                      <span>80% of calls go to voicemail with no follow-up</span>
+                      <span><AnimatedCounter value={80} suffix="%" className="font-bold" /> of calls go to voicemail with no follow-up</span>
                     </li>
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
@@ -127,7 +128,7 @@ function AIVoiceAgents() {
                     </li>
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
-                      <span>Hiring and training new sales reps costs $75K+ each</span>
+                      <span>Hiring and training new sales reps costs $<AnimatedCounter value={75} className="font-bold" />K+ each</span>
                     </li>
                   </ul>
                 </div>
@@ -138,7 +139,7 @@ function AIVoiceAgents() {
                   <ul className="space-y-4">
                     <li className="flex items-start text-green-600">
                       <span className="text-green-500 mr-3 mt-1">✅</span>
-                      <span>500+ personalized calls per day, per agent</span>
+                      <span><AnimatedCounter value={500} className="font-bold" />+ personalized calls per day, per agent</span>
                     </li>
                     <li className="flex items-start text-green-600">
                       <span className="text-green-500 mr-3 mt-1">✅</span>
@@ -280,7 +281,7 @@ function AIVoiceAgents() {
                       <Users className="h-6 w-6 text-primary mt-1 mr-3" />
                       <div>
                         <span className="font-semibold">Multi-language Support</span>
-                        <p className="text-gray-600">Communicate in 50+ languages fluently</p>
+                        <p className="text-gray-600">Communicate in <AnimatedCounter value={50} className="font-bold" />+ languages fluently</p>
                       </div>
                     </li>
                   </ul>
@@ -330,22 +331,28 @@ function AIVoiceAgents() {
               <div className="bg-white p-8 rounded-2xl">
                 <div className="grid md:grid-cols-3 gap-8 text-center">
                   <div>
-                    <div className="text-4xl font-bold text-primary mb-2">500</div>
+                    <div className="text-4xl font-bold text-primary mb-2">
+                      <AnimatedCounter value={500} />
+                    </div>
                     <div className="text-gray-600">Calls per day</div>
                   </div>
                   <div>
-                    <div className="text-4xl font-bold text-primary mb-2">15%</div>
+                    <div className="text-4xl font-bold text-primary mb-2">
+                      <AnimatedCounter value={15} suffix="%" />
+                    </div>
                     <div className="text-gray-600">Conversion rate</div>
                   </div>
                   <div>
-                    <div className="text-4xl font-bold text-primary mb-2">75</div>
+                    <div className="text-4xl font-bold text-primary mb-2">
+                      <AnimatedCounter value={75} />
+                    </div>
                     <div className="text-gray-600">New leads daily</div>
                   </div>
                 </div>
                 <div className="mt-8 p-6 bg-accent-dark rounded-xl">
                   <p className="text-lg text-gray-700">
                     <span className="font-bold">Conservative estimate:</span> If each lead is worth $500, 
-                    that's <span className="text-primary font-bold">$37,500 in new revenue per day</span>
+                    that's <span className="text-primary font-bold">$<AnimatedCounter value={37500} className="font-bold" /> in new revenue per day</span>
                   </p>
                 </div>
               </div>

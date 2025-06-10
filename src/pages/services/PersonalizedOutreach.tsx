@@ -5,6 +5,7 @@ import { RainbowButton } from "@/components/ui/rainbow-button";
 import { TypewriterHeading } from '@/components/ui/typewriter-heading';
 import { FadeIn } from '@/components/ui/fade-in';
 import { ServiceCard } from '@/components/ui/service-card';
+import { AnimatedCounter } from '@/components/ui/animated-counter';
 
 function PersonalizedOutreach() {
   const ButtonLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
@@ -146,7 +147,7 @@ function PersonalizedOutreach() {
                     </li>
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
-                      <span>Your team spends 80% of time on manual research</span>
+                      <span>Your team spends <AnimatedCounter value={80} suffix="%" className="font-bold" /> of time on manual research</span>
                     </li>
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
@@ -368,11 +369,11 @@ function PersonalizedOutreach() {
                       </div>
                       <div className="border-l-4 border-primary pl-4">
                         <h4 className="font-semibold text-black">Value Proposition</h4>
-                        <p className="text-gray-600">"We helped [Similar Company] reduce [Specific Pain Point] by 40%..."</p>
+                        <p className="text-gray-600">"We helped [Similar Company] reduce [Specific Pain Point] by <AnimatedCounter value={40} suffix="%" className="font-bold" />..."</p>
                       </div>
                       <div className="border-l-4 border-primary pl-4">
                         <h4 className="font-semibold text-black">Call to Action</h4>
-                        <p className="text-gray-600">"Would you be open to a 15-minute call next Tuesday?"</p>
+                        <p className="text-gray-600">"Would you be open to a <AnimatedCounter value={15} className="font-bold" />-minute call next Tuesday?"</p>
                       </div>
                     </div>
                   </div>
@@ -401,7 +402,7 @@ function PersonalizedOutreach() {
                 <div className="bg-accent-dark p-6 rounded-xl">
                   <Mail className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="font-bold text-black mb-2">Email Deliverability</h3>
-                  <p className="text-gray-600">95%+ inbox placement with proper authentication and reputation management</p>
+                  <p className="text-gray-600"><AnimatedCounter value={95} suffix="%" className="font-bold" />+ inbox placement with proper authentication and reputation management</p>
                 </div>
               </FadeIn>
               <FadeIn>

@@ -5,6 +5,7 @@ import { RainbowButton } from "@/components/ui/rainbow-button";
 import { TypewriterHeading } from '@/components/ui/typewriter-heading';
 import { FadeIn } from '@/components/ui/fade-in';
 import { ServiceCard } from '@/components/ui/service-card';
+import { AnimatedCounter } from '@/components/ui/animated-counter';
 
 function AutomationInfrastructure() {
   const ButtonLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
@@ -150,11 +151,11 @@ function AutomationInfrastructure() {
                   <ul className="space-y-4">
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
-                      <span>Data trapped in silos across 20+ different tools</span>
+                      <span>Data trapped in silos across <AnimatedCounter value={20} className="font-bold" />+ different tools</span>
                     </li>
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
-                      <span>Manual processes eating 60% of your team's time</span>
+                      <span>Manual processes eating <AnimatedCounter value={60} suffix="%" className="font-bold" /> of your team's time</span>
                     </li>
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
@@ -379,7 +380,7 @@ function AutomationInfrastructure() {
                     </div>
                     <div className="bg-white p-4 rounded-lg">
                       <h4 className="font-semibold text-black mb-2">Fault Tolerance</h4>
-                      <p className="text-gray-600">99.9% uptime with automatic failover</p>
+                      <p className="text-gray-600"><AnimatedCounter value={99.9} decimals={1} />% uptime with automatic failover</p>
                     </div>
                     <div className="bg-white p-4 rounded-lg">
                       <h4 className="font-semibold text-black mb-2">Monitoring & Alerts</h4>
@@ -462,22 +463,28 @@ function AutomationInfrastructure() {
               <div className="bg-white p-8 rounded-2xl">
                 <div className="grid md:grid-cols-3 gap-8 mb-8">
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">40</div>
+                    <div className="text-4xl font-bold text-primary mb-2">
+                      <AnimatedCounter value={40} />
+                    </div>
                     <div className="text-gray-600">Hours saved per week</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">$150K</div>
+                    <div className="text-4xl font-bold text-primary mb-2">
+                      $<AnimatedCounter value={150} />K
+                    </div>
                     <div className="text-gray-600">Annual cost savings</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">300%</div>
+                    <div className="text-4xl font-bold text-primary mb-2">
+                      <AnimatedCounter value={300} />%
+                    </div>
                     <div className="text-gray-600">Efficiency increase</div>
                   </div>
                 </div>
                 <div className="bg-accent-dark p-6 rounded-xl">
                   <p className="text-lg text-gray-700">
                     <span className="font-bold">Conservative estimate:</span> Most businesses see 
-                    <span className="text-primary font-bold"> 5x ROI within the first year</span> from 
+                    <span className="text-primary font-bold"> <AnimatedCounter value={5} />x ROI within the first year</span> from 
                     automation infrastructure implementation.
                   </p>
                 </div>
