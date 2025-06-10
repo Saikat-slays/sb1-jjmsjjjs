@@ -22,7 +22,7 @@ export function AnimatedCounter({
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (!ref.current || hasAnimated) return;
+    if (!ref.current) return;
 
     const element = ref.current;
     
@@ -30,8 +30,15 @@ export function AnimatedCounter({
     if (!element.isConnected) return;
     
     const cleanup = inView(element, () => {
-      // Additional check to ensure element is still valid and connected when animation starts
-      if (hasAnimated || !ref.current || !ref.current.isConnected) return;
+      // First check if element is still valid and connected
+      if (!ref.current || !ref.current.isConnected) {
+        return;
+      }
+      
+      // Then check if animation has already run
+      if (hasAnimated) {
+        return;
+      }
       
       setHasAnimated(true);
       
@@ -54,7 +61,7 @@ export function AnimatedCounter({
 
     // Always return cleanup function to ensure proper disconnection
     return cleanup;
-  }, [value, prefix, suffix, duration, decimals]);
+  }, [value, prefix, suffix, duration, decimals, hasAnimated]);
 
   return (
     <span ref={ref} className={className}>
