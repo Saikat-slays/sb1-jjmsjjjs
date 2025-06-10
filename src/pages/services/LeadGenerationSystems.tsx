@@ -5,7 +5,6 @@ import { RainbowButton } from "@/components/ui/rainbow-button";
 import { TypewriterHeading } from '@/components/ui/typewriter-heading';
 import { FadeIn } from '@/components/ui/fade-in';
 import { ServiceCard } from '@/components/ui/service-card';
-import { AnimatedCounter } from '@/components/ui/animated-counter';
 
 function LeadGenerationSystems() {
   const ButtonLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
@@ -145,7 +144,7 @@ function LeadGenerationSystems() {
                   <ul className="space-y-4">
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
-                      <span><AnimatedCounter value={98} suffix="%" className="font-bold" /> of website visitors leave without converting</span>
+                      <span>98% of website visitors leave without converting</span>
                     </li>
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
@@ -329,7 +328,7 @@ function LeadGenerationSystems() {
                       <Users className="h-6 w-6 text-primary mt-1 mr-3" />
                       <div>
                         <span className="font-semibold text-white">Lead Scoring Algorithm</span>
-                        <p className="text-white/70">AI-powered scoring based on <AnimatedCounter value={50} className="font-bold" />+ data points</p>
+                        <p className="text-white/70">AI-powered scoring based on 50+ data points</p>
                       </div>
                     </li>
                     <li className="flex items-start">
@@ -348,27 +347,19 @@ function LeadGenerationSystems() {
                   <div className="bg-white p-6 rounded-xl">
                     <div className="grid grid-cols-2 gap-4 mb-6">
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-primary">
-                          <AnimatedCounter value={2847} />
-                        </div>
+                        <div className="text-3xl font-bold text-primary">2,847</div>
                         <div className="text-gray-600">Leads This Month</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-primary">
-                          <AnimatedCounter value={34} suffix="%" />
-                        </div>
+                        <div className="text-3xl font-bold text-primary">34%</div>
                         <div className="text-gray-600">Conversion Rate</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-primary">
-                          $<AnimatedCounter value={127} />
-                        </div>
+                        <div className="text-3xl font-bold text-primary">$127</div>
                         <div className="text-gray-600">Cost Per Lead</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-primary">
-                          <AnimatedCounter value={4.2} decimals={1} />x
-                        </div>
+                        <div className="text-3xl font-bold text-primary">4.2x</div>
                         <div className="text-gray-600">ROI</div>
                       </div>
                     </div>
