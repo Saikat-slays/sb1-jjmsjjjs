@@ -12,6 +12,14 @@ import HowWeWork from './pages/HowWeWork';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
+// Import service pages
+import BespokeAIChatbots from './pages/services/BespokeAIChatbots';
+import AIVoiceAgents from './pages/services/AIVoiceAgents';
+import LeadGenerationSystems from './pages/services/LeadGenerationSystems';
+import PersonalizedOutreach from './pages/services/PersonalizedOutreach';
+import SocialMediaManagement from './pages/services/SocialMediaManagement';
+import AutomationInfrastructure from './pages/services/AutomationInfrastructure';
+
 function ScrollToTop() {
   const location = useLocation();
   
@@ -38,6 +46,14 @@ function App() {
               <Route path="/how-we-work" element={<HowWeWork />} />
               <Route path="/terms" element={<TermsOfService />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
+              
+              {/* Service Pages */}
+              <Route path="/services/bespoke-ai-chatbots" element={<BespokeAIChatbots />} />
+              <Route path="/services/ai-voice-agents" element={<AIVoiceAgents />} />
+              <Route path="/services/lead-generation-systems" element={<LeadGenerationSystems />} />
+              <Route path="/services/personalized-outreach" element={<PersonalizedOutreach />} />
+              <Route path="/services/social-media-management" element={<SocialMediaManagement />} />
+              <Route path="/services/automation-infrastructure" element={<AutomationInfrastructure />} />
             </Routes>
           </main>
           <Footer />

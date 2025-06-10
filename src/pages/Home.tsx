@@ -21,32 +21,38 @@ function Home() {
     {
       Icon: Bot,
       title: "Bespoke AI Chatbots",
-      description: "Built for nuance, not scripts. Includes live-agent handoff and real-time dashboards."
+      description: "Built for nuance, not scripts. Includes live-agent handoff and real-time dashboards.",
+      link: "/services/bespoke-ai-chatbots"
     },
     {
       Icon: Zap,
       title: "AI Voice Agents",
-      description: "Autonomous outbound calls, follow-ups, booking confirmations—on autopilot."
+      description: "Autonomous outbound calls, follow-ups, booking confirmations—on autopilot.",
+      link: "/services/ai-voice-agents"
     },
     {
       Icon: LineChart,
       title: "Lead Generation Systems",
-      description: "Custom funnels that qualify, tag, and route prospects without human drag."
+      description: "Custom funnels that qualify, tag, and route prospects without human drag.",
+      link: "/services/lead-generation-systems"
     },
     {
       Icon: MessageSquare,
       title: "Mass Personalized Outreach",
-      description: "Email, WhatsApp, SMS, LinkedIn—dialed to your exact customer persona."
+      description: "Email, WhatsApp, SMS, LinkedIn—dialed to your exact customer persona.",
+      link: "/services/personalized-outreach"
     },
     {
       Icon: Users,
       title: "AI Social Media Managers",
-      description: "Content creation, publishing, responses, and optimization done automatically."
+      description: "Content creation, publishing, responses, and optimization done automatically.",
+      link: "/services/social-media-management"
     },
     {
       Icon: Shield,
       title: "Automation Infrastructure",
-      description: "Full-stack systems that connect your digital operations to real-world execution."
+      description: "Full-stack systems that connect your digital operations to real-world execution.",
+      link: "/services/automation-infrastructure"
     }
   ];
 
@@ -109,7 +115,15 @@ function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
+              <Link key={index} to={service.link} className="block group">
+                <div className="group-hover:scale-105 transition-transform duration-300">
+                  <ServiceCard 
+                    Icon={service.Icon}
+                    title={service.title}
+                    description={service.description}
+                  />
+                </div>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-12">
