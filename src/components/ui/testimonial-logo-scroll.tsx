@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, useMotionValue, useTransform, PanInfo } from 'framer-motion';
 
 interface TestimonialLogoScrollProps {
@@ -8,8 +8,20 @@ interface TestimonialLogoScrollProps {
 export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const dragX = useMotionValue(0);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Check if mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const logos = [
     {
@@ -70,6 +82,17 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
     dragX.set(dragX.get() + info.delta.x);
   };
 
+  // Calculate animation distance based on screen size
+  const getAnimationDistance = () => {
+    if (isMobile) {
+      // On mobile, move by the width of one complete set of logos
+      return `-${100 / 4}%`; // Since we have 4 sets, move by 25%
+    } else {
+      // On desktop, use the original calculation
+      return `-${100 / 4}%`;
+    }
+  };
+
   return (
     <div className={className}>
       <div className="relative w-full overflow-hidden bg-charcoal py-16">
@@ -84,21 +107,21 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
         </div>
 
         {/* Gradient overlays */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-charcoal to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-charcoal to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 md:w-32 bg-gradient-to-r from-charcoal to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 md:w-32 bg-gradient-to-l from-charcoal to-transparent z-10 pointer-events-none" />
         
         {/* Scrolling container */}
         <motion.div
           ref={containerRef}
           className="flex whitespace-nowrap cursor-grab active:cursor-grabbing"
           animate={!isHovered && !isDragging ? {
-            x: [`0%`, `-${100 / 4}%`],
+            x: [`0%`, getAnimationDistance()],
           } : {}}
           style={{
             x: useTransform(dragX, (value) => value)
           }}
           transition={{
-            duration: window.innerWidth < 768 ? 4 : 8, // Faster on mobile
+            duration: isMobile ? 6 : 8, // Faster on mobile
             repeat: Infinity,
             ease: "linear",
           }}
@@ -115,19 +138,19 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
           {duplicatedLogos.map((logo, i) => (
             <div
               key={`${logo.name}-${i}`}
-              className="mx-3 sm:mx-6 md:mx-8 flex items-center justify-center flex-shrink-0 pointer-events-none"
-              style={{ minWidth: window.innerWidth < 768 ? '100px' : '120px' }}
+              className="mx-2 sm:mx-4 md:mx-6 lg:mx-8 flex items-center justify-center flex-shrink-0 pointer-events-none"
+              style={{ minWidth: isMobile ? '80px' : '120px' }}
             >
               {logo.isText ? (
                 // Text-based logo for xAI, DeepSeek, and Groq
-                <div className="w-20 sm:w-24 md:w-32 h-12 sm:h-16 md:h-20 flex items-center justify-center bg-white/10 rounded-lg p-2 sm:p-3 md:p-4 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-white/70 hover:text-white/100 text-xs sm:text-sm md:text-lg font-bold text-center transition-colors duration-300">
+                <div className="w-16 sm:w-20 md:w-24 lg:w-32 h-10 sm:h-12 md:h-16 lg:h-20 flex items-center justify-center bg-white/10 rounded-lg p-2 sm:p-3 md:p-4 hover:bg-white/20 transition-all duration-300">
+                  <div className="text-white/70 hover:text-white/100 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-center transition-colors duration-300">
                     {logo.name}
                   </div>
                 </div>
               ) : (
                 // Image-based logo with robust fallback
-                <div className="w-20 sm:w-24 md:w-32 h-12 sm:h-16 md:h-20 flex items-center justify-center bg-white/10 rounded-lg p-2 sm:p-3 md:p-4 hover:bg-white/20 transition-all duration-300">
+                <div className="w-16 sm:w-20 md:w-24 lg:w-32 h-10 sm:h-12 md:h-16 lg:h-20 flex items-center justify-center bg-white/10 rounded-lg p-2 sm:p-3 md:p-4 hover:bg-white/20 transition-all duration-300">
                   <img
                     src={logo.url}
                     alt={logo.name}
@@ -139,7 +162,7 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
                       if (container) {
                         // Replace the entire container content with text
                         container.innerHTML = `
-                          <div class="text-white/70 hover:text-white/100 text-xs sm:text-sm md:text-lg font-bold text-center transition-colors duration-300">
+                          <div class="text-white/70 hover:text-white/100 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-center transition-colors duration-300">
                             ${logo.name}
                           </div>
                         `;
@@ -152,7 +175,7 @@ export function TestimonialLogoScroll({ className }: TestimonialLogoScrollProps)
                         const container = target.parentElement;
                         if (container) {
                           container.innerHTML = `
-                            <div class="text-white/70 hover:text-white/100 text-xs sm:text-sm md:text-lg font-bold text-center transition-colors duration-300">
+                            <div class="text-white/70 hover:text-white/100 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-center transition-colors duration-300">
                               ${logo.name}
                             </div>
                           `;
