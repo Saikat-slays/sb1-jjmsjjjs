@@ -69,7 +69,8 @@ function Navbar() {
     { path: '/services', label: 'Services' },
     { path: '/how-we-work', label: 'How We Work' },
     { path: '/about', label: 'About' },
-    { path: '/data-solution', label: 'Case Study' },
+    { path: '/data-solution', label: 'Data Case Study' },
+    { path: '/ai-visuals', label: 'Visuals Case Study' },
     { path: '/developer-docs', label: 'Developer Docs' },
   ];
   

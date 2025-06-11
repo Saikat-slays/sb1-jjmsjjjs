@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Bot, LineChart, MessageSquare, Rocket, Shield, Users, ChevronRight, Zap } from 'lucide-react';
+import { Bot, LineChart, MessageSquare, Rocket, Shield, Users, ChevronRight, Zap, Camera, Database } from 'lucide-react';
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { ServiceCard } from '@/components/ui/service-card';
 import { CyclingTypewriter } from '@/components/ui/cycling-typewriter';
 import { MagneticButton } from '@/components/ui/magnetic-button';
 import { StatsCard } from '@/components/ui/stats-card';
 import { TestimonialLogoScroll } from '@/components/ui/testimonial-logo-scroll';
+import { FadeIn } from '@/components/ui/fade-in';
 
 function Home() {
   const ButtonLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
@@ -94,6 +95,86 @@ function Home() {
             <StatsCard value={98} suffix="%" label="Happy Customers" />
             <StatsCard value={2} suffix="x" label="More Leads Generated" />
             <StatsCard value={500} suffix="K+" label="Leads Captured" />
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Preview */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <FadeIn>
+            <h2 className="text-4xl font-bold text-black text-center mb-4">
+              Real Results from Real Businesses
+            </h2>
+            <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+              See how we've helped Fortune 500 companies transform their operations with AI
+            </p>
+          </FadeIn>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Data Solution Case Study */}
+            <FadeIn>
+              <Link to="/data-solution" className="block group">
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                  <div className="flex items-center mb-6">
+                    <Database className="h-12 w-12 text-blue-600 mr-4" />
+                    <div>
+                      <h3 className="text-2xl font-bold text-black">$350M Data Intelligence Revolution</h3>
+                      <p className="text-blue-600 font-semibold">Fortune 500 DTC Brand</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 mb-6">
+                    How we transformed 24-hour data delays into 10-second insights, processing 400,000+ rows 
+                    in real-time and generating $350M in revenue impact.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-blue-600">24h → 10s</div>
+                      <div className="text-gray-600 text-sm">Query Speed</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-blue-600">400K</div>
+                      <div className="text-gray-600 text-sm">Data Rows</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform">
+                    Read Full Case Study <ChevronRight className="ml-2 h-4 w-4" />
+                  </div>
+                </div>
+              </Link>
+            </FadeIn>
+
+            {/* AI Visuals Case Study */}
+            <FadeIn>
+              <Link to="/ai-visuals" className="block group">
+                <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                  <div className="flex items-center mb-6">
+                    <Camera className="h-12 w-12 text-purple-600 mr-4" />
+                    <div>
+                      <h3 className="text-2xl font-bold text-black">AI Visuals Replace Costly Photoshoots</h3>
+                      <p className="text-purple-600 font-semibold">Same $350M DTC Brand</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 mb-6">
+                    How we eliminated expensive photoshoots and delivered pixel-perfect product visuals 
+                    in 48 hours with CEO-approved quality: "I love those, Saikat."
+                  </p>
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-purple-600">48h</div>
+                      <div className="text-gray-600 text-sm">Asset Delivery</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-purple-600">90%</div>
+                      <div className="text-gray-600 text-sm">Cost Reduction</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center text-purple-600 font-semibold group-hover:translate-x-2 transition-transform">
+                    Read Full Case Study <ChevronRight className="ml-2 h-4 w-4" />
+                  </div>
+                </div>
+              </Link>
+            </FadeIn>
           </div>
         </div>
       </section>

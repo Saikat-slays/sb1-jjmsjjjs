@@ -13,6 +13,7 @@ import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import DeveloperDocs from './pages/DeveloperDocs';
 import DataSolutionShowcase from './pages/DataSolutionShowcase';
+import AIVisualsShowcase from './pages/AIVisualsShowcase';
 
 // Import service pages
 import BespokeAIChatbots from './pages/services/BespokeAIChatbots';
@@ -50,6 +51,7 @@ function App() {
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/developer-docs" element={<DeveloperDocs />} />
               <Route path="/data-solution" element={<DataSolutionShowcase />} />
+              <Route path="/ai-visuals" element={<AIVisualsShowcase />} />
               
               {/* Service Pages */}
               <Route path="/services/bespoke-ai-chatbots" element={<BespokeAIChatbots />} />

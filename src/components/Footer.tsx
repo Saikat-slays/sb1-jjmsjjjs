@@ -81,6 +81,8 @@ function Footer() {
               {[
                 ['About Us', '/about'],
                 ['How We Work', '/how-we-work'],
+                ['Data Case Study', '/data-solution'],
+                ['Visuals Case Study', '/ai-visuals'],
                 ['Book a Call', '/strategy-call']
               ].map(([label, path]) => (
                 <li key={label}>
