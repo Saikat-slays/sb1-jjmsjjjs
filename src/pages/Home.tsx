@@ -62,9 +62,9 @@ function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-primary">
         <div className="container mx-auto px-6 pt-20 pb-24 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 min-h-[120px] md:min-h-[160px] flex items-center justify-center">
-            AI-Powered Chatbots & Voice Agents for DTC Brands in India
-          </h1>
+          <CyclingTypewriter 
+            className="text-5xl md:text-7xl font-bold text-white mb-4 min-h-[120px] md:min-h-[160px] flex items-center justify-center"
+          />
           <p className="text-2xl text-white/80 mb-8">
             We build AI systems that work 24/7 to grow your business while you sleep.
           </p>
@@ -99,66 +99,15 @@ function Home() {
         </div>
       </section>
 
-      {/* Why AI Automation Section */}
+      {/* Case Studies Preview */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <FadeIn>
             <h2 className="text-4xl font-bold text-black text-center mb-4">
-              Why AI Automation is a Game-Changer for Indian eCommerce
+              Real Results from Real Businesses
             </h2>
             <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
-              Indian DTC brands are scaling faster than ever. But manual processes are holding them back. 
-              Here's how AI automation transforms your business operations.
-            </p>
-          </FadeIn>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <FadeIn>
-              <div className="bg-accent-dark p-8 rounded-2xl text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Zap className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-black mb-4">Instant Response Times</h3>
-                <p className="text-gray-600">
-                  Respond to customer queries in seconds, not hours. Never lose a sale due to delayed responses again.
-                </p>
-              </div>
-            </FadeIn>
-            <FadeIn>
-              <div className="bg-accent-dark p-8 rounded-2xl text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Users className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-black mb-4">Scale Without Hiring</h3>
-                <p className="text-gray-600">
-                  Handle 10x more customers without increasing your team size. Perfect for fast-growing Indian startups.
-                </p>
-              </div>
-            </FadeIn>
-            <FadeIn>
-              <div className="bg-accent-dark p-8 rounded-2xl text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                  <LineChart className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-black mb-4">Higher Conversion Rates</h3>
-                <p className="text-gray-600">
-                  AI-powered personalization increases conversion rates by 40% for Indian eCommerce brands.
-                </p>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies Preview */}
-      <section className="py-20 bg-charcoal">
-        <div className="container mx-auto px-6">
-          <FadeIn>
-            <h2 className="text-4xl font-bold text-white text-center mb-4">
-              Success Stories with Indian Brands
-            </h2>
-            <p className="text-xl text-white/70 text-center mb-16 max-w-3xl mx-auto">
-              See how we've helped Fortune 500 companies and Indian startups transform their operations with AI
+              See how we've helped Fortune 500 companies transform their operations with AI
             </p>
           </FadeIn>
           
@@ -233,12 +182,12 @@ function Home() {
       {/* Testimonial Logo Scroll Section */}
       <TestimonialLogoScroll />
 
-      {/* Chatbots that Convert More & Cost Less Section */}
-      <section className="py-20 bg-white">
+      {/* What We Build Section */}
+      <section className="py-20 bg-charcoal">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-black mb-4">Chatbots that Convert More & Cost Less</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-4xl font-bold text-white mb-4">How We Help You Get More Customers</h2>
+            <p className="text-xl text-white/70">
               We build AI systems that do the work you don't have time for.
             </p>
           </div>
@@ -256,59 +205,11 @@ function Home() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-white/70 mb-8">
               Stop working harder. Start working smarter.
             </p>
             <ButtonLink to="/strategy-call">
               See How We Can Help Your Business <ChevronRight className="ml-2 h-5 w-5" />
-            </ButtonLink>
-          </div>
-        </div>
-      </section>
-
-      {/* Voice Agents for Appointment-Based Businesses */}
-      <section className="py-20 bg-charcoal">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <FadeIn>
-              <h2 className="text-4xl font-bold text-white mb-8">
-                Voice Agents for Appointment-Based Businesses
-              </h2>
-              <p className="text-xl text-white/70 mb-12">
-                Perfect for healthcare, beauty salons, fitness centers, and professional services across India.
-                Our AI voice agents handle appointment booking, confirmations, and follow-ups automatically.
-              </p>
-            </FadeIn>
-            
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <FadeIn>
-                <div className="bg-white p-6 rounded-xl">
-                  <h3 className="text-xl font-bold text-black mb-4">24/7 Booking</h3>
-                  <p className="text-gray-600">
-                    Customers can book appointments anytime, even outside business hours.
-                  </p>
-                </div>
-              </FadeIn>
-              <FadeIn>
-                <div className="bg-white p-6 rounded-xl">
-                  <h3 className="text-xl font-bold text-black mb-4">Smart Scheduling</h3>
-                  <p className="text-gray-600">
-                    AI automatically manages your calendar and prevents double bookings.
-                  </p>
-                </div>
-              </FadeIn>
-              <FadeIn>
-                <div className="bg-white p-6 rounded-xl">
-                  <h3 className="text-xl font-bold text-black mb-4">Multi-Language</h3>
-                  <p className="text-gray-600">
-                    Supports Hindi, English, and regional languages for Indian customers.
-                  </p>
-                </div>
-              </FadeIn>
-            </div>
-
-            <ButtonLink to="/services/ai-voice-agents">
-              Learn About Voice Agents <ChevronRight className="ml-2 h-5 w-5" />
             </ButtonLink>
           </div>
         </div>
@@ -336,58 +237,6 @@ function Home() {
         </div>
       </section>
 
-      {/* FAQ Section with Schema */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-black text-center mb-12">
-              Frequently Asked Questions
-            </h2>
-            <div className="space-y-8">
-              <div className="bg-accent-dark p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-black mb-4">
-                  How does an AI chatbot help DTC brands in India?
-                </h3>
-                <p className="text-gray-600">
-                  AI chatbots help Indian DTC brands by providing 24/7 customer support, capturing leads automatically, 
-                  handling order inquiries, and reducing response times from hours to seconds. This is especially 
-                  important for Indian eCommerce where customers expect instant responses.
-                </p>
-              </div>
-              <div className="bg-accent-dark p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-black mb-4">
-                  Can WhatsApp be used for customer service automation?
-                </h3>
-                <p className="text-gray-600">
-                  Yes! WhatsApp is extremely popular in India, and our AI chatbots integrate seamlessly with 
-                  WhatsApp Business API. This allows you to automate customer service, send order updates, 
-                  and handle support queries directly through WhatsApp.
-                </p>
-              </div>
-              <div className="bg-accent-dark p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-black mb-4">
-                  How quickly can you implement AI automation for my business?
-                </h3>
-                <p className="text-gray-600">
-                  Most AI chatbot implementations take 2-4 weeks from start to finish. Voice agents and complex 
-                  automation systems may take 4-6 weeks. We provide a detailed timeline during our strategy call.
-                </p>
-              </div>
-              <div className="bg-accent-dark p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-black mb-4">
-                  Do you work with Shopify stores in India?
-                </h3>
-                <p className="text-gray-600">
-                  Absolutely! We specialize in integrating AI chatbots with Shopify stores, WooCommerce, 
-                  and other popular eCommerce platforms used by Indian businesses. Our solutions work 
-                  seamlessly with your existing setup.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Strategy Call Section */}
       <section className="py-20 bg-primary">
         <div className="container mx-auto px-6 text-center">
@@ -407,48 +256,6 @@ function Home() {
           </ButtonLink>
         </div>
       </section>
-
-      {/* Schema for FAQ */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How does an AI chatbot help DTC brands in India?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "AI chatbots help Indian DTC brands by providing 24/7 customer support, capturing leads automatically, handling order inquiries, and reducing response times from hours to seconds. This is especially important for Indian eCommerce where customers expect instant responses."
-              }
-            },
-            {
-              "@type": "Question", 
-              "name": "Can WhatsApp be used for customer service automation?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes! WhatsApp is extremely popular in India, and our AI chatbots integrate seamlessly with WhatsApp Business API. This allows you to automate customer service, send order updates, and handle support queries directly through WhatsApp."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How quickly can you implement AI automation for my business?", 
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Most AI chatbot implementations take 2-4 weeks from start to finish. Voice agents and complex automation systems may take 4-6 weeks. We provide a detailed timeline during our strategy call."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do you work with Shopify stores in India?",
-              "acceptedAnswer": {
-                "@type": "Answer", 
-                "text": "Absolutely! We specialize in integrating AI chatbots with Shopify stores, WooCommerce, and other popular eCommerce platforms used by Indian businesses. Our solutions work seamlessly with your existing setup."
-              }
-            }
-          ]
-        })}
-      </script>
     </div>
   );
 }

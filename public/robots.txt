@@ -4,38 +4,23 @@ Allow: /
 # Sitemaps
 Sitemap: https://thynknext.in/sitemap.xml
 
-# Crawl-delay for better server performance
-Crawl-delay: 1
+# Crawl-delay
+Crawl-delay: 10
 
 # Disallow patterns
 Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
 Disallow: /*?*
-Disallow: /*.json$
-Disallow: /src/
-Disallow: /node_modules/
 
-# Allow important file types
-Allow: /*.js$
-Allow: /*.css$
-Allow: /*.png$
-Allow: /*.jpg$
-Allow: /*.jpeg$
-Allow: /*.gif$
-Allow: /*.svg$
-Allow: /*.ico$
-Allow: /*.webp$
+# Allow patterns
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.ico
 
 # Host
 Host: https://thynknext.in
-
-# Additional directives for better SEO
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /

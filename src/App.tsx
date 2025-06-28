@@ -23,11 +23,6 @@ import PersonalizedOutreach from './pages/services/PersonalizedOutreach';
 import SocialMediaManagement from './pages/services/SocialMediaManagement';
 import AutomationInfrastructure from './pages/services/AutomationInfrastructure';
 
-// Import new SEO-optimized service pages
-import AIEcommerceIndia from './pages/services/AIEcommerceIndia';
-import WhatsAppAutomationIndia from './pages/services/WhatsAppAutomationIndia';
-import VoiceAgentAppointmentBusiness from './pages/services/VoiceAgentAppointmentBusiness';
-
 function ScrollToTop() {
   const location = useLocation();
   
@@ -58,18 +53,13 @@ function App() {
               <Route path="/data-solution" element={<DataSolutionShowcase />} />
               <Route path="/ai-visuals" element={<AIVisualsShowcase />} />
               
-              {/* Original Service Pages */}
+              {/* Service Pages */}
               <Route path="/services/bespoke-ai-chatbots" element={<BespokeAIChatbots />} />
               <Route path="/services/ai-voice-agents" element={<AIVoiceAgents />} />
               <Route path="/services/lead-generation-systems" element={<LeadGenerationSystems />} />
               <Route path="/services/personalized-outreach" element={<PersonalizedOutreach />} />
               <Route path="/services/social-media-management" element={<SocialMediaManagement />} />
               <Route path="/services/automation-infrastructure" element={<AutomationInfrastructure />} />
-              
-              {/* New SEO-Optimized Service Pages */}
-              <Route path="/ai-chatbot-ecommerce-india" element={<AIEcommerceIndia />} />
-              <Route path="/whatsapp-chatbot-automation-india" element={<WhatsAppAutomationIndia />} />
-              <Route path="/voice-agent-appointment-business" element={<VoiceAgentAppointmentBusiness />} />
             </Routes>
           </main>
           <Footer />
