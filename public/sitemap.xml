@@ -5,46 +5,133 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Homepage -->
   <url>
     <loc>https://thynknext.in/</loc>
-    <lastmod>2024-04-01</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <!-- Main Pages -->
   <url>
     <loc>https://thynknext.in/services</loc>
-    <lastmod>2024-04-01</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://thynknext.in/about</loc>
-    <lastmod>2024-04-01</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thynknext.in/how-we-work</loc>
-    <lastmod>2024-04-01</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thynknext.in/strategy-call</loc>
-    <lastmod>2024-04-01</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  
+  <!-- Case Studies -->
+  <url>
+    <loc>https://thynknext.in/data-solution</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thynknext.in/ai-visuals</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Original Service Pages -->
+  <url>
+    <loc>https://thynknext.in/services/bespoke-ai-chatbots</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thynknext.in/services/ai-voice-agents</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thynknext.in/services/lead-generation-systems</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thynknext.in/services/personalized-outreach</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thynknext.in/services/social-media-management</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thynknext.in/services/automation-infrastructure</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- SEO-Optimized Service Pages -->
+  <url>
+    <loc>https://thynknext.in/ai-chatbot-ecommerce-india</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thynknext.in/whatsapp-chatbot-automation-india</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thynknext.in/voice-agent-appointment-business</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Legal Pages -->
   <url>
     <loc>https://thynknext.in/privacy</loc>
-    <lastmod>2024-04-01</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://thynknext.in/terms</loc>
-    <lastmod>2024-04-01</lastmod>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+  
+  <!-- Developer Docs -->
+  <url>
+    <loc>https://thynknext.in/developer-docs</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
 </urlset>
