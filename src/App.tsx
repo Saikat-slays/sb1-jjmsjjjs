@@ -23,6 +23,54 @@ import PersonalizedOutreach from './pages/services/PersonalizedOutreach';
 import SocialMediaManagement from './pages/services/SocialMediaManagement';
 import AutomationInfrastructure from './pages/services/AutomationInfrastructure';
 
+// Declare global VG_CONFIG for TypeScript
+declare global {
+  interface Window {
+    VG_CONFIG?: any;
+  }
+}
+
+function ConvocoreChatbot() {
+  React.useEffect(() => {
+    // Check if the script is already loaded
+    if (document.querySelector('script[src*="vg_bundle.js"]')) {
+      return;
+    }
+
+    // Set up the configuration
+    window.VG_CONFIG = {
+      ID: "xZw5mE4iLR4GNXFg",
+      region: 'eu',
+      render: 'bottom-right',
+      stylesheets: [
+        "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css"
+      ],
+      autostart: true,
+    };
+
+    // Create and append the script
+    const VG_SCRIPT = document.createElement("script");
+    VG_SCRIPT.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
+    VG_SCRIPT.defer = true;
+    document.body.appendChild(VG_SCRIPT);
+
+    // Cleanup function
+    return () => {
+      // Remove the script if component unmounts
+      const existingScript = document.querySelector('script[src*="vg_bundle.js"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
+
+  return (
+    <div style={{ width: 0, height: 0 }} id="VG_OVERLAY_CONTAINER">
+      {/* Here is where CONVOCORE renders the widget. */}
+    </div>
+  );
+}
+
 function ScrollToTop() {
   const location = useLocation();
   
@@ -63,6 +111,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          <ConvocoreChatbot />
         </div>
       </div>
     </Router>
