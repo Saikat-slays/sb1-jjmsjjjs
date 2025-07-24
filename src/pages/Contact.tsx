@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ChevronRight } from 'lucide-react';
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { TypewriterHeading } from '@/components/ui/typewriter-heading';
-import { supabase } from '@/lib/supabase';
 import { PhoneInput } from '@/components/ui/phone-input';
 
 function Contact() {
@@ -95,11 +94,25 @@ function Contact() {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert([formData]);
+      // Prepare webhook payload
+      const webhookPayload = {
+        ...formData,
+        timestamp: new Date().toISOString(),
+        form_type: 'contact'
+      };
 
-      if (error) throw error;
+      // Send to webhook
+      const response = await fetch('https://hook.eu2.make.com/b8as5a6y6si9gcx1ykf2bbgqlcb2ug7r', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(webhookPayload)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
       // Clear form on success
       setFormData({

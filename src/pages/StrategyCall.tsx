@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Check, ChevronRight, Clock, Target, Users, Home } from 'lucide-react';
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { TypewriterHeading } from '@/components/ui/typewriter-heading';
-import { supabase } from '@/lib/supabase';
 import { PhoneInput } from '@/components/ui/phone-input';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -125,27 +124,36 @@ function StrategyCall() {
     setIsSubmitting(true);
 
     try {
-      // Use custom goal if "Other" is selected, otherwise use the selected goal
-      const finalGoal = formData.automationGoal === 'Other' ? formData.customGoal : formData.automationGoal;
+      // Prepare webhook payload
+      const webhookPayload = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        automation_goal: formData.automationGoal === 'Other' ? formData.customGoal : formData.automationGoal,
+        timestamp: new Date().toISOString(),
+        form_type: 'strategy_call'
+      };
 
-      const { error } = await supabase
-        .from('strategy_call_submissions')
-        .insert([{
-          name: formData.name,
-          email_address: formData.email,
-          phone_number: formData.phone,
-          company_name: formData.company,
-          automation_goal: finalGoal
-        }]);
+      // Send to webhook
+      const response = await fetch('https://hook.eu2.make.com/b8as5a6y6si9gcx1ykf2bbgqlcb2ug7r', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(webhookPayload)
+      });
 
-      if (error) throw error;
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
       setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting form:', error);
       setErrors(prev => ({
         ...prev,
-        submit: 'There was an error submitting your request. Please try again.'
+        automationGoal: 'There was an error submitting your request. Please try again.'
       }));
     } finally {
       setIsSubmitting(false);
