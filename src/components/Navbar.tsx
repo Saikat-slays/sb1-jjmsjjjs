@@ -68,6 +68,7 @@ function Navbar() {
   const menuItems = [
     { path: '/services', label: 'Services' },
     { path: '/how-we-work', label: 'How We Work' },
+    { path: '/blog', label: 'Blog' },
     { path: '/about', label: 'About' },
     { path: '/data-solution', label: 'Data Case Study' },
     { path: '/ai-visuals', label: 'Visuals Case Study' },

@@ -80,6 +80,7 @@ function Footer() {
             <ul className="space-y-3">
               {[
                 ['About Us', '/about'],
+                ['Blog', '/blog'],
                 ['How We Work', '/how-we-work'],
                 ['Data Case Study', '/data-solution'],
                 ['Visuals Case Study', '/ai-visuals'],
