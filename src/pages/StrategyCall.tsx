@@ -225,13 +225,13 @@ function StrategyCall() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <TypewriterHeading
-              text="Let's Talk About Getting You More Customers"
+              text="Let's Talk About Scaling Your Fitness or E-Commerce Brand"
               className="text-4xl md:text-5xl font-bold text-black mb-8"
             />
             <p className="text-xl text-gray-600 mb-12">
-              This is a real conversation about your business.
-              We'll show you exactly how AI can help you get more customers without working more hours.
-              No sales pitch, just honest advice.
+              This is a real conversation about your fitness or e-commerce brand.
+              We'll show you exactly how AI can help you scale globally without the operational complexity.
+              No sales pitch, just industry-specific solutions.
             </p>
             <div className="flex justify-center space-x-8">
               <div className="flex items-center text-gray-600">
@@ -266,7 +266,7 @@ function StrategyCall() {
                   <div>
                     <h3 className="text-xl font-semibold text-black mb-2">Clear Plan to Get More Customers</h3>
                     <p className="text-gray-600">
-                      We'll identify the top 3 ways AI can help your specific business get more leads and customers.
+                      We'll identify the top 3 ways AI can help your fitness or e-commerce brand scale globally and increase customer satisfaction.
                     </p>
                   </div>
                 </div>
@@ -277,7 +277,7 @@ function StrategyCall() {
                   <div>
                     <h3 className="text-xl font-semibold text-black mb-2">See How Much Money You Could Make</h3>
                     <p className="text-gray-600">
-                      We'll calculate how much extra revenue you could generate with the right AI system.
+                      We'll calculate how much extra revenue you could generate by automating your fitness or e-commerce operations.
                     </p>
                   </div>
                 </div>
@@ -288,7 +288,7 @@ function StrategyCall() {
                   <div>
                     <h3 className="text-xl font-semibold text-black mb-2">Custom Solution for Your Business</h3>
                     <p className="text-gray-600">
-                      Get a tailored plan that fits exactly how your business works and what you want to achieve.
+                      Get a tailored plan that fits your specific fitness or e-commerce model and global scaling goals.
                     </p>
                   </div>
                 </div>
@@ -299,7 +299,7 @@ function StrategyCall() {
                   <div>
                     <h3 className="text-xl font-semibold text-black mb-2">Timeline and Next Steps</h3>
                     <p className="text-gray-600">
-                      Know exactly when you could have your AI system working and bringing in more customers.
+                      Know exactly when you could have your AI system working and scaling your brand globally.
                     </p>
                   </div>
                 </div>
@@ -310,19 +310,19 @@ function StrategyCall() {
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-600">
                     <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                    <span>Losing customers because you respond too slowly</span>
+                    <span>A fitness or e-commerce brand losing customers to slow responses</span>
                   </li>
                   <li className="flex items-center text-gray-600">
                     <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                    <span>Spending too much time on repetitive tasks</span>
+                    <span>Spending too much time on manual customer service and order management</span>
                   </li>
                   <li className="flex items-center text-gray-600">
                     <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                    <span>Want to grow without hiring more people</span>
+                    <span>Want to scale globally without hiring massive support teams</span>
                   </li>
                   <li className="flex items-center text-gray-600">
                     <ChevronRight className="h-5 w-5 text-primary mr-2" />
-                    <span>Ready to invest in growing your business</span>
+                    <span>Ready to invest in scaling your fitness or e-commerce brand</span>
                   </li>
                 </ul>
               </div>
@@ -442,7 +442,7 @@ function StrategyCall() {
                               onChange={handleInputChange}
                               className={`${inputClasses} ${errors.customGoal ? errorInputClasses : ''}`}
                               rows={3}
-                              placeholder="What's the biggest challenge in your business right now?"
+                              placeholder="What's the biggest challenge in scaling your fitness or e-commerce brand?"
                               required={formData.automationGoal === 'Other'}
                             />
                             {errors.customGoal && (
@@ -457,13 +457,14 @@ function StrategyCall() {
                         className="w-full inline-flex items-center justify-center"
                         disabled={isSubmitting}
                       >
-                        {isSubmitting ? 'Booking...' : 'Book My Free Call'} <ChevronRight className="ml-2 h-5 w-5" />
-                      </RainbowButton>
-                    </form>
-
-                    <div className="mt-8 p-4 bg-accent-dark rounded-lg">
+                        <option value="">Select your biggest challenge</option>
+                        <option value="Scaling customer support globally">Scaling customer support globally</option>
+                        <option value="Managing inventory and orders manually">Managing inventory and orders manually</option>
+                        <option value="Personalizing fitness recommendations at scale">Personalizing fitness recommendations at scale</option>
+                        <option value="Converting website visitors to customers">Converting website visitors to customers</option>
+                        <option value="Managing social media and content creation">Managing social media and content creation</option>
                       <p className="text-sm text-gray-600 text-center">
-                        Free call. No pressure. Just honest advice about growing your business.
+                        Free call. No pressure. Just honest advice about scaling your fitness or e-commerce brand.
                       </p>
                     </div>
                   </motion.div>
@@ -481,31 +482,31 @@ function StrategyCall() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-accent-dark p-6 rounded-xl">
               <p className="text-gray-600 mb-4">
-                "The call was incredibly helpful. They showed me exactly how AI could help my business get more leads. 
-                Now our lead generation runs automatically and we're getting better results than ever."
+                "The call was incredibly helpful. They showed me exactly how AI could help my fitness brand scale globally. 
+                Now our customer support runs automatically and we're serving customers in 12 countries."
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
-                  <span className="text-white text-sm font-bold">ID</span>
+                  <span className="text-white text-sm font-bold">FB</span>
                 </div>
                 <div className="ml-4">
-                  <h4 className="font-semibold text-black">Interior Design Studio</h4>
-                  <p className="text-sm text-gray-600">Mumbai</p>
+                  <h4 className="font-semibold text-black">Fitness Brand Founder</h4>
+                  <p className="text-sm text-gray-600">Global Operations</p>
                 </div>
               </div>
             </div>
             <div className="bg-accent-dark p-6 rounded-xl">
               <p className="text-gray-600 mb-4">
-                "They gave me a clear plan and showed me exactly how much money I could make. 
-                The whole process was transparent and professional."
+                "They gave me a clear plan for scaling my supplement brand internationally. 
+                The AI automation handles customer inquiries in 8 languages now."
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
                   <span className="text-white text-sm font-bold">EC</span>
                 </div>
                 <div className="ml-4">
-                  <h4 className="font-semibold text-black">E-commerce Brand</h4>
-                  <p className="text-sm text-gray-600">Bangalore</p>
+                  <h4 className="font-semibold text-black">Supplement Brand CEO</h4>
+                  <p className="text-sm text-gray-600">International Markets</p>
                 </div>
               </div>
             </div>

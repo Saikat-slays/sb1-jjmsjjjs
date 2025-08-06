@@ -10,11 +10,11 @@ export function CyclingTypewriter({ className = '' }: CyclingTypewriterProps) {
   const [key, setKey] = useState(0);
 
   const headlines = [
-    "Never Miss a Lead Again",
-    "Get More Customers Without Working More Hours", 
-    "Stop Losing Money to Slow Responses",
-    "Turn Your Website Into a 24/7 Sales Machine",
-    "Automate the Work You Don't Have Time For"
+    "Scale Your Fitness Brand Globally",
+    "Automate Your E-Commerce Operations", 
+    "Turn Browsers Into Loyal Customers",
+    "24/7 AI Support for Your Brand",
+    "Personalized Fitness Journeys at Scale"
   ];
 
   useEffect(() => {

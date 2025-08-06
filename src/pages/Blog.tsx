@@ -169,22 +169,22 @@ function Blog() {
   return (
     <>
       <Helmet>
-        <title>AI Automation Blog | Expert Insights & Industry Trends | ThynkNext</title>
-        <meta name="description" content="Stay ahead with expert insights on AI automation, business efficiency, and digital transformation. Discover actionable strategies to grow your business." />
-        <meta name="keywords" content="AI automation blog, business automation, digital transformation, AI trends, business efficiency, automation insights" />
+        <title>Fitness & E-Commerce AI Automation Blog | Industry Insights | ThynkNext</title>
+        <meta name="description" content="Expert insights on AI automation for fitness and e-commerce brands. Discover strategies to scale globally, automate operations, and increase customer satisfaction." />
+        <meta name="keywords" content="fitness AI automation, e-commerce automation blog, fitness brand scaling, online store automation, customer service AI, fitness marketing automation" />
         <link rel="canonical" href="https://thynknext.in/blog" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="AI Automation Blog | Expert Insights & Industry Trends | ThynkNext" />
-        <meta property="og:description" content="Stay ahead with expert insights on AI automation, business efficiency, and digital transformation. Discover actionable strategies to grow your business." />
+        <meta property="og:title" content="Fitness & E-Commerce AI Automation Blog | Industry Insights | ThynkNext" />
+        <meta property="og:description" content="Expert insights on AI automation for fitness and e-commerce brands. Discover strategies to scale globally, automate operations, and increase customer satisfaction." />
         <meta property="og:url" content="https://thynknext.in/blog" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://thynknext.in/og-blog.jpg" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Automation Blog | Expert Insights & Industry Trends | ThynkNext" />
-        <meta name="twitter:description" content="Stay ahead with expert insights on AI automation, business efficiency, and digital transformation." />
+        <meta name="twitter:title" content="Fitness & E-Commerce AI Automation Blog | Industry Insights | ThynkNext" />
+        <meta name="twitter:description" content="Expert insights on AI automation for fitness and e-commerce brands. Scale globally with intelligent automation." />
         <meta name="twitter:image" content="https://thynknext.in/twitter-blog.jpg" />
         
         {/* Schema.org */}
@@ -192,8 +192,8 @@ function Blog() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Blog",
-            "name": "ThynkNext AI Automation Blog",
-            "description": "Expert insights on AI automation, business efficiency, and digital transformation",
+            "name": "ThynkNext Fitness & E-Commerce AI Blog",
+            "description": "Expert insights on AI automation for fitness and e-commerce brands",
             "url": "https://thynknext.in/blog",
             "publisher": {
               "@type": "Organization",
@@ -213,12 +213,12 @@ function Blog() {
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center">
               <TypewriterHeading
-                text="AI Automation Insights & Industry Expertise"
+                text="Fitness & E-Commerce AI Automation Insights"
                 className="text-4xl md:text-6xl font-bold text-white mb-6"
               />
               <p className="text-xl text-white/80 mb-8">
                 Stay ahead of the curve with expert insights, industry trends, and actionable strategies 
-                for AI automation and business transformation.
+                for scaling fitness and e-commerce brands with AI automation.
               </p>
             </div>
           </div>
@@ -316,16 +316,16 @@ function Blog() {
           <div className="container mx-auto px-6 text-center">
             <FadeIn>
               <h2 className="text-4xl font-bold text-white mb-8">
-                Stay Updated with AI Automation Trends
+                Stay Updated with Fitness & E-Commerce AI Trends
               </h2>
               <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
-                Get the latest insights, case studies, and automation strategies delivered to your inbox.
+                Get the latest insights, case studies, and automation strategies for fitness and e-commerce brands.
               </p>
               <Link
                 to="/strategy-call"
                 className="inline-flex items-center bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-white/90 transition-colors"
               >
-                Get Expert Insights <ArrowRight className="ml-2 h-5 w-5" />
+                Scale Your Brand with AI <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </FadeIn>
           </div>

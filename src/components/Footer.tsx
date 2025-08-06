@@ -18,7 +18,7 @@ function Footer() {
               <span className="ml-2 text-xl text-white">ThynkNext</span>
             </Link>
             <p className="text-sm mb-6">
-              Crafting bespoke AI automation solutions for business growth.
+              AI automation solutions for global fitness and e-commerce brands.
             </p>
             {/* Social Media Links */}
             <div className="flex space-x-4">
