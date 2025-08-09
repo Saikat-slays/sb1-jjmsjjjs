@@ -86,20 +86,20 @@ function DataSolutionShowcase() {
             <FadeIn>
               <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
                 <BarChart3 className="h-5 w-5 text-white mr-2" />
-                <span className="text-white font-semibold">Case Study: Global Fitness Brand Transformation</span>
+                <span className="text-white font-semibold">Case Study: Enterprise DTC Transformation</span>
               </div>
             </FadeIn>
             <TypewriterHeading
-              text="How We Generated $350M in Revenue for a Global Fitness Brand with AI-Powered Data Intelligence"
+              text="How We Generated $350M in Revenue with AI-Powered Data Intelligence"
               className="text-4xl md:text-6xl font-bold text-white mb-6"
             />
             <FadeIn>
               <p className="text-2xl text-white/80 mb-8">
-                From 24-hour data delays to 10-second insights: The complete transformation of global fitness brand operations
+                From 24-hour data delays to 10-second insights: The complete transformation of enterprise decision-making
               </p>
               <p className="text-xl text-white/70 mb-12 max-w-4xl mx-auto">
-                Discover how our AI data solution turned a global fitness brand's data bottleneck into their biggest competitive advantage, 
-                processing 400,000+ customer interactions in real-time and enabling personalized fitness recommendations at scale.
+                Discover how our AI data solution turned a Fortune 500 DTC brand's data bottleneck into their biggest competitive advantage, 
+                processing 400,000+ rows in real-time and empowering every team member to make data-driven decisions instantly.
               </p>
             </FadeIn>
           </div>
@@ -114,8 +114,8 @@ function DataSolutionShowcase() {
               The Numbers That Changed Everything
             </h2>
             <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
-              When fitness and e-commerce data becomes instantly accessible, brands transform globally. Here's the quantifiable impact 
-              of our AI-powered data intelligence solution for fitness brands.
+              When data becomes instantly accessible, businesses transform. Here's the quantifiable impact 
+              of our AI-powered data intelligence solution.
             </p>
           </FadeIn>
           <div className="grid md:grid-cols-4 gap-8">
@@ -395,7 +395,7 @@ function DataSolutionShowcase() {
                   </div>
                   <div className="text-left">
                     <div className="font-semibold text-xl">Chief Technology Officer</div>
-                    <div className="text-white/80">Global Fitness Equipment Brand</div>
+                    <div className="text-white/80">Fortune 500 DTC Brand</div>
                   </div>
                 </div>
               </div>

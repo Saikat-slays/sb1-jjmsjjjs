@@ -21,38 +21,38 @@ function Home() {
   const services = [
     {
       Icon: Bot,
-      title: "24/7 Customer Support for Your Fitness Brand",
-      description: "AI chatbots that answer product questions, help with sizing, and capture leads while your customers shop around the clock.",
+      title: "Never Miss Another Lead",
+      description: "AI chatbots that capture leads 24/7, even when you're sleeping. No more lost customers.",
       link: "/services/bespoke-ai-chatbots"
     },
     {
       Icon: Zap,
-      title: "Automated Personal Training Consultations",
-      description: "AI voice agents that qualify fitness goals, book training sessions, and follow up with potential clients automatically.",
+      title: "Make 500 Calls While You Have Coffee",
+      description: "AI voice agents that call prospects, book appointments, and follow up automatically.",
       link: "/services/ai-voice-agents"
     },
     {
       Icon: LineChart,
-      title: "Convert Browsers Into Buyers",
-      description: "Smart systems that identify high-intent shoppers and guide them to purchase your fitness products or e-commerce items.",
+      title: "Turn Website Visitors Into Paying Customers",
+      description: "Smart systems that identify hot prospects and guide them to buy from you.",
       link: "/services/lead-generation-systems"
     },
     {
       Icon: MessageSquare,
-      title: "Personalized Fitness Journey Messages",
-      description: "Send thousands of personalized messages to customers about their fitness goals and product recommendations.",
+      title: "Send 1000 Personal Messages in Minutes",
+      description: "Reach more prospects with messages that feel personal, without the manual work.",
       link: "/services/personalized-outreach"
     },
     {
       Icon: Users,
-      title: "Automated Fitness Content & Product Showcases",
-      description: "AI creates and posts workout content, product features, and customer transformations across all social platforms.",
+      title: "Post on Social Media Without Lifting a Finger",
+      description: "AI creates and posts content that gets engagement while you focus on your business.",
       link: "/services/social-media-management"
     },
     {
       Icon: Shield,
-      title: "Streamline Your E-Commerce Operations",
-      description: "Automate inventory management, order processing, and customer follow-ups so you can focus on scaling your brand.",
+      title: "Stop Doing Repetitive Tasks",
+      description: "Automate the boring stuff so you can focus on growing your business and making money.",
       link: "/services/automation-infrastructure"
     }
   ];
@@ -66,21 +66,21 @@ function Home() {
             className="text-5xl md:text-7xl font-bold text-white mb-4 min-h-[120px] md:min-h-[160px] flex items-center justify-center"
           />
           <p className="text-2xl text-white/80 mb-8">
-            We build AI systems that help fitness and e-commerce brands scale globally while you focus on what matters most.
+            We build AI systems that work 24/7 to grow your business while you sleep.
           </p>
           <div className="max-w-3xl mx-auto mb-12">
             <p className="text-xl text-white/70 mb-4">
-              Stop losing customers to slow responses and manual processes.
+              Stop losing customers because you can't respond fast enough.
             </p>
             <p className="text-xl text-white/70">
-              Our AI handles customer inquiries, processes orders, and nurtures leads automatically.
-              Scale your fitness or e-commerce brand without the operational headaches.
+              Our AI handles leads, books appointments, and follows up with prospects automatically.
+              You get more customers without working more hours.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <MagneticButton className="inline-block">
               <ButtonLink to="/strategy-call">
-                Scale Your Brand with AI <ChevronRight className="ml-2 h-5 w-5" />
+                Get More Customers on Autopilot <ChevronRight className="ml-2 h-5 w-5" />
               </ButtonLink>
             </MagneticButton>
           </div>
@@ -91,10 +91,10 @@ function Home() {
       <section className="py-16 bg-charcoal">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <StatsCard value={150} suffix="+" label="Fitness & E-Commerce Brands" />
-            <StatsCard value={98} suffix="%" label="Customer Satisfaction" />
-            <StatsCard value={3} suffix="x" label="Revenue Growth" />
-            <StatsCard value={2} suffix="M+" label="Customer Interactions Automated" />
+            <StatsCard value={250} suffix="+" label="Businesses Helped" />
+            <StatsCard value={98} suffix="%" label="Happy Customers" />
+            <StatsCard value={2} suffix="x" label="More Leads Generated" />
+            <StatsCard value={500} suffix="K+" label="Leads Captured" />
           </div>
         </div>
       </section>
@@ -104,10 +104,10 @@ function Home() {
         <div className="container mx-auto px-6">
           <FadeIn>
             <h2 className="text-4xl font-bold text-black text-center mb-4">
-              Real Results from Fitness & E-Commerce Brands
+              Real Results from Real Businesses
             </h2>
             <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
-              See how we've helped fitness and e-commerce brands scale globally with AI automation
+              See how we've helped Fortune 500 companies transform their operations with AI
             </p>
           </FadeIn>
           
@@ -120,12 +120,12 @@ function Home() {
                     <Database className="h-12 w-12 text-blue-600 mr-4" />
                     <div>
                       <h3 className="text-2xl font-bold text-black">$350M Data Intelligence Revolution</h3>
-                      <p className="text-blue-600 font-semibold">Global Fitness E-Commerce Brand</p>
+                      <p className="text-blue-600 font-semibold">Fortune 500 DTC Brand</p>
                     </div>
                   </div>
                   <p className="text-gray-700 mb-6">
-                    How we transformed a global fitness brand's data chaos into real-time insights, processing 400,000+ customer interactions 
-                    and generating $350M in revenue through personalized fitness recommendations.
+                    How we transformed 24-hour data delays into 10-second insights, processing 400,000+ rows 
+                    in real-time and generating $350M in revenue impact.
                   </p>
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="text-center">
@@ -152,12 +152,12 @@ function Home() {
                     <Camera className="h-12 w-12 text-purple-600 mr-4" />
                     <div>
                       <h3 className="text-2xl font-bold text-black">AI Visuals Replace Costly Photoshoots</h3>
-                      <p className="text-purple-600 font-semibold">Global Fitness Equipment Brand</p>
+                      <p className="text-purple-600 font-semibold">Same $350M DTC Brand</p>
                     </div>
                   </div>
                   <p className="text-gray-700 mb-6">
-                    How we eliminated expensive fitness equipment photoshoots and delivered pixel-perfect product visuals 
-                    in 48 hours for global marketing campaigns across 15 countries.
+                    How we eliminated expensive photoshoots and delivered pixel-perfect product visuals 
+                    in 48 hours with CEO-approved quality: "I love those, Saikat."
                   </p>
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="text-center">
@@ -186,9 +186,9 @@ function Home() {
       <section className="py-20 bg-charcoal">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">How We Help Fitness & E-Commerce Brands Scale</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">How We Help You Get More Customers</h2>
             <p className="text-xl text-white/70">
-              We build AI systems that handle the complex operations of global fitness and e-commerce brands.
+              We build AI systems that do the work you don't have time for.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -206,10 +206,10 @@ function Home() {
           </div>
           <div className="text-center mt-12">
             <p className="text-xl text-white/70 mb-8">
-              Stop managing operations manually. Start scaling globally with AI.
+              Stop working harder. Start working smarter.
             </p>
             <ButtonLink to="/strategy-call">
-              Scale Your Brand with AI <ChevronRight className="ml-2 h-5 w-5" />
+              See How We Can Help Your Business <ChevronRight className="ml-2 h-5 w-5" />
             </ButtonLink>
           </div>
         </div>
@@ -219,18 +219,18 @@ function Home() {
       <section className="py-20 bg-primary text-white">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-8">Why Fitness & E-Commerce Brands Choose ThynkNext?</h2>
-            <p className="text-xl mb-4">Because generic automation doesn't understand your industry.</p>
+            <h2 className="text-4xl font-bold mb-8">Why Choose ThynkNext?</h2>
+            <p className="text-xl mb-4">Because cookie-cutter solutions don't work.</p>
             <p className="text-xl mb-12">
-              We build custom AI systems specifically for fitness and e-commerce operations.
+              We build custom AI systems specifically for your business.
             </p>
             <div className="space-y-6 text-lg text-white/80">
               <p>
-                Every fitness and e-commerce brand has unique challenges. That's why we don't use templates.
-                We build everything from scratch to fit your specific customer journey and product catalog.
+                Every business is different. That's why we don't use templates.
+                We build everything from scratch to fit exactly how your business works.
               </p>
               <p>
-                The result? AI that understands fitness goals, product recommendations, and e-commerce flows that actually drive sales.
+                The result? AI that actually helps you make more money instead of just looking fancy.
               </p>
             </div>
           </div>
@@ -240,7 +240,7 @@ function Home() {
       {/* Strategy Call Section */}
       <section className="py-20 bg-primary">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-white mb-8">Ready to Scale Your Brand Globally?</h2>
+          <h2 className="text-4xl font-bold text-white mb-8">Ready to Get More Customers?</h2>
           <p className="text-xl text-white/80 mb-8">Let's talk about your business.</p>
           <div className="max-w-3xl mx-auto">
             <p className="text-lg text-white/80 mb-8">

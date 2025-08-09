@@ -49,22 +49,22 @@ function BespokeAIChatbots() {
 
   const useCases = [
     {
-      industry: "Fitness Equipment Brands",
-      challenge: "Customers have complex questions about equipment specifications and workout compatibility",
-      solution: "AI chatbot understands fitness goals, recommends equipment, and provides workout guidance based on customer needs",
-      result: "3x increase in equipment sales, 60% reduction in returns"
+      industry: "Interior Design Studios",
+      challenge: "Visitors browse portfolios but leave without inquiring",
+      solution: "AI chatbot qualifies design preferences, budget, and timeline, then books consultation calls automatically",
+      result: "3x increase in qualified consultation bookings"
     },
     {
-      industry: "Supplement E-Commerce",
-      challenge: "Customers need personalized supplement recommendations based on fitness goals and dietary restrictions",
-      solution: "Intelligent bot qualifies fitness goals, dietary needs, and recommends personalized supplement stacks",
-      result: "50% increase in average order value, 2x higher customer satisfaction"
+      industry: "Solar Installation Companies",
+      challenge: "Complex technical questions overwhelm basic contact forms",
+      solution: "Intelligent bot handles technical queries, calculates savings estimates, and schedules site assessments",
+      result: "50% reduction in unqualified leads, 2x faster sales cycle"
     },
     {
-      industry: "Fitness Apparel Brands",
-      challenge: "High cart abandonment due to sizing concerns and style questions",
-      solution: "Proactive chatbot offers sizing assistance, style recommendations, and personalized outfit suggestions",
-      result: "40% reduction in cart abandonment, 45% increase in average order value"
+      industry: "E-commerce Brands",
+      challenge: "Cart abandonment and product questions slow conversions",
+      solution: "Proactive chatbot offers assistance, answers product questions, and provides personalized recommendations",
+      result: "25% reduction in cart abandonment, 35% increase in average order value"
     }
   ];
 
@@ -75,19 +75,19 @@ function BespokeAIChatbots() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <TypewriterHeading
-              text="24/7 AI Support for Your Fitness & E-Commerce Brand"
+              text="Stop Losing Leads While You Sleep"
               className="text-4xl md:text-6xl font-bold text-white mb-6"
             />
             <p className="text-2xl text-white/80 mb-8">
-              Your fitness customers and e-commerce shoppers need help at 3 AM. Are you there for them?
+              Your website visitors are ready to buy. But they're leaving because no one's there to help them.
             </p>
             <p className="text-xl text-white/70 mb-12 max-w-3xl mx-auto">
-              Our bespoke AI chatbots understand fitness goals and product specifications—they answer sizing questions, 
-              recommend workout plans, and convert global visitors into customers 24/7. While your competitors sleep, you're scaling globally.
+              Our bespoke AI chatbots don't just answer questions—they qualify prospects, handle objections, 
+              and convert visitors into customers 24/7. While your competitors sleep, you're closing deals.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <ButtonLink to="/strategy-call">
-                Scale Your Brand with AI <ArrowRight className="ml-2 h-5 w-5" />
+                Get Your Custom Chatbot Strategy <ArrowRight className="ml-2 h-5 w-5" />
               </ButtonLink>
             </div>
           </div>
@@ -110,19 +110,19 @@ function BespokeAIChatbots() {
                   <ul className="space-y-4">
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
-                      <span>97% of fitness and e-commerce visitors leave without buying</span>
+                      <span>97% of website visitors leave without taking action</span>
                     </li>
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
-                      <span>Customers with sizing questions wait hours and buy from competitors</span>
+                      <span>Qualified prospects wait hours for responses and buy elsewhere</span>
                     </li>
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
-                      <span>Your team spends 60% of time answering the same product and fitness questions</span>
+                      <span>Your team spends 60% of time answering the same basic questions</span>
                     </li>
                     <li className="flex items-start text-red-600">
                       <span className="text-red-500 mr-3 mt-1">❌</span>
-                      <span>International customers convert at 50% lower rates due to time zone barriers</span>
+                      <span>International visitors convert at 50% lower rates due to time zones</span>
                     </li>
                   </ul>
                 </div>
@@ -133,19 +133,19 @@ function BespokeAIChatbots() {
                   <ul className="space-y-4">
                     <li className="flex items-start text-green-600">
                       <span className="text-green-500 mr-3 mt-1">✅</span>
-                      <span>Every customer gets instant help with sizing, workouts, and product recommendations</span>
+                      <span>Every visitor gets instant, personalized assistance</span>
                     </li>
                     <li className="flex items-start text-green-600">
                       <span className="text-green-500 mr-3 mt-1">✅</span>
-                      <span>Fitness goals and purchase intent are captured and nurtured automatically</span>
+                      <span>Qualified leads are captured and nurtured automatically</span>
                     </li>
                     <li className="flex items-start text-green-600">
                       <span className="text-green-500 mr-3 mt-1">✅</span>
-                      <span>Your team focuses on product development, not answering basic questions</span>
+                      <span>Your team focuses on closing deals, not answering FAQs</span>
                     </li>
                     <li className="flex items-start text-green-600">
                       <span className="text-green-500 mr-3 mt-1">✅</span>
-                      <span>Sales flow in 24/7 from customers worldwide</span>
+                      <span>Revenue flows in 24/7 from global markets</span>
                     </li>
                   </ul>
                 </div>
@@ -203,7 +203,7 @@ function BespokeAIChatbots() {
         <div className="container mx-auto px-6">
           <FadeIn>
             <h2 className="text-4xl font-bold text-white text-center mb-16">
-              The Hidden Revenue Leak in Fitness & E-Commerce
+              Real Businesses. Real Results.
             </h2>
           </FadeIn>
           <div className="space-y-12">

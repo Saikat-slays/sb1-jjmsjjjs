@@ -108,15 +108,15 @@ function HowWeWork() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <TypewriterHeading
-              text="Simple. Effective. Built for Fitness & E-Commerce Scale."
+              text="Simple. Effective. Built to Scale."
               className="text-4xl md:text-6xl font-bold text-white mb-6"
             />
             <p className="text-2xl text-white/80 mb-8">
-              We don't just install AI into your fitness or e-commerce brand...
+              We don't just install AI into your business...
             </p>
             <p className="text-xl text-white/70 mb-12 max-w-3xl mx-auto">
-              We surgically insert automation into your customer journey and operations, 
-              so no customer inquiry, order, or opportunity slips through the cracks.
+              We surgically insert automation into the cracks of your operations, 
+              so nothing leaks time, money, or opportunity ever again.
             </p>
           </div>
         </div>
@@ -127,7 +127,7 @@ function HowWeWork() {
         <div className="container mx-auto px-6">
           <FadeIn>
             <h2 className="text-4xl font-bold text-black text-center mb-16">
-              How We Transform Fitness & E-Commerce Brands
+              How We Transform Your Business
             </h2>
           </FadeIn>
           
@@ -177,7 +177,7 @@ function HowWeWork() {
           <div className="max-w-4xl mx-auto">
             <FadeIn>
               <h2 className="text-4xl font-bold text-white text-center mb-4">
-                We're Not Your Average Automation Provider
+                Transparent Pricing. No Surprises.
               </h2>
               <p className="text-xl text-white/70 text-center mb-16">
                 No long contracts. No surprise fees. Just clean business.
@@ -236,7 +236,7 @@ function HowWeWork() {
               <div className="bg-red-50 border-l-4 border-red-500 p-8 rounded-r-2xl">
                 <h3 className="text-2xl font-bold text-red-700 mb-6 flex items-center">
                   <X className="h-8 w-8 mr-3" />
-                  What We Don't Build
+                  What We Don't Do
                 </h3>
                 <div className="space-y-4">
                   {whatWeDont.map((item, index) => (
@@ -248,7 +248,7 @@ function HowWeWork() {
                 </div>
                 <div className="mt-6 p-4 bg-red-100 rounded-lg">
                   <p className="text-red-700 font-semibold">
-                    We're not a generic automation agency. We specialize in fitness and e-commerce.
+                    We're not a chatbot agency. We're not some Fiverr freelancer.
                   </p>
                 </div>
               </div>
@@ -270,7 +270,7 @@ function HowWeWork() {
                 </div>
                 <div className="mt-6 p-4 bg-green-100 rounded-lg">
                   <p className="text-green-700 font-semibold">
-                    We build automated infrastructure behind fitness and e-commerce brands that scale globally.
+                    We build automated infrastructure behind brands that move fast.
                   </p>
                 </div>
               </div>
@@ -285,10 +285,10 @@ function HowWeWork() {
           <div className="max-w-4xl mx-auto text-center">
             <FadeIn>
               <h2 className="text-4xl font-bold text-white mb-8">
-               Ready to Scale Your Brand?
+                Ready to Move Fast?
               </h2>
               <p className="text-xl text-white/80 mb-8">
-               If you're a fitness or e-commerce brand founder tired of:
+                If you're a founder, operator, or CMO tired of:
               </p>
             </FadeIn>
             
@@ -296,31 +296,31 @@ function HowWeWork() {
               <div className="grid md:grid-cols-3 gap-6 mb-12">
                 <div className="bg-white/10 p-6 rounded-xl">
                   <Clock className="h-8 w-8 text-white mx-auto mb-3" />
-                  <h3 className="font-semibold text-white mb-2">Manual Customer Support</h3>
-                  <p className="text-white/70 text-sm">Losing customers across time zones due to delayed responses</p>
+                  <h3 className="font-semibold text-white mb-2">Slow Replies</h3>
+                  <p className="text-white/70 text-sm">Losing customers to delayed responses</p>
                 </div>
                 <div className="bg-white/10 p-6 rounded-xl">
                   <Users className="h-8 w-8 text-white mx-auto mb-3" />
-                  <h3 className="font-semibold text-white mb-2">Complex Global Operations</h3>
-                  <p className="text-white/70 text-sm">Team overwhelmed managing international customers and orders</p>
+                  <h3 className="font-semibold text-white mb-2">Repetitive Workflows</h3>
+                  <p className="text-white/70 text-sm">Team stuck on manual, time-consuming tasks</p>
                 </div>
                 <div className="bg-white/10 p-6 rounded-xl">
                   <Target className="h-8 w-8 text-white mx-auto mb-3" />
-                  <h3 className="font-semibold text-white mb-2">Scaling Bottlenecks</h3>
-                  <p className="text-white/70 text-sm">Growth limited by manual processes and operational complexity</p>
+                  <h3 className="font-semibold text-white mb-2">Conversion Leaks</h3>
+                  <p className="text-white/70 text-sm">Revenue slipping through operational gaps</p>
                 </div>
               </div>
             </FadeIn>
             
             <FadeIn>
               <p className="text-xl text-white/80 mb-12">
-                ...and ready to scale globally like the top fitness and e-commerce brands—let's talk.
+                ...and ready to automate like the big dogs—let's talk.
               </p>
               <ButtonLink to="/strategy-call">
-                Scale Your Brand Today <ChevronRight className="ml-2 h-5 w-5" />
+                Book Your 15-Minute Slot <ChevronRight className="ml-2 h-5 w-5" />
               </ButtonLink>
               <p className="text-white/60 mt-6">
-                Zero fluff. Just a clear look at how to scale your fitness or e-commerce brand.
+                Zero fluff. Just a clear look at what's possible.
               </p>
             </FadeIn>
           </div>

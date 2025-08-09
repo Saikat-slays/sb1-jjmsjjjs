@@ -58,14 +58,14 @@ function Services() {
       <section className="bg-white py-20">
         <div className="container mx-auto px-6">
           <TypewriterHeading
-            text="Scale Your Fitness & E-Commerce Brand with AI"
+            text="Get More Customers Without Working More Hours"
             className="text-4xl md:text-5xl font-bold text-black text-center mb-8"
           />
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-8">
-            We build AI systems that handle the complex operations of global fitness and e-commerce brands.
+            We build AI systems that do the work you don't have time for.
           </p>
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto">
-            More customers, global reach, automated operations. Built specifically for fitness and e-commerce.
+            More leads, more customers, less manual work. Built specifically for your business.
           </p>
         </div>
       </section>
@@ -73,7 +73,7 @@ function Services() {
       {/* Core Solutions */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-white text-center mb-16">How We Help Fitness & E-Commerce Brands</h2>
+          <h2 className="text-4xl font-bold text-white text-center mb-16">How We Help Your Business</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -91,30 +91,27 @@ function Services() {
                       <div className="flex items-center text-primary font-semibold group-hover:translate-x-2 transition-transform">
                         Learn More <ChevronRight className="ml-2 h-4 w-4" />
                       </div>
-              Stop managing operations manually. Start scaling globally with AI.
+                    </div>
                   </div>
                 </div>
-              Scale Your Brand with AI <ChevronRight className="ml-2 h-5 w-5" />
+              </Link>
             ))}
           </div>
         </div>
-          )
-          )
-          }
       </section>
 
       {/* Final CTA */}
       <section className="bg-primary py-20">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-white mb-8">
-            Ready to Scale Your Brand Globally?
+            Ready to Stop Losing Customers?
           </h2>
           <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
-            Let's talk about your fitness or e-commerce brand and show you exactly how AI can help you scale globally
-            without the operational complexity.
+            Let's talk about your business and show you exactly how AI can help you get more customers
+            without working more hours.
           </p>
           <ButtonLink to="/strategy-call">
-            Scale Your Brand Today <ChevronRight className="ml-2 h-5 w-5" />
+            Book Your Free Call Now <ChevronRight className="ml-2 h-5 w-5" />
           </ButtonLink>
         </div>
       </section>

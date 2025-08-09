@@ -113,21 +113,21 @@ function AIVisualsShowcase() {
             <FadeIn>
               <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
                 <Camera className="h-5 w-5 text-white mr-2" />
-                <span className="text-white font-semibold">Case Study: Fitness Brand Visual Revolution</span>
+                <span className="text-white font-semibold">Case Study: AI Visual Production Revolution</span>
               </div>
             </FadeIn>
             <TypewriterHeading
-              text="AI-Generated Fitness Product Visuals That Replace Costly Photoshoots"
+              text="AI-Generated Product Visuals That Replace Costly Photoshoots"
               className="text-4xl md:text-6xl font-bold text-white mb-6"
             />
             <FadeIn>
               <p className="text-2xl text-white/80 mb-8">
-                How we saved a $350M fitness brand millions while delivering flawless product visuals in 48 hours
+                How we saved a $350M DTC brand millions while delivering flawless product visuals in 48 hours
               </p>
               <p className="text-xl text-white/70 mb-12 max-w-4xl mx-auto">
-                Discover how our custom AI image generation system eliminated expensive fitness equipment photoshoots, 
+                Discover how our custom AI image generation system eliminated expensive photoshoots, 
                 delivered pixel-perfect product representation, and created unlimited creative possibilities 
-                for a global fitness equipment brand.
+                for a Fortune 500 personal care brand.
               </p>
             </FadeIn>
           </div>
@@ -142,8 +142,8 @@ function AIVisualsShowcase() {
               The Visual Production Revolution
             </h2>
             <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
-              When AI replaces traditional fitness equipment photoshoots, brands unlock speed, consistency, and cost savings 
-              that transform their entire global marketing strategy.
+              When AI replaces traditional photoshoots, brands unlock speed, consistency, and cost savings 
+              that transform their entire visual marketing strategy.
             </p>
           </FadeIn>
           <div className="grid md:grid-cols-4 gap-8">
@@ -448,7 +448,7 @@ function AIVisualsShowcase() {
                   </div>
                   <div className="text-left">
                     <div className="font-semibold text-xl text-black">Chief Executive Officer</div>
-                    <div className="text-gray-600">$350M Global Fitness Equipment Brand</div>
+                    <div className="text-gray-600">$350M DTC Personal Care Brand</div>
                   </div>
                 </div>
               </div>
